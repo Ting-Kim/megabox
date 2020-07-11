@@ -7,7 +7,7 @@ public class SpecialTheaterListHandler implements CommandHandler{
 
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return "/specialtheater/list";
+		return "/specialtheaterList";
 	}
 	
 }

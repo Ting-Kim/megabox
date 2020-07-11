@@ -6,6 +6,7 @@ import java.util.List;
 import com.util.ConnectionProvider;
 
 import megabox.mvc.dao.TheaterListDAO;
+import megabox.mvc.model.EventDTO;
 import megabox.mvc.model.TheaterListDTO;
 
 public class TheaterListService {
@@ -20,5 +21,17 @@ public class TheaterListService {
             throw new RuntimeException(e); // ServiceException()
 		}
 		
-	} // 
+	} // select()
+	
+	public List<EventDTO> eventSelect(){
+		TheaterListDAO dao = TheaterListDAO.getInstance();
+		try ( Connection conn = ConnectionProvider.getConnection()){
+			List<EventDTO> list = dao.TheaterNewEvent(conn);
+			// conn.close () 자동 -> 커넥션 풀에 반환
+			return list;
+		} catch (Exception e) {
+            throw new RuntimeException(e); // ServiceException()
+		}
+	}
+	
 }

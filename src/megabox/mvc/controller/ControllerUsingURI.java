@@ -26,7 +26,6 @@ public class ControllerUsingURI extends HttpServlet{
 
 	@Override
 	public void init() throws ServletException {	
-		System.out.println("ControllerUsingURI init() 함수 호출됨.");
 		String path = getInitParameter("configFile");
 		String configFilePath = getServletContext().getRealPath(path);
 		Properties prop = new Properties();
@@ -63,7 +62,6 @@ public class ControllerUsingURI extends HttpServlet{
 
 	private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		 
 		String requestURI =  request.getRequestURI();
-		System.out.println("ControllerUsingURI process() 함수 호출됨.");
 		 
 		// System.out.println("> 요청 URI : " + requestURI );
 		if(  requestURI.indexOf( request.getContextPath() ) == 0) {
@@ -76,14 +74,13 @@ public class ControllerUsingURI extends HttpServlet{
 		try {
 			viewPage  = handler.process(request, response);
 		} catch (Exception e) { 
-			System.out.println("에러발생");
 			e.printStackTrace();
 		}
 		if( viewPage != null ) {
 			String prefix ="/WEB-INF/page"; 
 			String suffix = ".jsp";
 			viewPage = String.format("%s%s%s", prefix, viewPage, suffix);
-			System.out.println("dkdkdkdk");
+			
 			RequestDispatcher dispatcher
 			= request.getRequestDispatcher(viewPage);
 			dispatcher.forward(request, response);

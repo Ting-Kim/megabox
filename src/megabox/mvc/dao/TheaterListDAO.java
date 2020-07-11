@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.util.JdbcUtil;
 
+import megabox.mvc.model.EventDTO;
 import megabox.mvc.model.TheaterListDTO;
 
 public class TheaterListDAO {
@@ -56,5 +57,48 @@ public class TheaterListDAO {
 		}
 		return list;
 	}
+	
+	 public ArrayList<EventDTO> TheaterNewEvent(Connection conn){
+	      PreparedStatement pstmt = null;
+	      ResultSet rs = null;
+	      EventDTO dto = null;
+	      ArrayList<EventDTO> list = new ArrayList();
+	      String sql = "";
+	      
+	      sql = "select rownum, ranking, seq_event,seq_etype,title,start_date " + 
+	      		"from " + 
+	      		"( " + 
+	      		"    select rank() over (order by start_date desc) as ranking, seq_event,seq_etype,title,start_date " + 
+	      		"    from event " + 
+	      		"    where seq_etype = 3 " + 
+	      		") " + 
+	      		"where rownum<=2  " + 
+	      		"order by ranking, seq_event desc" ;
+
+	      try {
+	         pstmt = conn.prepareStatement(sql);
+	         rs=pstmt.executeQuery();
+	         
+	         while (rs.next()) {
+	            dto = new EventDTO();
+	            dto.setSeq_event(rs.getInt("seq_event"));
+	            dto.setSeq_etype(rs.getInt("seq_etype"));
+	            dto.setTitle(rs.getString("title"));
+	            dto.setStart_date(rs.getDate("start_date"));
+
+	            
+	            list.add(dto);
+	         }
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      }finally {
+	         JdbcUtil.close(pstmt);
+	         try {rs.close();} catch (SQLException e) {e.printStackTrace();}
+	         try {conn.close();} catch (SQLException e) {e.printStackTrace();}
+	      }
+	      //service 로 반환
+	      return list;
+	      
+	   }
 	
 }

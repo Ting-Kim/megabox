@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+String name = request.getParameter("name");
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name="viewport"content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 <link rel="shortcut icon" href="static/pc/images/favicon.ico" />
 <title>박스오피스 < 영화 | 라이프씨어터, 메가박스</title>
 <meta property="name" id="metaTagTitle" content="박스오피스 &lt; 영화" />
@@ -55,9 +56,8 @@
 				type='hidden' name='nonMbCertedMblpNo' value='' /> <input
 				type='hidden' name='reloadYn' value='' /> <input type='hidden'
 				name='validDataRevisnYn' value='N' />
-
 		</form>
-
+	
 
 		<div style="display: none;">
 			<a id="loginPupupATag" href="#layer_login_select"
@@ -291,17 +291,14 @@
 														name="chkNonMbBokdPersonInfoProc" class="ml20"> <label
 														for="chkNonMbBokdPersonInfoProcFalse">미동의<!--미동의--></label>
 												</div>
-
 												<ul class="dot-list gblue mt20">
-													<li class="font-gblue">정보수집에 동의를 거부할 수 있으며, 동의하지 않을 경우
-														비회원 예매서비스를 이용하실 수 없습니다.<!--정보수집에 동의를 거부할 수 있으며, 동의하지 않을 경우 비회원 예매서비스를 이용하실 수 없습니다.-->
+													<li class="font-gblue">정보수집에 동의를 거부할 수 있으며, 동의하지 않을 경우 비회원 예매서비스를 이용하실 수 없습니다.
 													</li>
 												</ul>
 											</div>
 										</div>
 									</div>
 								</div>
-								<!--// col-wrap -->
 
 								<div class="btn-group">
 									<button id="btnChkNonMbLogin" type="button"
@@ -312,15 +309,10 @@
 								</div>
 							</div>
 						</div>
-						<!--// tab 비회원 로그인 -->
 					</div>
-					<!--// tab-cont-wrap -->
 				</div>
 
-				<button type="button" class="btn-modal-close">
-					레이어 닫기
-					<!--레이어 닫기-->
-				</button>
+				<button type="button" class="btn-modal-close">레이어 닫기</button>
 			</div>
 		</section>
 
@@ -374,7 +366,7 @@
 
 		<header id="header">
 			<h1 class="ci">
-				<a href="index.html" title="MEGABOX 메인으로 가기">MEGABOX : Life
+				<a href="main.do" title="MEGABOX 메인으로 가기">MEGABOX : Life
 					Theater</a>
 			</h1>
 
@@ -453,11 +445,11 @@
 					<li><a href="movie.html" class="gnb-txt-movie" title="영화">영화</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="movie.html" title="전체영화">전체영화</a></li>
-								<li><a href="curation/specialcontent.html" title="큐레이션">큐레이션</a></li>
+								<li><a href="movie.do" title="전체영화">전체영화</a></li>
+								<li><a href="#" title="큐레이션">큐레이션</a></li>
 
 								<li id="festivalArea" style="display: none;"><a
-									href="festival.html" title="영화제">영화제</a></li>
+									href="#" title="영화제">영화제</a></li>
 								<li><a href="moviepost/all.html" title="무비포스트">무비포스트</a></li>
 							</ul>
 						</div></li>
@@ -656,16 +648,16 @@
 						<p class="tit-depth">회사소개</p>
 
 						<ul class="list-depth">
-							<li><a href="megaboxinfo.html" target="_blank"
+							<li><a href="#" target="_blank"
 								title="메가박스소개">메가박스소개</a></li>
-							<li><a href="socialcontribution.html" target="_blank"
+							<li><a href="#" target="_blank"
 								title="사회공헌">사회공헌</a></li>
-							<li><a href="advertize.html" target="_blank" title="홍보자료">홍보자료</a></li>
-							<li><a href="partner.html" target="_blank" title="제휴/부대사업문의">제휴/부대사업문의</a></li>
-							<li><a href="onlinereport.html" target="_blank"
+							<li><a href="#" target="_blank" title="홍보자료">홍보자료</a></li>
+							<li><a href="#" target="_blank" title="제휴/부대사업문의">제휴/부대사업문의</a></li>
+							<li><a href="#" target="_blank"
 								title="온라인제보센터">온라인제보센터</a></li>
-							<li><a href="ir.html" target="_blank" title="자료">IR자료</a></li>
-							<li><a href="recruit.html" target="_blank" title="인재채용림">인재채용</a></li>
+							<li><a href="#" target="_blank" title="자료">IR자료</a></li>
+							<li><a href="#" target="_blank" title="인재채용림">인재채용</a></li>
 							<li><a href="https://jebo.joonganggroup.com/main.do"
 								target="_blank" title="윤리경영">윤리경영</a></li>
 						</ul>
@@ -675,9 +667,9 @@
 						<p class="tit-depth">이용정책</p>
 
 						<ul class="list-depth">
-							<li><a href="support/terms.html" title="이용약관">이용약관</a></li>
-							<li><a href="support/privacy.html" title="개인정보처리방침">개인정보처리방침</a></li>
-							<li><a href="support/screenrule.html" title="스크린수배정에관한기준">스크린수배정에관한기준</a></li>
+							<li><a href="#" title="이용약관">이용약관</a></li>
+							<li><a href="#" title="개인정보처리방침">개인정보처리방침</a></li>
+							<li><a href="#" title="스크린수배정에관한기준">스크린수배정에관한기준</a></li>
 						</ul>
 					</div>
 
@@ -836,8 +828,8 @@
 			<div class="page-util">
 				<div class="inner-wrap">
 					<div class="location">
-						<span>Home</span> <a href="movie.html" title="영화 페이지로 이동">영화</a> <a
-							href="movie.html" title="전체영화 페이지로 이동">전체영화</a>
+						<span>Home</span> <a href="movie.do" title="영화 페이지로 이동">영화</a> 
+						<a href="movie.do" title="전체영화 페이지로 이동">전체영화</a>
 					</div>
 
 
@@ -852,10 +844,10 @@
 
 					<div class="tab-list fixed">
 						<ul id="topMenu">
-							<li><a href="movie.html" title="박스오피스 탭으로 이동">박스오피스</a></li>
-							<li><a href="movie/comingsoon.html" title="상영예정작 탭으로 이동">상영예정작</a></li>
-							<li><a href="movie/film.html" title="필름소사이어티 탭으로 이동">필름소사이어티</a></li>
-							<li><a href="movie/classic.html" title="클래식소사이어티 탭으로 이동">클래식소사이어티</a></li>
+							<li <%if(name ==null)%> class="on"<%; %>><a href="movie.do" title="박스오피스 탭으로 이동">박스오피스</a></li>
+							<li <%if(name.equalsIgnoreCase("comingsoon"))%> class="on"<%; %>><a href="movie.do?name=comingsoon" title="상영예정작 탭으로 이동" >상영예정작</a></li>
+							<li <%if(name.equalsIgnoreCase("file"))%> class="on"<%; %>><a href="movie.do?name=film" title="필름소사이어티 탭으로 이동">필름소사이어티</a></li>
+							<li <%if(name.equalsIgnoreCase("classic"))%> class="on"<%; %>><a href="movie.do?name=classic" title="클래식소사이어티 탭으로 이동">클래식소사이어티</a></li>
 
 						</ul>
 					</div>
@@ -994,17 +986,15 @@
 					<div class="ci">MEGABOX : Life Theater</div>
 
 					<div class="footer-info">
-						<div>
-							<address>서울특별시 성동구 왕십리로 50, 6층(성수동 1가, 메가박스스퀘어)</address>
-							<p>ARS 1544-0070</p>
-						</div>
-						<p>대표자명 김진선</p>
-						<p>&middot; 개인정보보호책임자 조상연</p>
-						<p>&middot; 사업자등록번호 211-86-59478</p>
-						<p>&middot; 통신판매업신고번호 제 833호</p>
-						<p class="copy">COPYRIGHT &copy; MegaboxJoongAng, Inc. All
-							rights reserved</p>
-					</div>
+                <div>
+                    <address>서울특별시 강남구 역삼동 테헤란로 132</address>
+                </div>
+                <p>팀장 이진권</p>
+                <p>· 기술고문 김태호</p>
+                <p>· 김진우, 이진석 </p>
+                <p>· 하기싫다..</p> 
+                <p class="copy">COPYRIGHT © MegaboxJoongAng, Inc. All rights reserved</p>
+            </div>
 
 					<div class="footer-sns">
 						<a href="#" target="_blank" title="MEGABOX 트위터 페이지로 이동"><i
@@ -1021,5 +1011,6 @@
 			</div>
 			<div id="layer_looking_theater" class="layer-looking-theater"></div>
 		</footer>
+	</div>
 </body>
 </html>
