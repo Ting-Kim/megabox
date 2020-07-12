@@ -1,5 +1,6 @@
 package megabox.mvc.model;
 
+import java.sql.Clob;
 import java.util.Date;
 
 import oracle.sql.CLOB;
@@ -10,81 +11,113 @@ public class MovieDTO {
 	String Name; 		//영화이름
 	String Genre; 		//장르
 	String Age;			//영화시청가능 나이
-	Date release_date;	//개봉일
 	String Director;	//감독명
-	CLOB summary;		//줄거리
-	int runningTime;	//러닝타임
+	Date date;			//개봉일
 	String actors;		//출연진
-	String img;			//포스터
-	boolean socieoty;	//소사이어티인지 아닌지 체크하는 변수 true면 소사이어티 false면 일반영화
+	int runningTime;	//러닝타임
+	Clob summary;		//줄거리
+	Clob img;			//포스터
+	long view;			//누적관객수
+	String type;		//
 	long like;			//좋아요수
+	
 	public MovieDTO() {}
+
 	public String getName() {
 		return Name;
 	}
+
 	public void setName(String name) {
 		Name = name;
 	}
+
 	public String getGenre() {
 		return Genre;
 	}
+
 	public void setGenre(String genre) {
 		Genre = genre;
 	}
+
 	public String getAge() {
 		return Age;
 	}
+
 	public void setAge(String age) {
 		Age = age;
 	}
-	public Date getRelease_date() {
-		return release_date;
-	}
-	public void setRelease_date(Date release_date) {
-		this.release_date = release_date;
-	}
+
 	public String getDirector() {
 		return Director;
 	}
+
 	public void setDirector(String director) {
 		Director = director;
 	}
-	public CLOB getSummary() {
-		return summary;
+
+	public Date getDate() {
+		return date;
 	}
-	public void setSummary(CLOB summary) {
-		this.summary = summary;
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
-	public int getRunningTime() {
-		return runningTime;
-	}
-	public void setRunningTime(int runningTime) {
-		this.runningTime = runningTime;
-	}
+
 	public String getActors() {
 		return actors;
 	}
+
 	public void setActors(String actors) {
 		this.actors = actors;
 	}
-	public String getImg() {
+
+	public int getRunningTime() {
+		return runningTime;
+	}
+
+	public void setRunningTime(int runningTime) {
+		this.runningTime = runningTime;
+	}
+
+	public Clob getSummary() {
+		return summary;
+	}
+
+	public void setSummary(Clob clob) {
+		this.summary = clob;
+	}
+
+	public Clob getImg() {
 		return img;
 	}
-	public void setImg(String img) {
+
+	public void setImg(Clob img) {
 		this.img = img;
 	}
-	public boolean isSocieoty() {
-		return socieoty;
+
+	public long getView() {
+		return view;
 	}
-	public void setSocieoty(boolean socieoty) {
-		this.socieoty = socieoty;
+
+	public void setView(long view) {
+		this.view = view;
 	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	public long getLike() {
 		return like;
 	}
+
 	public void setLike(long like) {
 		this.like = like;
 	}
-	
+
 	
 }

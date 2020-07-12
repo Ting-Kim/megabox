@@ -2,7 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
+String path = request.getContextPath();
 String name = request.getParameter("name");
+String title="";
+if(name==null){
+	title="박스오피스";
+}else if(name.equalsIgnoreCase("comingsoon")){
+	title="상영예정작";
+}else if(name.equalsIgnoreCase("film")){
+	title="필름소사이어티";
+}else if(name.equalsIgnoreCase("classic")){
+	title="클래식소사이어티";
+}
 %>
 <!DOCTYPE html>
 <html>
@@ -11,35 +22,22 @@ String name = request.getParameter("name");
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta name="viewport"content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 <link rel="shortcut icon" href="static/pc/images/favicon.ico" />
-<title>박스오피스 < 영화 | 라이프씨어터, 메가박스</title>
+<title><%=title%> < 영화 | 라이프씨어터, 메가박스</title>
 <meta property="name" id="metaTagTitle" content="박스오피스 &lt; 영화" />
-<meta property="description" id="metaTagDtls"
-	content="메가박스에서 상영중인 더 많은 영화를 만나보세요." />
-<meta property="keywords" id="metaTagKeyword"
-	content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
-<meta property="fb:app_id" id="fbAppId" content="546913502790694" />
-
-
+<meta property="description" id="metaTagDtls" content="메가박스에서 상영중인 더 많은 영화를 만나보세요." />
+<meta property="keywords" id="metaTagKeyword" content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
+<meta property="fb:app_id" id="fbAppId" content="546913502790694" /> 
 <meta property="og:site_name" id="fbSiteName" content="메가박스" />
 <meta property="og:type" id="fbType" content="movie" />
 <meta property="og:url" id="fbUrl" content="movie.html" />
 <meta property="og:title" id="fbTitle" content="박스오피스 &lt; 영화" />
-<meta property="og:description" id="fbDtls"
-	content="메가박스에서 상영중인 더 많은 영화를 만나보세요." />
-<meta property="og:image" id="fbImg"
-	content="../img.megabox.co.kr/SharedImg/metaTag/2020/02/04/gFfTzMwwiCxhBwcUV5TRGMFX9Cmoj64W.jpg" />
+<meta property="og:description" id="fbDtls" content="메가박스에서 상영중인 더 많은 영화를 만나보세요." />
 
-
-
-
-
-
-<link rel="stylesheet" href="css/main.css" media="all" />
-<link rel="stylesheet" href="css/megabox.min.css" media="all" />
+<link rel="stylesheet" href="<%=path %>/css/megabox.min.css" media="all" />
 </head>
 <body>
 	<div class="skip" title="스킵 네비게이션">
-		<a href="#contents" title="본문 바로가기">본문 바로가기</a> <a href="#footer" title="푸터 바로가기">푸터 바로가기</a>
+	<a href="#contents" title="본문 바로가기">본문 바로가기</a> <a href="#footer" title="푸터 바로가기">푸터 바로가기</a>
 	</div>
 	<div class="body-wrap">
 		<form id="loginForm">
@@ -362,30 +360,23 @@ String name = request.getParameter("name");
 			</div>
 		</section>
 
-
-
 		<header id="header">
 			<h1 class="ci">
-				<a href="main.do" title="MEGABOX 메인으로 가기">MEGABOX : Life
-					Theater</a>
+				<a href="<%=path %>/main.do" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a>
 			</h1>
-
-
-
-
 
 			<div class="util-area">
 				<div class="left-link">
-					<a href="benefit/viplounge.html" title="VIP LOUNGE">VIP LOUNGE</a>
-					<a href="benefit/membership.html" title="멤버십">멤버십</a> <a
-						href="support.html" title="고객센터">고객센터</a>
+					<a href="<%=path %>/benefit/viplounge.do" title="VIP LOUNGE">VIP LOUNGE</a>
+					<a href="<%=path %>/benefit/membership.do" title="멤버십">멤버십</a> <a
+						href="<%=path %>/support.do" title="고객센터">고객센터</a>
 				</div>
 
 				<div class="right-link">
 					<!-- 로그인전 -->
 					<div class="before" style="display: none">
-						<a href="javaScript:fn_viewLoginPopup('default','pc')" title="로그인">로그인</a>
-						<a href="join.html" title="회원가입">회원가입</a>
+						<a href="#" title="로그인">로그인</a>
+						<a href="#" title="회원가입">회원가입</a>
 					</div>
 
 					<!-- 로그인후 -->
@@ -431,71 +422,55 @@ String name = request.getParameter("name");
 			</div>
 
 			<div class="link-area">
-				<a href="#layer_sitemap" class="header-open-layer btn-layer-sitemap"
-					title="사이트맵">사이트맵</a> <a href="#layer_header_search"
-					class="header-open-layer btn-layer-search" title="검색">검색</a> <a
-					href="booking/timetable.html" class="link-ticket" title="상영시간표">상영시간표</a>
-				<a href="#layer_mymega" class="header-open-layer btn-layer-mymega"
-					title="나의 메가박스">나의 메가박스</a>
+				<a href="#" class="header-open-layer btn-layer-sitemap" title="사이트맵">사이트맵</a>
+				<a href="#" class="header-open-layer btn-layer-search" title="검색">검색</a>
+				<a href="#" class="link-ticket" title="상영시간표">상영시간표</a>
+				<a href="#" class="header-open-layer btn-layer-mymega" title="나의 메가박스">나의 메가박스</a>
 			</div>
 
 
 			<nav id="gnb">
 				<ul class="gnb-depth1">
-					<li><a href="movie.html" class="gnb-txt-movie" title="영화">영화</a>
+					<li><a href="<%=path %>/movie.do" class="gnb-txt-movie" title="영화">영화</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="movie.do" title="전체영화">전체영화</a></li>
-								<li><a href="#" title="큐레이션">큐레이션</a></li>
-
-								<li id="festivalArea" style="display: none;"><a
-									href="#" title="영화제">영화제</a></li>
-								<li><a href="moviepost/all.html" title="무비포스트">무비포스트</a></li>
+								<li><a href="<%=path %>/movie.do" title="전체영화">전체영화</a></li>
+								<li><a href="<%=path %>/curation.do" title="큐레이션">큐레이션</a></li>
+								<li><a href="<%=path %>/moviepost.do" title="무비포스트">무비포스트</a></li>
 							</ul>
 						</div></li>
-					<li><a href="booking.html" class="gnb-txt-reserve" title="예매">예매</a>
+					<li><a href="#" class="gnb-txt-reserve" title="예매">예매</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="booking.html" title="빠른예매">빠른예매</a></li>
-								<li><a href="booking/timetable.html" title="상영시간표">상영시간표</a></li>
-								<li><a href="booking/privatebooking.html"
-									title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a></li>
+								<li><a href="#" title="빠른예매">빠른예매</a></li>
+								<li><a href="#" title="상영시간표">상영시간표</a></li>
+								<li><a href="#" title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a></li>
 							</ul>
 						</div></li>
-					<li><a href="theater/list.html" class="gnb-txt-theater"
+					<li><a href="<%=path %>/theater/list.do" class="gnb-txt-theater"
 						title="극장">극장</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="theater/list.html" title="전체극장">전체극장</a></li>
-								<li><a href="specialtheater/list.html" title="특별관">특별관</a></li>
+								<li><a href="<%=path %>/theater/list.do" title="전체극장">전체극장</a></li>
+								<li><a href="<%=path %>/specialtheater/list.do" title="특별관">특별관</a></li>
 							</ul>
 						</div></li>
-					<li><a href="javascript:void(0)"
-						onclick="NetfunnelChk.aTag('EVENT_LIST','/event');return false;"
-						class="gnb-txt-event" title="이벤트">이벤트</a>
+					<li><a href="<%=path %>/event.do" class="gnb-txt-event" title="이벤트">이벤트</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="javascript:void(0)"
-									onclick="NetfunnelChk.aTag('EVENT_LIST','/event');return false;"
-									title="진행중 이벤트">진행중 이벤트</a></li>
-								<li><a href="javascript:void(0)"
-									onclick="NetfunnelChk.aTag('EVENT_LIST','/event/end');return false;"
-									title="지난 이벤트">지난 이벤트</a></li>
-								<li><a href="javascript:void(0)"
-									onclick="NetfunnelChk.aTag('EVENT_LIST','/event/winner/list');return false;"
-									title="당첨자발표">당첨자발표</a></li>
+								<li><a href="<%=path %>/event.do" title="진행중 이벤트">진행중 이벤트</a></li>
+								<li><a href="#" title="지난 이벤트">지난 이벤트</a></li>
+								<li><a href="#" title="당첨자발표">당첨자발표</a></li>
 							</ul>
-						</div></li>
-					<li><a href="javascript:void(0)"
-						onclick="NetfunnelChk.aTag('STORE_LIST','/store');return false;"
-						class="gnb-txt-store" title="스토어">스토어</a></li>
-					<li><a href="benefit/membership.html" class="gnb-txt-benefit"
-						title="혜택">혜택</a>
+						</div>
+					</li>
+					<li><a href="<%=path %>/store.do" class="gnb-txt-store" title="스토어">스토어</a></li>
+					<li><a href="<%=path %>/benefit/membership.do" class="gnb-txt-benefit" title="혜택">혜택</a>
+						
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="benefit/membership.html" title="메가박스 멤버십">메가박스
-										멤버십</a></li>
-								<li><a href="benefit/discount/guide.html" title="제휴/할인">제휴/할인</a></li>
+								<li><a href="<%=path %>/benefit/membership.do" title="메가박스 멤버십">메가박스 멤버십</a></li>
+								<li><a href="<%=path %>/benefit/discount.do" title="제휴/할인">제휴/할인</a></li>
 							</ul>
 						</div></li>
 				</ul>
@@ -503,169 +478,119 @@ String name = request.getParameter("name");
 			<div id="layer_sitemap" class="header-layer layer-sitemap">
 				<!-- wrap -->
 				<div class="wrap">
-					<a href="#" class="link-acc" title="사이트맵 레이어 입니다.">사이트맵 레이어
-						입니다.</a>
+					<a href="#" class="link-acc" title="사이트맵 레이어 입니다.">사이트맵 레이어 입니다.</a>
 
 					<p class="tit">SITEMAP</p>
 
 					<div class="list position-1">
 						<p class="tit-depth">영화</p>
-
 						<ul class="list-depth">
-							<li><a href="movie.html" title="전체영화">전체영화</a></li>
-							<li><a href="curation/specialcontent.html" title="큐레이션">큐레이션</a></li>
-							<li><a href="javascript:void(0)"
-								onclick="javascript:MegaboxUtil.Common.moveMovieFilmCheck();"
-								title="영화제">영화제</a></li>
-							<li><a href="moviepost/all.html" title="무비포스트">무비포스트</a></li>
+							<li><a href="<%=path %>/movie.do" title="전체영화">전체영화</a></li>
+							<li><a href="<%=path %>/curation.do" title="큐레이션">큐레이션</a></li>
+							<li><a href="<%=path %>/moviepost.do" title="무비포스트">무비포스트</a></li>
 						</ul>
 					</div>
 
 					<div class="list position-2">
 						<p class="tit-depth">예매</p>
-
 						<ul class="list-depth">
-							<li><a href="booking.html" title="빠른예매">빠른예매</a></li>
-							<li><a href="booking/timetable.html" title="상영시간표">상영시간표</a></li>
-							<li><a href="booking/privatebooking.html"
-								title="더 부티크 프라빗 예매">더 부티크 프라이빗 예매</a></li>
-							<!-- <li><a href="/booking?megaboxLanguage=en" title="English Ticketing">English Ticketing</a></li> -->
+							<li><a href="#" title="빠른예매">빠른예매</a></li>
+							<li><a href="#" title="상영시간표">상영시간표</a></li>
+							<li><a href="#" title="더 부티크 프라빗 예매">더 부티크 프라이빗 예매</a></li>
 						</ul>
 					</div>
 
 					<div class="list position-3">
 						<p class="tit-depth">극장</p>
-
 						<ul class="list-depth">
-							<li><a href="theater/list.html" title="전체극장">전체극장</a></li>
-							<li><a href="specialtheater/list.html" title="특별관">특별관</a></li>
+							<li><a href="<%=path %>/theater/list.do" title="전체극장">전체극장</a></li>
+							<li><a href="<%=path %>/specialtheater/list.do" title="특별관">특별관</a></li>
 						</ul>
 					</div>
 
 					<div class="list position-4">
 						<p class="tit-depth">이벤트</p>
-
 						<ul class="list-depth">
-							<li><a href="javascript:void(0)"
-								onclick="NetfunnelChk.aTag('EVENT_LIST','/event');return false;"
-								title="진행중 이벤트">진행중 이벤트</a></li>
-							<li><a href="javascript:void(0)"
-								onclick="NetfunnelChk.aTag('EVENT_LIST','/event/end');return false;"
-								title="지난 이벤트">지난 이벤트</a></li>
-							<li><a href="javascript:void(0)"
-								onclick="NetfunnelChk.aTag('EVENT_LIST','/event/winner/list');return false;"
-								title="당첨자발표">당첨자발표</a></li>
+							<li><a href="<%=path %>/event.do" title="진행중 이벤트">진행중 이벤트</a></li>
+							<li><a href="#" title="지난 이벤트">지난 이벤트</a></li>
+							<li><a href="#" title="당첨자발표">당첨자발표</a></li>
 						</ul>
 					</div>
 
 					<div class="list position-5">
 						<p class="tit-depth">스토어</p>
-
 						<ul class="list-depth">
-							<li><a href="javascript:void(0)"
-								onclick="NetfunnelChk.aTag('STORE_LIST','/store');return false;"
-								title="새로운 상품">새로운 상품</a></li>
-							<li><a href="javascript:void(0)"
-								onclick="NetfunnelChk.aTag('STORE_LIST','/store/megaticket');return false;"
-								title="메가티켓">메가티켓</a></li>
-							<li><a href="javascript:void(0)"
-								onclick="NetfunnelChk.aTag('STORE_LIST','/store/megachance');return false;"
-								title="메가찬스">메가찬스</a></li>
-							<li><a href="javascript:void(0)"
-								onclick="NetfunnelChk.aTag('STORE_LIST','/store/popcorn');return false;"
-								title="팝콘/음료/굿즈">팝콘/음료/굿즈</a></li>
+							<li><a href="<%=path %>/store.do?group=0" title="새로운 상품">새로운 상품</a></li>
+							<li><a href="<%=path %>/store.do?group=1" title="메가티켓">메가티켓</a></li>
+							<li><a href="<%=path %>/store.do?group=2" title="메가찬스">메가찬스</a></li>
+							<li><a href="<%=path %>/store.do?group=3" title="팝콘/음료/굿즈">팝콘/음료/굿즈</a></li>
 						</ul>
 					</div>
+					
 					<div class="list position-6">
 						<p class="tit-depth">나의 메가박스</p>
 						<ul class="list-depth mymage">
-
-
-							<li><a
-								href="javascript:movePage('/mypage',						'로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
+							<li><a href="javascript:movePage('/mypage',	'로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
 								title="나의 메가박스 홈">나의 메가박스 홈</a></li>
-							<li><a
-								href="javascript:movePage('/mypage/bookinglist',			'로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
+							<li><a href="javascript:movePage('/mypage/bookinglist',	'로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
 								title="예매/구매내역">예매/구매내역</a></li>
-							<li><a
-								href="javascript:movePage('/mypage/movie-coupon',		'로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
+							<li><a href="javascript:movePage('/mypage/movie-coupon', '로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
 								title="영화관람권">영화관람권</a></li>
-							<li><a
-								href="javascript:movePage('/mypage/store-coupon',		'로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
+							<li><a href="javascript:movePage('/mypage/store-coupon', '로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
 								title="스토어교환권">스토어교환권</a></li>
-							<li><a
-								href="javascript:movePage('/mypage/discount-coupon',		'로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
+							<li><a href="javascript:movePage('/mypage/discount-coupon', '로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
 								title="할인/제휴쿠폰">할인/제휴쿠폰</a></li>
-
-							<li><a
-								href="javascript:movePage('/mypage/point-list',			'로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
+							<li><a href="javascript:movePage('/mypage/point-list', '로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
 								title="멤버십포인트">멤버십포인트</a></li>
-							<li><a
-								href="javascript:movePage('/mypage/moviestory',			'로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
+							<li><a href="javascript:movePage('/mypage/moviestory', '로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
 								title="나의 무비스토리">나의 무비스토리</a></li>
-							<li><a
-								href="javascript:movePage('/mypage/myevent',				'로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
+							<li><a href="javascript:movePage('/mypage/myevent', '로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
 								title="나의 이벤트 응모내역">나의 이벤트 응모내역</a></li>
-							<li><a
-								href="javascript:movePage('/mypage/myinquiry',			'로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
+							<li><a href="javascript:movePage('/mypage/myinquiry', '로그인이 필요한 서비스 입니다. \n로그인하시겠습니까?');"
 								title="나의 문의내역">나의 문의내역</a></li>
 							<li><a href="#" title="자주쓰는 할인 카드">자주쓰는 할인 카드</a></li>
-							<li><a
-								href="javascript:movePage('/on/oh/ohh/Mypage/mainPage.do?returnURL=info','로그인이 필요한 서비스 입니다.');"
+							<li><a href="javascript:movePage('/on/oh/ohh/Mypage/mainPage.do?returnURL=info','로그인이 필요한 서비스 입니다.');"
 								title="회원정보">회원정보</a></li>
-
-
-
 						</ul>
 					</div>
 
 					<div class="list position-7">
 						<p class="tit-depth">혜택</p>
-
 						<ul class="list-depth">
-							<li><a href="benefit/membership.html" title="멤버십 안내">멤버십
-									안내</a></li>
-							<li><a href="benefit/viplounge.html" title="VIP LOUNGE">VIP
-									LOUNGE</a></li>
-							<li><a href="benefit/discount/guide.html" title="제휴/할인">제휴/할인</a></li>
+							<li><a href="<%=path %>/benefit/membership.do" title="멤버십 안내">멤버십 안내</a></li>
+							<li><a href="<%=path %>/benefit/viplounge.do" title="VIP LOUNGE">VIP LOUNGE</a></li>
+							<li><a href="<%=path %>/benefit/discount.do" title="제휴/할인">제휴/할인</a></li>
 						</ul>
 					</div>
 
 					<div class="list position-8">
 						<p class="tit-depth">고객센터</p>
-
 						<ul class="list-depth">
-							<li><a href="support.html" title="고객센터 홈">고객센터 홈</a></li>
-							<li><a href="support/faq.html" title="자주묻는질문">자주묻는질문</a></li>
-							<li><a href="support/notice.html" title="공지사항">공지사항</a></li>
-							<li><a href="support/inquiry.html" title="1:1문의">1:1문의</a></li>
-							<li><a href="support/rent.html" title="단체/대관문의">단체/대관문의</a></li>
-							<li><a href="support/lost.html" title="분실물문의">분실물문의</a></li>
+							<li><a href="#" title="고객센터 홈">고객센터 홈</a></li>
+							<li><a href="#" title="자주묻는질문">자주묻는질문</a></li>
+							<li><a href="#" title="공지사항">공지사항</a></li>
+							<li><a href="#" title="1:1문의">1:1문의</a></li>
+							<li><a href="#" title="단체/대관문의">단체/대관문의</a></li>
+							<li><a href="#" title="분실물문의">분실물문의</a></li>
 						</ul>
 					</div>
 
 					<div class="list position-9">
 						<p class="tit-depth">회사소개</p>
-
 						<ul class="list-depth">
-							<li><a href="#" target="_blank"
-								title="메가박스소개">메가박스소개</a></li>
-							<li><a href="#" target="_blank"
-								title="사회공헌">사회공헌</a></li>
+							<li><a href="#" target="_blank" title="메가박스소개">메가박스소개</a></li>
+							<li><a href="#" target="_blank" title="사회공헌">사회공헌</a></li>
 							<li><a href="#" target="_blank" title="홍보자료">홍보자료</a></li>
 							<li><a href="#" target="_blank" title="제휴/부대사업문의">제휴/부대사업문의</a></li>
-							<li><a href="#" target="_blank"
-								title="온라인제보센터">온라인제보센터</a></li>
+							<li><a href="#" target="_blank" title="온라인제보센터">온라인제보센터</a></li>
 							<li><a href="#" target="_blank" title="자료">IR자료</a></li>
 							<li><a href="#" target="_blank" title="인재채용림">인재채용</a></li>
-							<li><a href="https://jebo.joonganggroup.com/main.do"
-								target="_blank" title="윤리경영">윤리경영</a></li>
+							<li><a href="https://jebo.joonganggroup.com/main.do" target="_blank" title="윤리경영">윤리경영</a></li>
 						</ul>
 					</div>
 
 					<div class="list position-10">
 						<p class="tit-depth">이용정책</p>
-
 						<ul class="list-depth">
 							<li><a href="#" title="이용약관">이용약관</a></li>
 							<li><a href="#" title="개인정보처리방침">개인정보처리방침</a></li>
@@ -713,11 +638,7 @@ String name = request.getParameter("name");
 								마지막 접속일 : <em></em>
 							</div>
 
-							<!-- vip, 멤버십 없을때는 미 출력  -->
 							<div class="membership">
-								<!-- <i class="iconset ico-header-vip"></i>
-                        <i class="iconset ico-header-film"></i>
-                        <i class="iconset ico-header-classic"></i> -->
 							</div>
 
 							<div class="btn-fixed">
@@ -822,14 +743,14 @@ String name = request.getParameter("name");
 			value="ticketing" /> <input type="hidden" id="onairYn" name="onairYn"
 			value="N" /> <input type="hidden" id="specialType" name="specialType"
 			value="" />
+<!-- --------------------------------------------------------------------------- -->
 
-		<!-- container -->
 		<div class="container">
 			<div class="page-util">
 				<div class="inner-wrap">
 					<div class="location">
-						<span>Home</span> <a href="movie.do" title="영화 페이지로 이동">영화</a> 
-						<a href="movie.do" title="전체영화 페이지로 이동">전체영화</a>
+						<span>Home</span> <a href="<%=path %>/movie.do" title="영화 페이지로 이동">영화</a> 
+						<a href="<%=path %>/movie.do" title="전체영화 페이지로 이동">전체영화</a>
 					</div>
 
 
@@ -837,17 +758,17 @@ String name = request.getParameter("name");
 			</div>
 
 			<!-- contents -->
-			<div id="contents">
+			<div id="contents" class="">
 				<!-- inner-wrap -->
 				<div class="inner-wrap">
 					<h2 class="tit">전체영화</h2>
 
 					<div class="tab-list fixed">
 						<ul id="topMenu">
-							<li <%if(name ==null)%> class="on"<%; %>><a href="movie.do" title="박스오피스 탭으로 이동">박스오피스</a></li>
-							<li <%if(name.equalsIgnoreCase("comingsoon"))%> class="on"<%; %>><a href="movie.do?name=comingsoon" title="상영예정작 탭으로 이동" >상영예정작</a></li>
-							<li <%if(name.equalsIgnoreCase("file"))%> class="on"<%; %>><a href="movie.do?name=film" title="필름소사이어티 탭으로 이동">필름소사이어티</a></li>
-							<li <%if(name.equalsIgnoreCase("classic"))%> class="on"<%; %>><a href="movie.do?name=classic" title="클래식소사이어티 탭으로 이동">클래식소사이어티</a></li>
+							<li class="on"><a href="<%=path %>/movie.do" title="박스오피스 탭으로 이동">박스오피스</a></li>
+							<li><a href="<%=path %>/movie.do?name=comingsoon" title="상영예정작 탭으로 이동" >상영예정작</a></li>
+							<li><a href="<%=path %>/movie.do?name=film" title="필름소사이어티 탭으로 이동">필름소사이어티</a></li>
+							<li><a href="<%=path %>/movie.do?name=classic" title="클래식소사이어티 탭으로 이동">클래식소사이어티</a></li>
 
 						</ul>
 					</div>
@@ -855,9 +776,7 @@ String name = request.getParameter("name");
 					<!-- movie-list-util -->
 					<div class="movie-list-util mt40">
 						<!-- 박스오피스 -->
-						<div class="topSort">
-							<div class="movie-sorting sortTab"></div>
-
+						<div class="topSort" style="display: block;">
 							<div class="onair-condition">
 								<button type="button" title="개봉작만 보기" class="btn-onair btnOnAir">개봉작만</button>
 							</div>
@@ -865,11 +784,10 @@ String name = request.getParameter("name");
 						<!--// 박스오피스 -->
 
 						<!-- 상영예정작 -->
-						<div class="topSort">
+						<div class="topSort" style="display: none;">
 							<div class="movie-sorting sortTab">
-								<span><button type="button" class="btn on"
-										sort-type="rfilmDe">개봉일순</button></span> <span><button
-										type="button" class="btn" sort-type="title">가나다순</button></span>
+								<span><button type="button" class="btn on"sort-type="rfilmDe">개봉일순</button></span>
+								<span><button type="button" class="btn" sort-type="title">가나다순</button></span>
 							</div>
 						</div>
 						<!--// 상영예정작 -->
@@ -879,9 +797,7 @@ String name = request.getParameter("name");
 							<div class="movie-sorting sortTab">
 								<span><button type="button" class="btn on"
 										sort-type="ticketing" tab-cd="">전체</button></span>
-
 							</div>
-
 							<div class="onair-condition">
 								<button type="button" title="개봉작만 보기" class="btn-onair btnOnAir">개봉작만</button>
 							</div>
@@ -891,11 +807,8 @@ String name = request.getParameter("name");
 						<!-- 클래식소사이어티 -->
 						<div class="topSort" style="display: none;">
 							<div class="movie-sorting sortTab">
-								<span><button type="button" class="btn on"
-										sort-type="ticketing" tab-cd="">전체</button></span>
-
+								<span><button type="button" class="btn on" sort-type="ticketing" tab-cd="">전체</button></span>
 							</div>
-
 							<div class="onair-condition">
 								<button type="button" title="개봉작만 보기" class="btn-onair btnOnAir">개봉작만</button>
 							</div>
@@ -904,14 +817,6 @@ String name = request.getParameter("name");
 
 						<!-- 장르모아보기 -->
 						<div class="topSort" style="display: none;">
-							<div class="movie-sorting sortTab">
-								<span><button type="button" class="btn on"
-										sort-type="ticketing">예매율순</button></span> <span><button
-										type="button" class="btn" sort-type="accmAdnc">누적관객순</button></span>
-								<span><button type="button" class="btn"
-										sort-type="megaScore">메가스코어순</button></span>
-							</div>
-
 							<div class="onair-condition">
 								<button type="button" title="개봉작만 보기" class="btn-onair btnOnAir">개봉작만</button>
 							</div>
@@ -922,47 +827,115 @@ String name = request.getParameter("name");
 						<p class="no-result-count">
 							<strong id="totCnt">0</strong>개의 영화가 검색되었습니다.
 						</p>
+						<!--// 검색결과 없을 때 -->
 
 						<div class="movie-search">
-							<input type="text" title="영화명을 입력하세요" id="ibxMovieNmSearch"
-								name="ibxMovieNmSearch" placeholder="영화명 검색" class="input-text" />
+							<input type="text" title="영화명을 입력하세요" id="ibxMovieNmSearch" name="ibxMovieNmSearch" placeholder="영화명 검색" class="input-text">
 							<button type="button" class="btn-search-input" id="btnSearch">검색</button>
 						</div>
 					</div>
-
+					
+					<!--// movie-list-util -->
 					<div class="bg-loading" style="display: none;">
 						<div class="spinner-border" role="status">
 							<span class="sr-only">Loading...</span>
 						</div>
 					</div>
+
+					<!-- movie-list -->
+					<c:if test="${ not empty list }">
 					<div class="movie-list">
-						<ol class="list" id="movieList"></ol>
+						<ol class="list" id="movieList">
+						<c:forEach var="dto" items="${list}">
+							<li tabindex="0" class="no-img">
+							<div class="movie-list-info">
+									<p class="rank" style="">${dto.rank}<span class="ir">위</span>
+									</p>
+									<img src="${dto.img }" alt="${dto.name}" class="poster lozad" onerror="noImg(this)">
+									<div class="curation">
+										<p class="film" style="display: none">필름 소사이어티</p>
+										<p class="classic" style="display: none">클래식 소사이어티</p>
+									</div>
+									
+									<div class="screen-type">
+										<p class="boutqScreen" style="">부티크</p>
+										<p class="mxScreen" style="">MX</p>
+									</div>
+									
+									<div class="movie-score">
+										<a href="#" class="wrap movieBtn" title="${dto.name} 상세보기">
+											<div class="summary"> ${dto.summary} </div>
+											<div class="my-score equa">
+												<div class="preview">
+													<p class="tit">관람평</p>
+													<p class="number">${dto.score}<span class="ir">점</span></p>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="tit-area">
+									<p class="movie-grade age-15">,</p>
+									<p title="영화명" class="tit">영화명</p>
+								</div>
+								<div class="rate-date">
+									<span class="rate">예매율 예매율 몇퍼인지</span> <span class="date">개봉일 몇일인지</span>
+								</div>
+								<div class="btn-util">
+									<button type="button" class="button btn-like" data-no="20021300">
+										<i title="보고싶어 안함" class="iconset ico-heart-toggle-gray intrstType"></i> <span>${dto.like }</span>
+									</button>
+									<p class="txt movieStat1" style="display: none">상영예정</p>
+									<p class="txt movieStat2" style="display: none">7월 개봉예정</p>
+									<p class="txt movieStat5" style="display: none">개봉예정</p>
+									<p class="txt movieStat6" style="display: none">상영종료</p>
+									<div class="case col-2 movieStat3" style="">
+										<a href="#" class="button purple bokdBtn" title="영화 예매하기">예매</a>
+										<a href="#" class="button purple bokdMxBtn"  title="MX관 예매하기">MX</a>
+									</div>
+									<div class="case movieStat4" style="display: none">
+										<a href="#" class="button purple bokdBtn" title="영화 예매하기">예매</a>
+									</div>
+								</div>
+							 </li>
+							</c:forEach>
+						</ol>
 					</div>
-					<div class="btn-more v1" id="addMovieDiv" style="display: none;">
+					</c:if>
+					<!--// movie-list -->
+
+
+
+
+					<div class="btn-more v1" id="addMovieDiv" style="">
 						<button type="button" class="btn" id="btnAddMovie">
 							더보기 <i class="iconset ico-btn-more-arr"></i>
 						</button>
 					</div>
-					<div class="movie-list-no-result" id="noDataDiv"
-						style="display: none;">
+
+					<!-- 검색결과 없을 때 -->
+					<div class="movie-list-no-result" id="noDataDiv" style="display: none;">
 						<p>현재 상영중인 영화가 없습니다.</p>
 					</div>
 
-					<div class="movie-list-no-favor" id="noMyGenre"
-						style="display: none;">
+
+					<!-- 검색결과 없을 때 장르-->
+					<div class="movie-list-no-favor" id="noMyGenre" style="display: none;">
 						<p>선호장르가 등록되지 않았습니다. 선호하시는 장르를 등록해보세요.</p>
 						<div class="btn-group center">
-							<a href="index.html" class="button large purple"
-								title="선호장르설정하기 페이지로 이동">선호장르설정하기</a>
+							<a href="/mypage/additionalinfo" class="button large purple" title="선호장르설정하기 페이지로 이동">선호장르설정하기</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		
+		
 		<div class="quick-area">
 			<a href="#" class="btn-go-top" title="top">top</a>
 		</div>
-
+		
 		<!-- footer -->
 		<footer id="footer">
 			<div class="footer-top">
@@ -991,21 +964,17 @@ String name = request.getParameter("name");
                 </div>
                 <p>팀장 이진권</p>
                 <p>· 기술고문 김태호</p>
-                <p>· 김진우, 이진석 </p>
+                <p>· 김진우, 이진석, 엄! </p>
                 <p>· 하기싫다..</p> 
                 <p class="copy">COPYRIGHT © MegaboxJoongAng, Inc. All rights reserved</p>
             </div>
 
 					<div class="footer-sns">
-						<a href="#" target="_blank" title="MEGABOX 트위터 페이지로 이동"><i
-							class="iconset ico-twitter">트위터</i></a> <a href="#" target="_blank"
-							title="MEGABOX 페이스북 페이지로 이동"><i class="iconset ico-facebook">페이스북</i></a>
-						<a href="#" target="_blank" title="MEGABOX 인스타그램 페이지로 이동"><i
-							class="iconset ico-instagram">인스타그램</i></a> <a href="#"
-							target="_blank" title="MEGABOX 구글플레이 페이지로 이동"><i
-							class="iconset ico-googleplay">구글플레이</i></a> <a href="#"
-							target="_blank" title="MEGABOX 앱스토어 페이지로 이동"><i
-							class="iconset ico-appstore">앱스토어</i></a>
+						<a href="#" target="_blank" title="MEGABOX 트위터 페이지로 이동"><i class="iconset ico-twitter">트위터</i></a>
+						<a href="#" target="_blank" title="MEGABOX 페이스북 페이지로 이동"><i class="iconset ico-facebook">페이스북</i></a>
+						<a href="#" target="_blank" title="MEGABOX 인스타그램 페이지로 이동"><i class="iconset ico-instagram">인스타그램</i></a>
+						<a href="#" target="_blank" title="MEGABOX 구글플레이 페이지로 이동"><i class="iconset ico-googleplay">구글플레이</i></a>
+						<a href="#" target="_blank" title="MEGABOX 앱스토어 페이지로 이동"><i class="iconset ico-appstore">앱스토어</i></a>
 					</div>
 				</div>
 			</div>

@@ -21,6 +21,8 @@
 <meta property="og:image" id="fbImg" content="https://img.megabox.co.kr/SharedImg/metaTag/2020/02/04/gFfTzMwwiCxhBwcUV5TRGMFX9Cmoj64W.jpg" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <link rel="stylesheet" href="<%=path%>/css/megabox.min.css" media="all" />
 <link rel="stylesheet" href="<%=path%>/css/main.css" media="all" />
 <link rel="stylesheet" href="<%=path%>/css/megabox.netfunnel.min.css" media="all" />
@@ -413,7 +415,7 @@
 			<!--// 레이어 : 마이페이지 -->
 
 		</header>
-<!-- 
+
 
 <script>
 
@@ -483,7 +485,8 @@
 			}).resize();
 		}
 	});
-
+	
+/* 
 	$(function() {
 
 		// 이벤트 버블현상 공통 제거
@@ -547,10 +550,10 @@
 			});
 		});
 	});
- 
+  */
 </script>
  
- -->
+ 
 		<div class="container">
 			<div class="page-util">
 				<div class="inner-wrap">

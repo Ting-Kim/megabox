@@ -14,18 +14,19 @@ public class MoviePageHandler implements CommandHandler{
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 			String pageName = request.getParameter("name");
 			MoviePageService service = new MoviePageService();
-//			List<MovieDTO> list = service.메서드만들어야됨();
+			List<MovieDTO> list = null;;
 			if (pageName ==null) {
 				//모든영화 순위별로 뿌려주는 코딩해야됨
-				
+				list=service.select(pageName);
 			}else if (pageName.equals("comingsoon")) {
 				//개봉전인 영화(순위) 뿌려주는 코딩해야됨
-				
+				list=service.select(pageName);
 			}else if (pageName.equals("film")) {
 				//film 소사이어티 관련(순위) 영화뿌려주는 코딩
-				
+				list=service.select(pageName);
 			}else if (pageName.equals("classic")) {
 				// classic 관련(순위)  뿌려주는 코딩해야됨
+				list=service.select(pageName);
 			}
 			return "/movie";
 	}

@@ -10,11 +10,11 @@ public class DBConn {
 	
 	public static Connection getConnection() {
 		if (connection == null) {
-//			String url = "jdbc:oracle:thin:@211.63.89.171:1521:xe";
-//			String user = "project", password = "1234";
-			String url = "jdbc:oracle:thin:@localhost:1521:xe"; // Type 4
-			String user = "scott";
-			String password = "tiger"; 
+			String url = "jdbc:oracle:thin:@218.238.71.245:1521:xe";
+			String user = "megabox", password = "1234";
+//			String url = "jdbc:oracle:thin:@localhost:1521:xe"; // Type 4
+//			String user = "scott";
+//			String password = "tiger"; 
 			try {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 				connection = DriverManager.getConnection(url, user, password);
