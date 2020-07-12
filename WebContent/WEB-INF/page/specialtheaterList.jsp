@@ -466,31 +466,31 @@
     
     <nav id="gnb">
         <ul class="gnb-depth1">
-            <li><a href="<%=path%>/movie" class="gnb-txt-movie" title="영화">영화</a>
+            <li><a href="<%=path%>/movie.do" class="gnb-txt-movie" title="영화">영화</a>
                 <div class="gnb-depth2">
                     <ul>
-                        <li><a href="<%=path%>/movie"					title="전체영화">전체영화</a></li>
-                        <li><a href="<%=path%>/curation/specialcontent"	title="큐레이션">큐레이션</a></li>
+                        <li><a href="<%=path%>/movie.do"					title="전체영화">전체영화</a></li>
+                        <li><a href="<%=path%>/curation/specialcontent.do"	title="큐레이션">큐레이션</a></li>
                         
                         <li id="festivalArea" style="display: none;"><a href="<%=path%>/festival" title="영화제">영화제</a></li>
-                        <li><a href="<%=path%>/moviepost/all"			title="무비포스트">무비포스트</a></li>
+                        <li><a href="<%=path%>/moviepost/all.do"			title="무비포스트">무비포스트</a></li>
                     </ul>
                 </div>
             </li>
-            <li><a href="<%=path%>/booking" class="gnb-txt-reserve" title="예매">예매</a>
+            <li><a href="<%=path%>/booking.do" class="gnb-txt-reserve" title="예매">예매</a>
                 <div class="gnb-depth2">
                     <ul>
-                        <li><a href="<%=path%>/booking"					title="빠른예매">빠른예매</a></li>
-                        <li><a href="<%=path%>/booking/timetable"		title="상영시간표">상영시간표</a></li>
-                        <li><a href="<%=path%>/booking/privatebooking"	title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a></li>
+                        <li><a href="<%=path%>/booking.do"					title="빠른예매">빠른예매</a></li>
+                        <li><a href="<%=path%>/booking/timetable.do"		title="상영시간표">상영시간표</a></li>
+                        <li><a href="<%=path%>/booking/privatebooking.do"	title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a></li>
                     </ul>
                 </div>
             </li>
-            <li><a href="<%=path%>/theater/list" class="gnb-txt-theater" title="극장">극장</a>
+            <li><a href="<%=path%>/theater/list/do" class="gnb-txt-theater" title="극장">극장</a>
                 <div class="gnb-depth2">
                     <ul>
-                        <li><a href="<%=path%>/theater/list" title="전체극장">전체극장</a></li>
-                        <li><a href="<%=path%>/specialtheater/list" title="특별관">특별관</a></li>
+                        <li><a href="<%=path%>/theater/list.do" title="전체극장">전체극장</a></li>
+                        <li><a href="<%=path%>/specialtheater/list.do" title="특별관">특별관</a></li>
                     </ul>
                 </div>
             </li>
@@ -507,14 +507,43 @@
             <li><a href="<%=path%>/benefit/membership" class="gnb-txt-benefit" title="혜택">혜택</a>
                 <div class="gnb-depth2">
                     <ul>
-                        <li><a href="<%=path%>/benefit/membership" title="메가박스 멤버십">메가박스 멤버십</a></li>
-                        <li><a href="<%=path%>/benefit/discount/guide" title="제휴/할인">제휴/할인</a></li>
+                        <li><a href="<%=path%>/benefit/membership.do" title="메가박스 멤버십">메가박스 멤버십</a></li>
+                        <li><a href="<%=path%>/benefit/discount/guide.do" title="제휴/할인">제휴/할인</a></li>
                     </ul>
                 </div>
             </li>
         </ul>
     </nav>
+    
+    <!-- TH, <nav> 태그 마우스 포인터에 따라 자식 <li> 태그  on/off 기능 (2020.07.12)-->
+       <script>
+		$('#gnb ul li').children('a').mouseover(function(){
+			
+			if ($(this).closest('div').attr('class') != 'gnb-depth2') {
+				$('#gnb').find('li').removeClass();	
+			}
+			
+			if ($(this).attr('class')!='gnb-txt-store') {
+				$('#gnb').addClass('on');
+				$(this).closest('li').addClass('on');
+			}
+		});
+		
+		$('#header').mouseleave(function(){
+			if ($('#gnb ul li a div li').mouseleave()) {
+				
+				$('#gnb').removeClass();
+				$('#gnb ul li').removeClass();
+			}
+		});
+		
+    </script>
+   
+    
     <!--// gnb -->
+    
+    
+    
     <!-- 
     <script type="text/javascript">
         $(document).ready(function() {

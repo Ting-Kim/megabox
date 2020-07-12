@@ -98,7 +98,7 @@
 			</div>
 
 			<!-- gnb -->
-
+			
 			<nav id="gnb">
 				<ul class="gnb-depth1">
 					<li><a href="<%=path%>/movie.do" class="gnb-txt-movie" title="영화">영화</a>
@@ -121,11 +121,11 @@
 										부티크 프라이빗 예매</a></li>
 							</ul>
 						</div></li>
-					<li><a href="theaterList.do" class="gnb-txt-theater" title="극장">극장</a>
+					<li><a href="<%=path%>/theater/list.do" class="gnb-txt-theater" title="극장">극장</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="theaterList.do" title="전체극장">전체극장</a></li>
-								<li><a href="<%=path%>/specialtheaterList.do" title="특별관">특별관</a></li>
+								<li><a href="<%=path%>/theater/list.do" title="전체극장">전체극장</a></li>
+								<li><a href="<%=path%>/specialtheater/list.do" title="특별관">특별관</a></li>
 							</ul>
 						</div></li>
 					<li><a href="<%=path%>/event.do"	class="gnb-txt-event" title="이벤트">이벤트</a>
@@ -147,6 +147,31 @@
 						</div></li>
 				</ul>
 			</nav>
+
+<!-- TH, <nav> 태그 마우스 포인터에 따라 자식 <li> 태그  on/off 기능 (2020.07.12)-->
+   <script>
+		$('#gnb ul li').children('a').mouseover(function(){
+			
+			if ($(this).closest('div').attr('class') != 'gnb-depth2') {
+				$('#gnb').find('li').removeClass();	
+			}
+			
+			if ($(this).attr('class')!='gnb-txt-store') {
+				$('#gnb').addClass('on');
+				$(this).closest('li').addClass('on');
+			}
+		});
+		
+		$('#header').mouseleave(function(){
+			if ($('#gnb ul li a div li').mouseleave()) {
+				
+				$('#gnb').removeClass();
+				$('#gnb ul li').removeClass();
+			}
+		});
+		
+    </script>
+   
 
 			<div id="layer_sitemap" class="header-layer layer-sitemap">
 				<!-- wrap -->

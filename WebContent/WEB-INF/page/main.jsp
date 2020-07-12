@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<% String path = request.getContextPath(); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,14 +16,17 @@
 <meta property="og:title" 		id="fbTitle"	content="라이프시어터,메가박스" />
 <meta property="og:description"	id="fbDtls"		content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남과 소통의 즐거움이 가득한 공간 메가박스 입니다. "/>
 <meta property="og:image" 		id="fbImg"		content="../img.megabox.co.kr/SharedImg/metaTag/2020/02/04/gFfTzMwwiCxhBwcUV5TRGMFX9Cmoj64W.jpg" />
-<link rel="stylesheet" href="css/megabox.min.css" media="all" />
-<link rel="stylesheet" href="css/main.css" media="all" />
-<link rel="stylesheet" href="css/megabox.netfunnel.min.css" media="all" />
-<script src="static/pc/dist/jquery-1.12.4.min.js"></script>
-<script src="static/pc/dist/jquery-ui.1.12.1.min.js"></script>
+<link rel="stylesheet" href="<%=path %>/css/megabox.min.css" media="all" />
+<link rel="stylesheet" href="<%=path %>/css/main.css" media="all" />
+<link rel="stylesheet" href="<%=path %>/css/megabox.netfunnel.min.css" media="all" />
+
+<!-- 
+<script src="<%=path %>/static/pc/dist/jquery-1.12.4.min.js"></script>
+<script src="<%=path %>/static/pc/dist/jquery-ui.1.12.1.min.js"></script>
+ -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="shortcut icon" href="static/pc/images/favicon.ico" />
+<link rel="shortcut icon" href="<%=path %>/static/pc/images/favicon.ico" />
 <title>라이프시어터, 메가박스</title>
 </head>
 <body>
@@ -89,9 +93,9 @@
 							<button id="btnLogin" type="button" class="button purple large btn-login" disabled="disabled">로그인</button>
 
 							<div class="link">
-								<a href="/user-find" title="ID/PW 찾기 선택">ID/PW 찾기<!--ID/PW 찾기--></a>
-								<a href="/join" title="회원가입 선택">회원가입<!--회원가입--></a>
-								<a href="/on/oh/ohg/MbLogin/viewNonMbLogin.rest" title="비회원 예매확인 선택">비회원 예매확인<!--비회원 예매확인--></a>
+								<a href="<%=path %>/user-find" title="ID/PW 찾기 선택">ID/PW 찾기<!--ID/PW 찾기--></a>
+								<a href="<%=path %>/join" title="회원가입 선택">회원가입<!--회원가입--></a>
+								<a href="<%=path %>/on/oh/ohg/MbLogin/viewNonMbLogin.rest" title="비회원 예매확인 선택">비회원 예매확인<!--비회원 예매확인--></a>
 							</div>
 
 							<div class="sns-login">
@@ -282,7 +286,7 @@
 
             <!-- 로그인후 -->
             <div class="after" style="display:none">
-                <a href="/on/oh/ohg/MbLogin/mbLogout.do" class="" title="로그아웃">로그아웃</a>
+                <a href="<%=path %>/on/oh/ohg/MbLogin/mbLogout.do" class="" title="로그아웃">로그아웃</a>
                 <a href="" class="notice" title="알림">알림</a>
 
                 <!-- layer-header-notice -->
@@ -323,6 +327,10 @@
         <a href="#" class="link-ticket" title="상영시간표">상영시간표</a>
         <a href="#" class="header-open-layer btn-layer-mymega" title="나의 메가박스">나의 메가박스</a>
     </div>
+    
+    
+     
+    
     <nav id="gnb" class="">
         <ul class="gnb-depth1">
             <li><a href="movie.do" class="gnb-txt-movie" title="영화">영화</a>
@@ -373,6 +381,32 @@
             </li>
         </ul>
     </nav>
+    
+   <!-- TH, <nav> 태그 마우스 포인터에 따라 자식 <li> 태그  on/off 기능 (2020.07.12)-->
+   <script>
+		$('#gnb ul li').children('a').mouseover(function(){
+			
+			if ($(this).closest('div').attr('class') != 'gnb-depth2') {
+				$('#gnb').find('li').removeClass();	
+			}
+			
+			if ($(this).attr('class')!='gnb-txt-store') {
+				$('#gnb').addClass('on');
+				$(this).closest('li').addClass('on');
+			}
+		});
+		
+		$('#header').mouseleave(function(){
+			if ($('#gnb ul li a div li').mouseleave()) {
+				
+				$('#gnb').removeClass();
+				$('#gnb ul li').removeClass();
+			}
+		});
+		
+    </script>
+   
+   
     
     <div id="layer_sitemap" class="header-layer layer-sitemap">
         <div class="wrap">
@@ -993,7 +1027,7 @@
 						<div class="cell"><a href="#" title="빠른예매 보기"><i class="iconset ico-quick-reserve-main"></i> 빠른예매</a></div>
 					</div>
 					<div class="moving-mouse">
-						<img class="iconset" alt="" src="/img/ico-mouse.png" style="top: 10px;">
+						<img class="iconset" alt="" src="<%=path%>/img/ico-mouse.png" style="top: 10px;">
 					</div>
 				</div>
 			</div>
@@ -1102,7 +1136,7 @@
 
 												<p class="date">20.06.24</p>
 
-												<img src="/static/pc/images/common/bg/bg-noimage-main.png" alt="힐링 프리미엄 극장, 창원내서 6월 24일(수) OPEN!" onerror="noImg(this, 'main');"> <!-- 이벤트 이미지 적용하지 않고 기본이미지 사용 2019.08.29 -->
+												<img src="<%=path%>/static/pc/images/common/bg/bg-noimage-main.png" alt="힐링 프리미엄 극장, 창원내서 6월 24일(수) OPEN!" onerror="noImg(this, 'main');"> <!-- 이벤트 이미지 적용하지 않고 기본이미지 사용 2019.08.29 -->
 											</a>
 										</div>
 									<div class="cell swiper-slide swiper-slide-next" style="width: 242.333px;">
@@ -1117,7 +1151,7 @@
 
 												<p class="date">20.06.24</p>
 
-												<img src="/static/pc/images/common/bg/bg-noimage-main.png" alt="세종에서 제일 편안한 극장, 세종청사 6월 24일(수) OPEN!" onerror="noImg(this, 'main');"> <!-- 이벤트 이미지 적용하지 않고 기본이미지 사용 2019.08.29 -->
+												<img src="<%=path%>/static/pc/images/common/bg/bg-noimage-main.png" alt="세종에서 제일 편안한 극장, 세종청사 6월 24일(수) OPEN!" onerror="noImg(this, 'main');"> <!-- 이벤트 이미지 적용하지 않고 기본이미지 사용 2019.08.29 -->
 											</a>
 										</div>
 									<div class="cell swiper-slide" style="width: 242.333px;">
@@ -1133,7 +1167,7 @@
 
 												<p class="date">20.06.24</p>
 
-												<img src="/static/pc/images/common/bg/bg-noimage-main.png" alt="품격있는 당신을 위한 명품극장, 대전현대아울렛 6월 24일(수) OPEN!" onerror="noImg(this, 'main');"> <!-- 이벤트 이미지 적용하지 않고 기본이미지 사용 2019.08.29 -->
+												<img src="<%=path%>/static/pc/images/common/bg/bg-noimage-main.png" alt="품격있는 당신을 위한 명품극장, 대전현대아울렛 6월 24일(수) OPEN!" onerror="noImg(this, 'main');"> <!-- 이벤트 이미지 적용하지 않고 기본이미지 사용 2019.08.29 -->
 											</a>
 										</div>
 									</div>
