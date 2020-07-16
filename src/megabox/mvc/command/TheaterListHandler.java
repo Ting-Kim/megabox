@@ -16,6 +16,7 @@ public class TheaterListHandler  implements CommandHandler{
 System.out.println("TheaterListHandler.process() 호출됨.");
 		
 		try {
+
 			TheaterListService service = new TheaterListService();
 			List<TheaterListDTO> list = service.select();
 			request.setAttribute("list", list);
@@ -23,10 +24,13 @@ System.out.println("TheaterListHandler.process() 호출됨.");
 			TheaterListService eventService = new TheaterListService();
 			List<EventDTO> elist = eventService.eventSelect();
 			request.setAttribute("elist", elist);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "/theaterList";
+		
+		return "/theater/list";
+		
 	}
 
 }

@@ -29,6 +29,7 @@ public class ControllerUsingURI extends HttpServlet{
 		String path = getInitParameter("configFile");
 		String configFilePath = getServletContext().getRealPath(path);
 		Properties prop = new Properties();
+		super.init();
 		try ( FileReader fr = new FileReader(configFilePath)  ){
 			prop.load(fr);
 		}catch( IOException e) {
@@ -63,7 +64,7 @@ public class ControllerUsingURI extends HttpServlet{
 	private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		 
 		String requestURI =  request.getRequestURI();
 		 
-		// System.out.println("> 요청 URI : " + requestURI );
+		 System.out.println("> 요청 URI : " + requestURI );
 		if(  requestURI.indexOf( request.getContextPath() ) == 0) {
 			requestURI = requestURI.substring(request.getContextPath().length());
 		}
@@ -73,6 +74,7 @@ public class ControllerUsingURI extends HttpServlet{
 		String viewPage = null;
 		try {
 			viewPage  = handler.process(request, response);
+			System.out.println(viewPage);
 		} catch (Exception e) { 
 			e.printStackTrace();
 		}

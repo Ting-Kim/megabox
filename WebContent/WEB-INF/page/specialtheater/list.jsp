@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<% String path = request.getContextPath(); %>
 <!doctype html>
 <!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
 <!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
@@ -9,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-	<link rel="shortcut icon" href="/static/pc/images/favicon.ico" />
+	<link rel="shortcut icon" href="<%=path%>/static/pc/images/favicon.ico" />
 		<title>메가박스 특별관 | 라이프씨어터, 메가박스</title>
 		<meta property="name"			id="metaTagTitle"	content="메가박스 특별관"/>
 		<meta property="description"	id="metaTagDtls"	content="영화의 감동을 더 해줄 메가박스만의 특별관을 만나보세요."/>
@@ -30,15 +31,17 @@
 	
 	
      	
-     		<link rel="stylesheet" href="/static/pc/dist/megabox.min.css" media="all" />
+     		<link rel="stylesheet" href="<%=path%>/static/pc/dist/megabox.min.css" media="all" />
      		<!-- Global site tag (gtag.js) - Google Analytics -->
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-30006739-3"></script>
 			<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-30006739-3');</script>
-		    <script src="/static/pc/dist/megabox.api.min.js"></script>
-			<script src="/static/mb/js/lozad.min.js"></script>
-			<script src="/js/common/dist/megabox.common.min.js"></script>
-     		<script src="/js/netfunnel/dist/megabox.netfunnel.min.js"></script>
-			<script src="//cast.imp.joins.com/persona.js" async></script>
+			<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+						
+		    <%-- <script src="<%=path%>/static/pc/dist/megabox.api.min.js"></script> --%>
+			<script src="<%=path%>/static/mb/js/lozad.min.js"></script>
+			<%-- <script src="<%=path%>/js/common/dist/megabox.common.min.js"></script> --%>
+     		<script src="<%=path%>/js/netfunnel/dist/megabox.netfunnel.min.js"></script>
+			<%-- <script src="<%=path%>//cast.imp.joins.com/persona.js" async></script> --%>
 </head>
 
 <body>
@@ -125,16 +128,16 @@
 										<button id="btnLogin" type="button" class="button purple large btn-login">로그인<!--로그인--></button>
 
 										<div class="link">
-											<a href="/user-find" title="ID/PW 찾기 선택">ID/PW 찾기<!--ID/PW 찾기--></a>
-											<a href="/join" title="회원가입 선택">회원가입<!--회원가입--></a>
-											<a href="/on/oh/ohg/MbLogin/viewNonMbLogin.rest" title="비회원 예매확인 선택">비회원 예매확인<!--비회원 예매확인--></a>
+											<a href="<%=path%>/user-find" title="ID/PW 찾기 선택">ID/PW 찾기<!--ID/PW 찾기--></a>
+											<a href="<%=path%>/join" title="회원가입 선택">회원가입<!--회원가입--></a>
+											<a href="<%=path%>/on/oh/ohg/MbLogin/viewNonMbLogin.rest" title="비회원 예매확인 선택">비회원 예매확인<!--비회원 예매확인--></a>
 										</div>
 
 										<div class="sns-login">
-											<a href="javaScript:void(0)" lnkgTy="FACEBOOK" title="페이스북으로 로그인 선택"><img src="../../../static/pc/images/member/ico-facebook.png"  alt="페이스북"><!--페이스북--> 페이스북으로 로그인<!--페이스북으로 로그인--></a>
-											<a href="javaScript:void(0)" lnkgTy="NAVER"    title="네이버로 로그인 선택"><img src="../../../static/pc/images/member/ico-naver.png"     alt="네이버"><!--네이버-->   네이버로 로그인<!--네이버로 로그인--></a>
-											<a href="javaScript:void(0)" lnkgTy="KAKAO"    title="카카오톡으로 로그인 선택" ><img src="../../../static/pc/images/member/ico-kakao.png"    alt="카카오톡"><!--카카오톡--> 카카오톡으로 로그인<!--카카오톡으로 로그인--></a>
-											<a href="javaScript:void(0)" lnkgTy="PAYCO"    title="페이코로 로그인 선택"><img src="../../../static/pc/images/member/ico-payco.png"     alt="페이코"><!--페이코-->   페이코로 로그인<!--페이코로 로그인--></a>
+											<a href="javaScript:void(0)" lnkgTy="FACEBOOK" title="페이스북으로 로그인 선택"><img src="<%=path%>/static/pc/images/member/ico-facebook.png"  alt="페이스북"><!--페이스북--> 페이스북으로 로그인<!--페이스북으로 로그인--></a>
+											<a href="javaScript:void(0)" lnkgTy="NAVER"    title="네이버로 로그인 선택"><img src="<%=path%>/static/pc/images/member/ico-naver.png"     alt="네이버"><!--네이버-->   네이버로 로그인<!--네이버로 로그인--></a>
+											<a href="javaScript:void(0)" lnkgTy="KAKAO"    title="카카오톡으로 로그인 선택" ><img src="<%=path%>/static/pc/images/member/ico-kakao.png"    alt="카카오톡"><!--카카오톡--> 카카오톡으로 로그인<!--카카오톡으로 로그인--></a>
+											<a href="javaScript:void(0)" lnkgTy="PAYCO"    title="페이코로 로그인 선택"><img src="<%=path%>/static/pc/images/member/ico-payco.png"     alt="페이코"><!--페이코-->   페이코로 로그인<!--페이코로 로그인--></a>
 										</div>
 									</div>
 								</div>
@@ -328,7 +331,7 @@
 
 <!-- header -->
 <header id="header" >
-    <h1 class="ci"><a href="/" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a></h1>
+    <h1 class="ci"><a href="<%=path %>/static/pc/images/theater/sp-text-tit.png" alt="MEGABOX LIFE THEATER"" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a></h1>
 
 	<!-- 브라우저 다운로드 -->
     
@@ -339,7 +342,7 @@
 		<div class="dimd"></div>
 		<div class="wrap">
 			<p class="tit">
-				<img src="../../../static/pc/images/ie/txt-update.png" alt="megabox 홈페이지는 internet explrer10이상에서 최적화된 서비스 이용이 가능합니다. ie9 이하에서는 예매가 정상적으로 진행되지 않을 수 있으니, 브라우저를 업그레이드하시거나 다른 예매수단을 이용해 주세요!" />
+				<img src="<%=path%>/static/pc/images/ie/txt-update.png" alt="megabox 홈페이지는 internet explrer10이상에서 최적화된 서비스 이용이 가능합니다. ie9 이하에서는 예매가 정상적으로 진행되지 않을 수 있으니, 브라우저를 업그레이드하시거나 다른 예매수단을 이용해 주세요!" />
 			</p>
 
 			<div class="box">
@@ -348,13 +351,13 @@
 
 					<div class="link">
 						<a href="https://www.microsoft.com/ko-kr/download/internet-explorer.aspx" title="internet explorer 새 버전 다운로드" target="_blank">
-							<img src="../../../static/pc/images/ie/btn-ie.png" alt="internet explorer 새 버전 다운로드" />
+							<img src="<%=path%>/static/pc/images/ie/btn-ie.png" alt="internet explorer 새 버전 다운로드" />
 						</a>
 					</div>
 
 					<div class="link">
 						<a href="http://www.google.com/chrome?hl=ko" title="chrome 다운로드" target="_blank">
-							<img src="../../../static/pc/images/ie/btn-chrome.png" alt="chrome 다운로드">
+							<img src="<%=path%>/static/pc/images/ie/btn-chrome.png" alt="chrome 다운로드">
 						</a>
 					</div>
 				</div>
@@ -364,13 +367,13 @@
 
 					<div class="link">
 						<a href="https://itunes.apple.com/us/app/megabox/id894443858?l=ko&amp;ls=1&amp;mt=8" title="available on the app store" target="_blank">
-							<img  src="../../../static/pc/images/ie/btn-appstore.png" alt="available on the app store">
+							<img  src="<%=path%>/static/pc/images/ie/btn-appstore.png" alt="available on the app store">
 						</a>
 					</div>
 
 					<div class="link">
 						<a href="https://play.google.com/store/apps/details?id=com.megabox.mop&amp;hl=ko" title="available on the google play" target="_blank">
-							<img src="../../../static/pc/images/ie/btn-google.png" alt="available on the google play">
+							<img src="<%=path%>/static/pc/images/ie/btn-google.png" alt="available on the google play">
 						</a>
 					</div>
 				</div>
@@ -395,21 +398,21 @@
 	<!-- 2019-04-15 마크업 수정 : 고객요청  -->
     <div class="util-area">
         <div class="left-link">
-            <a href="/benefit/viplounge" 	title="VIP LOUNGE">VIP LOUNGE</a>
-            <a href="/benefit/membership"	title="멤버십">멤버십</a>
-            <a href="/support"				title="고객센터">고객센터</a>
+            <a href="<%=path%>/benefit/viplounge" 	title="VIP LOUNGE">VIP LOUNGE</a>
+            <a href="<%=path%>/benefit/membership"	title="멤버십">멤버십</a>
+            <a href="<%=path%>/support"				title="고객센터">고객센터</a>
         </div>
 
         <div class="right-link">
             <!-- 로그인전 -->
             <div class="before" style="display:none">
                 <a href="javaScript:fn_viewLoginPopup('default','pc')" title="로그인">로그인</a>
-                <a href="/join" title="회원가입">회원가입</a>
+                <a href="<%=path%>/join" title="회원가입">회원가입</a>
             </div>
 
             <!-- 로그인후 -->
             <div class="after" style="display:none">
-                <a href="/on/oh/ohg/MbLogin/mbLogout.do" class="" title="로그아웃">로그아웃</a>
+                <a href="<%=path%>/on/oh/ohg/MbLogin/mbLogout.do" class="" title="로그아웃">로그아웃</a>
                 <a href="" class="notice" title="알림">알림</a>
 
                 <!-- layer-header-notice -->
@@ -443,7 +446,7 @@
 
             </div>
 
-            <a href="/booking">빠른예매</a>
+            <a href="<%=path%>/booking">빠른예매</a>
         </div>
     </div>
     <!--// 2019-04-15 마크업 수정 : 고객요청  -->
@@ -451,7 +454,7 @@
     <div class="link-area">
         <a href="#layer_sitemap" 		class="header-open-layer btn-layer-sitemap"	title="사이트맵">사이트맵</a>
         <a href="#layer_header_search" 	class="header-open-layer btn-layer-search"	title="검색">검색</a>
-        <a href="/booking/timetable" 	class="link-ticket" 						title="상영시간표">상영시간표</a>
+        <a href="<%=path%>/booking/timetable" 	class="link-ticket" 						title="상영시간표">상영시간표</a>
         <a href="#layer_mymega" 		class="header-open-layer btn-layer-mymega" 	title="나의 메가박스">나의 메가박스</a>
     </div>
 
@@ -463,31 +466,31 @@
     
     <nav id="gnb">
         <ul class="gnb-depth1">
-            <li><a href="/movie" class="gnb-txt-movie" title="영화">영화</a>
+            <li><a href="<%=path%>/movie.do" class="gnb-txt-movie" title="영화">영화</a>
                 <div class="gnb-depth2">
                     <ul>
-                        <li><a href="/movie"					title="전체영화">전체영화</a></li>
-                        <li><a href="/curation/specialcontent"	title="큐레이션">큐레이션</a></li>
+                        <li><a href="<%=path%>/movie.do"					title="전체영화">전체영화</a></li>
+                        <li><a href="<%=path%>/curation/specialcontent.do"	title="큐레이션">큐레이션</a></li>
                         
-                        <li id="festivalArea" style="display: none;"><a href="/festival" title="영화제">영화제</a></li>
-                        <li><a href="/moviepost/all"			title="무비포스트">무비포스트</a></li>
+                        <li id="festivalArea" style="display: none;"><a href="<%=path%>/festival" title="영화제">영화제</a></li>
+                        <li><a href="<%=path%>/moviepost/all.do"			title="무비포스트">무비포스트</a></li>
                     </ul>
                 </div>
             </li>
-            <li><a href="/booking" class="gnb-txt-reserve" title="예매">예매</a>
+            <li><a href="<%=path%>/booking.do" class="gnb-txt-reserve" title="예매">예매</a>
                 <div class="gnb-depth2">
                     <ul>
-                        <li><a href="/booking"					title="빠른예매">빠른예매</a></li>
-                        <li><a href="/booking/timetable"		title="상영시간표">상영시간표</a></li>
-                        <li><a href="/booking/privatebooking"	title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a></li>
+                        <li><a href="<%=path%>/booking.do"					title="빠른예매">빠른예매</a></li>
+                        <li><a href="<%=path%>/booking/timetable.do"		title="상영시간표">상영시간표</a></li>
+                        <li><a href="<%=path%>/booking/privatebooking.do"	title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a></li>
                     </ul>
                 </div>
             </li>
-            <li><a href="/theater/list" class="gnb-txt-theater" title="극장">극장</a>
+            <li><a href="<%=path%>/theater/list/do" class="gnb-txt-theater" title="극장">극장</a>
                 <div class="gnb-depth2">
                     <ul>
-                        <li><a href="/theater/list" title="전체극장">전체극장</a></li>
-                        <li><a href="/specialtheater/list" title="특별관">특별관</a></li>
+                        <li><a href="<%=path%>/theater/list.do" title="전체극장">전체극장</a></li>
+                        <li><a href="<%=path%>/specialtheater/list.do" title="특별관">특별관</a></li>
                     </ul>
                 </div>
             </li>
@@ -501,17 +504,47 @@
                 </div>
             </li>
             <li><a href="javascript:void(0)" onclick="NetfunnelChk.aTag('STORE_LIST','/store');return false;" class="gnb-txt-store" title="스토어">스토어</a></li>
-            <li><a href="/benefit/membership" class="gnb-txt-benefit" title="혜택">혜택</a>
+            <li><a href="<%=path%>/benefit/membership" class="gnb-txt-benefit" title="혜택">혜택</a>
                 <div class="gnb-depth2">
                     <ul>
-                        <li><a href="/benefit/membership" title="메가박스 멤버십">메가박스 멤버십</a></li>
-                        <li><a href="/benefit/discount/guide" title="제휴/할인">제휴/할인</a></li>
+                        <li><a href="<%=path%>/benefit/membership.do" title="메가박스 멤버십">메가박스 멤버십</a></li>
+                        <li><a href="<%=path%>/benefit/discount/guide.do" title="제휴/할인">제휴/할인</a></li>
                     </ul>
                 </div>
             </li>
         </ul>
     </nav>
+    
+    <!-- TH, <nav> 태그 마우스 포인터에 따라 자식 <li> 태그  on/off 기능 (2020.07.12)-->
+       <script>
+		$('#gnb ul li').children('a').mouseover(function(){
+			
+			if ($(this).closest('div').attr('class') != 'gnb-depth2') {
+				$('#gnb').find('li').removeClass();	
+			}
+			
+			if ($(this).attr('class')!='gnb-txt-store') {
+				$('#gnb').addClass('on');
+				$(this).closest('li').addClass('on');
+			}
+		});
+		
+		$('#header').mouseleave(function(){
+			if ($('#gnb ul li a div li').mouseleave()) {
+				
+				$('#gnb').removeClass();
+				$('#gnb ul li').removeClass();
+			}
+		});
+		
+    </script>
+   
+    
     <!--// gnb -->
+    
+    
+    
+    <!-- 
     <script type="text/javascript">
         $(document).ready(function() {
             var filmCheck = MegaboxUtil.Common.moveMovieFilmCheckGnb(); // 영화제 존재여부 체크
@@ -522,6 +555,7 @@
             }
         });
     </script>
+     -->
     <!--// topGnb -->
 
     <!-- 레이어 : 사이트맵 -->
@@ -540,10 +574,10 @@
                 <p class="tit-depth">영화</p>
 
                 <ul class="list-depth">
-                    <li><a href="/movie" title="전체영화">전체영화</a></li>
-                    <li><a href="/curation/specialcontent" title="큐레이션">큐레이션</a></li>
+                    <li><a href="<%=path%>/movie" title="전체영화">전체영화</a></li>
+                    <li><a href="<%=path%>/curation/specialcontent" title="큐레이션">큐레이션</a></li>
                     <li><a href="javascript:void(0)" onclick="javascript:MegaboxUtil.Common.moveMovieFilmCheck();" title="영화제">영화제</a></li>
-                    <li><a href="/moviepost/all" title="무비포스트">무비포스트</a></li>
+                    <li><a href="<%=path%>/moviepost/all" title="무비포스트">무비포스트</a></li>
                 </ul>
             </div>
 
@@ -551,9 +585,9 @@
                 <p class="tit-depth">예매</p>
 
                 <ul class="list-depth">
-                    <li><a href="/booking" title="빠른예매">빠른예매</a></li>
-                    <li><a href="/booking/timetable" title="상영시간표">상영시간표</a></li>
-                    <li><a href="/booking/privatebooking" title="더 부티크 프라빗 예매">더 부티크 프라이빗 예매</a></li>
+                    <li><a href="<%=path%>/booking" title="빠른예매">빠른예매</a></li>
+                    <li><a href="<%=path%>/booking/timetable" title="상영시간표">상영시간표</a></li>
+                    <li><a href="<%=path%>/booking/privatebooking" title="더 부티크 프라빗 예매">더 부티크 프라이빗 예매</a></li>
                     <!-- <li><a href="/booking?megaboxLanguage=en" title="English Ticketing">English Ticketing</a></li> -->
                 </ul>
             </div>
@@ -562,8 +596,8 @@
                 <p class="tit-depth">극장</p>
 
                 <ul class="list-depth">
-                    <li><a href="/theater/list" title="전체극장">전체극장</a></li>
-                    <li><a href="/specialtheater/list" title="특별관">특별관</a></li>
+                    <li><a href="<%=path%>/theater/list" title="전체극장">전체극장</a></li>
+                    <li><a href="<%=path%>/specialtheater/list" title="특별관">특별관</a></li>
                 </ul>
             </div>
 
@@ -615,9 +649,9 @@
                 <p class="tit-depth">혜택</p>
 
                 <ul class="list-depth">
-                    <li><a href="/benefit/membership" title="멤버십 안내">멤버십 안내</a></li>
-                    <li><a href="/benefit/viplounge" title="VIP LOUNGE">VIP LOUNGE</a></li>
-                    <li><a href="/benefit/discount/guide" title="제휴/할인">제휴/할인</a></li>
+                    <li><a href="<%=path%>/benefit/membership" title="멤버십 안내">멤버십 안내</a></li>
+                    <li><a href="<%=path%>/benefit/viplounge" title="VIP LOUNGE">VIP LOUNGE</a></li>
+                    <li><a href="<%=path%>/benefit/discount/guide" title="제휴/할인">제휴/할인</a></li>
                 </ul>
             </div>
 
@@ -625,12 +659,12 @@
                 <p class="tit-depth">고객센터</p>
 
                 <ul class="list-depth">
-                    <li><a href="/support" 			title="고객센터 홈">고객센터 홈</a></li>
-                    <li><a href="/support/faq"		title="자주묻는질문">자주묻는질문</a></li>
-                    <li><a href="/support/notice"	title="공지사항">공지사항</a></li>
-                    <li><a href="/support/inquiry"	title="1:1문의">1:1문의</a></li>
-                    <li><a href="/support/rent"		title="단체/대관문의">단체/대관문의</a></li>
-                    <li><a href="/support/lost"		title="분실물문의">분실물문의</a></li>
+                    <li><a href="<%=path%>/support" 			title="고객센터 홈">고객센터 홈</a></li>
+                    <li><a href="<%=path%>/support/faq"		title="자주묻는질문">자주묻는질문</a></li>
+                    <li><a href="<%=path%>/support/notice"	title="공지사항">공지사항</a></li>
+                    <li><a href="<%=path%>/support/inquiry"	title="1:1문의">1:1문의</a></li>
+                    <li><a href="<%=path%>/support/rent"		title="단체/대관문의">단체/대관문의</a></li>
+                    <li><a href="<%=path%>/support/lost"		title="분실물문의">분실물문의</a></li>
                 </ul>
             </div>
 
@@ -638,13 +672,13 @@
                 <p class="tit-depth">회사소개</p>
 
                 <ul class="list-depth">
-                    <li><a href="/megaboxinfo" 			target="_blank" title="메가박스소개">메가박스소개</a></li>
-                    <li><a href="/socialcontribution" 	target="_blank" title="사회공헌">사회공헌</a></li>
-                    <li><a href="/advertize" 			target="_blank" title="홍보자료">홍보자료</a></li>
-                    <li><a href="/partner" 				target="_blank" title="제휴/부대사업문의">제휴/부대사업문의</a></li>
-                    <li><a href="/onlinereport" 		target="_blank" title="온라인제보센터">온라인제보센터</a></li>
-                    <li><a href="/ir" 					target="_blank" title="자료">IR자료</a></li>
-                    <li><a href="/recruit" 				target="_blank" title="인재채용림">인재채용</a></li>
+                    <li><a href="<%=path%>/megaboxinfo" 			target="_blank" title="메가박스소개">메가박스소개</a></li>
+                    <li><a href="<%=path%>/socialcontribution" 	target="_blank" title="사회공헌">사회공헌</a></li>
+                    <li><a href="<%=path%>/advertize" 			target="_blank" title="홍보자료">홍보자료</a></li>
+                    <li><a href="<%=path%>/partner" 				target="_blank" title="제휴/부대사업문의">제휴/부대사업문의</a></li>
+                    <li><a href="<%=path%>/onlinereport" 		target="_blank" title="온라인제보센터">온라인제보센터</a></li>
+                    <li><a href="<%=path%>/ir" 					target="_blank" title="자료">IR자료</a></li>
+                    <li><a href="<%=path%>/recruit" 				target="_blank" title="인재채용림">인재채용</a></li>
                     <li><a href="https://jebo.joonganggroup.com/main.do" target="_blank" title="윤리경영">윤리경영</a></li>
                 </ul>
             </div>
@@ -653,9 +687,9 @@
                 <p class="tit-depth">이용정책</p>
 
                 <ul class="list-depth">
-                    <li><a href="/support/terms"		title="이용약관">이용약관</a></li>
-                    <li><a href="/support/privacy"		title="개인정보처리방침">개인정보처리방침</a></li>
-                    <li><a href="/support/screenrule"	title="스크린수배정에관한기준">스크린수배정에관한기준</a></li>
+                    <li><a href="<%=path%>/support/terms"		title="이용약관">이용약관</a></li>
+                    <li><a href="<%=path%>/support/privacy"		title="개인정보처리방침">개인정보처리방침</a></li>
+                    <li><a href="<%=path%>/support/screenrule"	title="스크린수배정에관한기준">스크린수배정에관한기준</a></li>
                 </ul>
             </div>
 
@@ -706,7 +740,7 @@
                     </div>
 
                     <div class="btn-fixed">
-                        <a href="/mypage" class="button" title="나의  메가박스">나의  메가박스</a>
+                        <a href="<%=path%>/mypage" class="button" title="나의  메가박스">나의  메가박스</a>
                     </div>
                 </div>
 
@@ -719,7 +753,7 @@
                         </p>
 
                         <div class="btn-fixed">
-                            <a href="/mypage/point-list" class="button" title="멤버십 포인트" >멤버십 포인트</a>
+                            <a href="<%=path%>/mypage/point-list" class="button" title="멤버십 포인트" >멤버십 포인트</a>
                         </div>
                     </div>
                 </div>
@@ -734,8 +768,8 @@
                         </p>
 
                         <div class="btn-fixed">
-                            <a href="/mypage/discount-coupon" class="button" title="쿠폰">쿠폰</a>
-                            <a href="/mypage/movie-coupon" class="button" title="관람권">관람권</a>
+                            <a href="<%=path%>/mypage/discount-coupon" class="button" title="쿠폰">쿠폰</a>
+                            <a href="<%=path%>/mypage/movie-coupon" class="button" title="관람권">관람권</a>
                         </div>
                     </div>
                 </div>
@@ -747,7 +781,7 @@
                         <p class="txt"></p>
 
                         <div class="btn-fixed">
-                            <a href="/mypage/bookinglist" class="button" title="예매내역">예매내역 </a>
+                            <a href="<%=path%>/mypage/bookinglist" class="button" title="예매내역">예매내역 </a>
                         </div>
                     </div>
                 </div>
@@ -763,7 +797,7 @@
                     </div>
 
                     <div class="btn-fixed">
-                        <a href="/mypage/bookinglist?tab=02" class="button" title="구매내역">구매내역</a>
+                        <a href="<%=path%>/mypage/bookinglist?tab=02" class="button" title="구매내역">구매내역</a>
                     </div>
                 </div>
             </div>
@@ -779,7 +813,7 @@
                     <a href="#layer_login_common" id="moveLogin" title="로그인" class="button w120px btn-modal-open" w-data='850' h-data='484'>로그인</a>
                 </div>
 
-                <a href="/join" class="link" title="혹시 아직 회원이 아니신가요?">혹시 아직 회원이 아니신가요?</a>
+                <a href="<%=path%>/join" class="link" title="혹시 아직 회원이 아니신가요?">혹시 아직 회원이 아니신가요?</a>
             </div>
         </div>
         <!--// wrap -->
@@ -802,8 +836,8 @@
 		<div class="inner-wrap">
 			<div class="location">
 				<span>Home</span>
-				<a href="/theater/list" title="극장 페이지로 이동">극장</a>
-				<a href="/specialtheater/list" title="특별관 페이지로 이동">특별관</a>
+				<a href="<%=path%>/theater/list" title="극장 페이지로 이동">극장</a>
+				<a href="<%=path%>/specialtheater/list" title="특별관 페이지로 이동">특별관</a>
 			</div>
 
 		</div>
@@ -815,7 +849,7 @@
 			<div class="inner-wrap">
 				<div class="brn-link">
 					<div class="cell tit-area">
-						<p class="tit"><img src="../../../static/pc/images/theater/sp-text-tit.png" alt="MEGABOX LIFE THEATER" /></p>
+						<p class="tit"><img src="<%=path%>/static/pc/images/theater/sp-text-tit.png" alt="MEGABOX LIFE THEATER" /></p>
 						<p class="txt">
 							메가박스<br />
 							특별관을<br />
@@ -824,7 +858,7 @@
 					</div>
 
 					<div class="cell link-boutique">
-						<a href="/specialtheater/boutique" title="THE BOUTIQUE 페이지로 이동">
+						<a href="<%=path%>/specialtheater/boutique" title="THE BOUTIQUE 페이지로 이동">
 							<div class="link-txt">
 								<p class="tit">THE BOUTIQUE</p>
 								<p class="txt">부티크 호텔의 개성을 더한<br />메가박스만의 프리미엄 시네마</p>
@@ -834,7 +868,7 @@
 					</div>
 
 					<div class="cell link-mx">
-						<a href="/specialtheater/mx" title="MX 페이지로 이동">
+						<a href="<%=path%>/specialtheater/mx" title="MX 페이지로 이동">
 							<div class="link-txt">
 								<p class="tit">MX</p>
 								<p class="txt">진정한 영화 사운드를 통한 최고의 영화!<br />메가박스의 차세대 표준 상영관</p>
@@ -844,7 +878,7 @@
 					</div>
 
 					<div class="cell link-kids">
-						<a href="/specialtheater/megakids" title="MEGA KIDS 페이지로 이동">
+						<a href="<%=path%>/specialtheater/megakids" title="MEGA KIDS 페이지로 이동">
 							<div class="link-txt">
 								<p class="tit">MEGA KIDS</p>
 								<p class="txt">아이와 가족이 함께 머물며<br />삶의 소중한 가치를 배우는<br />더 행복한 놀이공간</p>
@@ -854,7 +888,7 @@
 					</div>
 
 					<div class="cell link-comfort">
-						<a href="/specialtheater/comfort" title="COMFORT 페이지로 이동">
+						<a href="<%=path%>/specialtheater/comfort" title="COMFORT 페이지로 이동">
 							<div class="link-txt">
 								<p class="tit">COMFORT</p>
 								<p class="txt">더욱 편안한 영화 관람을 위한<br />다양한 여유공간</p>
@@ -874,7 +908,7 @@
 <!-- 					</div> -->
 
 					<div class="cell link-first">
-						<a href="/specialtheater/firstclub" title="THE FIRST CLUB 페이지로 이동">
+						<a href="<%=path%>/specialtheater/firstclub" title="THE FIRST CLUB 페이지로 이동">
 							<div class="link-txt">
 								<p class="tit">THE FIRST CLUB</p>
 								<p class="txt">특별한 날, 특별한 당신을 위한<br />단 하나의 The FIRST CLUB</p>
@@ -949,12 +983,12 @@
     <div class="footer-top">
         <div class="inner-wrap">
             <ul class="fnb">
-                <li><a href="/megaboxinfo" title="회사소개 페이지로 이동">회사소개</a></li>
-                <li><a href="/recruit" title="인재채용 페이지로 이동">인재채용</a></li>
-                <li><a href="/socialcontribution" title="사회공헌 페이지로 이동">사회공헌</a></li>
-                <li><a href="/partner" title="제휴/광고/부대사업문의 페이지로 이동">제휴/광고/부대사업문의</a></li>
-                <li><a href="/support/terms" title="이용약관 페이지로 이동">이용약관</a></li>
-                <li class="privacy"><a href="/support/privacy" title="개인정보처리방침 페이지로 이동">개인정보처리방침</a></li>
+                <li><a href="<%=path%>/megaboxinfo" title="회사소개 페이지로 이동">회사소개</a></li>
+                <li><a href="<%=path%>/recruit" title="인재채용 페이지로 이동">인재채용</a></li>
+                <li><a href="<%=path%>/socialcontribution" title="사회공헌 페이지로 이동">사회공헌</a></li>
+                <li><a href="<%=path%>/partner" title="제휴/광고/부대사업문의 페이지로 이동">제휴/광고/부대사업문의</a></li>
+                <li><a href="<%=path%>/support/terms" title="이용약관 페이지로 이동">이용약관</a></li>
+                <li class="privacy"><a href="<%=path%>/support/privacy" title="개인정보처리방침 페이지로 이동">개인정보처리방침</a></li>
                 <li><a href="https://jebo.joonganggroup.com/main.do" target="_blank" title="윤리경영 페이지로 이동">윤리경영</a></li>
             </ul>
 
