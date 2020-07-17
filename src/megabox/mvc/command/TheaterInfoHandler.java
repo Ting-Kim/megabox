@@ -22,11 +22,13 @@ public class TheaterInfoHandler implements CommandHandler{
 		List<TheaterInfoDTO> floorList = infoService.floorSelect(seqBranch); 
 		List<TheaterInfoDTO> parkList = infoService.parkSelect(seqBranch); 
 		List<TheaterInfoDTO> trafficSelect = infoService.trafficSelect(seqBranch); 
+		List<TheaterInfoDTO> theaterNoticeSelect = infoService.theaterNoticeSelect(seqBranch); 
 		request.setAttribute("titleList", titleList);
 		request.setAttribute("facilityList", facilityList);
 		request.setAttribute("floorList", floorList);
 		request.setAttribute("parkList", parkList);
 		request.setAttribute("trafficList", trafficSelect);
+		request.setAttribute("theaterNoticeList", theaterNoticeSelect);
 		System.out.println("dd");
 		
 		return "/theater/theaterInfo";

@@ -714,7 +714,7 @@
 								<ul class="area-depth1">
 
 
-									<li><a href="" class="depth1" title="서울 선택">서울</a>
+									<li><a href="<%=path %>/theater/list.do %>" class="depth1" title="서울 선택">서울</a>
 										<div class="area-depth2">
 											<ul>
 
@@ -1466,85 +1466,85 @@
 
 
 
-									<c:set var="doneLoop" value="false"/>
+									<c:set var="doneLoop" value="false" />
+									<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
+										<c:if test="${parkDTO.seq_pinfo eq 2 && not doneLoop }">
+
+											<div class="parking-section">
+												<div class="icon-box">
+													<i class="${parkDTO.iconPark }" title="${parkDTO.pPart}">${parkDTO.pPart}</i>
+												</div>
+												<div class="info">
+													<p class="tit">${parkDTO.pPart}</p>
+													<ul class="dot-list">
+														<c:set var="doneLoop" value="true" />
+										</c:if>
+									</c:forEach>
+
+									<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
+										<c:if test="${parkDTO.seq_pinfo eq 2 }">
+											<li>${parkDTO.pInfo}</li>
+										</c:if>
+									</c:forEach>
+									</ul>
+								</div>
+								<!-- .info -->
+							</div>
+							<!-- .parking-section -->
+
+
+							<c:set var="doneLoop" value="false" />
 							<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
 								<c:if test="${parkDTO.seq_pinfo eq 2 && not doneLoop }">
-									
-										<div class="parking-section">
-											<div class="icon-box">
-												<i class="${parkDTO.iconPark }" title="${parkDTO.pPart}">${parkDTO.pPart}</i>
-											</div>
-											<div class="info">
-												<p class="tit">${parkDTO.pPart}</p>
-										<ul class="dot-list">
-									<c:set var="doneLoop" value="true"/>
+
+									<div class="parking-section">
+										<div class="icon-box">
+											<i class="${parkDTO.iconPark }" title="${parkDTO.pPart}">${parkDTO.pPart}</i>
+										</div>
+										<div class="info">
+											<p class="tit">${parkDTO.pPart}</p>
+											<ul class="dot-list">
+												<c:set var="doneLoop" value="true" />
 								</c:if>
 							</c:forEach>
-									
+
 							<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
 								<c:if test="${parkDTO.seq_pinfo eq 2 }">
-										<li>${parkDTO.pInfo}</li>
+									<li>${parkDTO.pInfo}</li>
 								</c:if>
 							</c:forEach>
-									</ul>
-						</div>
-						<!-- .info -->
-					</div>
-					<!-- .parking-section -->
-							
-							
-							<c:set var="doneLoop" value="false"/>
-							<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
-								<c:if test="${parkDTO.seq_pinfo eq 2 && not doneLoop }">
-									
-										<div class="parking-section">
-											<div class="icon-box">
-												<i class="${parkDTO.iconPark }" title="${parkDTO.pPart}">${parkDTO.pPart}</i>
-											</div>
-											<div class="info">
-												<p class="tit">${parkDTO.pPart}</p>
-										<ul class="dot-list">
-									<c:set var="doneLoop" value="true"/>
-								</c:if>
-							</c:forEach>
-									
-							<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
-								<c:if test="${parkDTO.seq_pinfo eq 2 }">
-										<li>${parkDTO.pInfo}</li>
-								</c:if>
-							</c:forEach>
-									</ul>
+							</ul>
 						</div>
 						<!-- .info -->
 					</div>
 					<!-- .parking-section -->
 
-					<c:set var="doneLoop" value="false"/>
-							<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
-								<c:if test="${parkDTO.seq_pinfo eq 3 && not doneLoop }">
-									
-									
-										<div class="parking-section">
-											<div class="icon-box">
-												<i class="${parkDTO.iconPark }" title="${parkDTO.pPart}">${parkDTO.pPart}</i>
-											</div>
-											<div class="info">
-												<p class="tit">${parkDTO.pPart}</p>
-										<ul class="dot-list">
-									<c:set var="doneLoop" value="true"/>
-								</c:if>
-							</c:forEach>
-									
-							<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
-								<c:if test="${parkDTO.seq_pinfo eq 3 }">
-										<li>${parkDTO.pInfo}</li>
-								</c:if>
-							</c:forEach>
-									</ul>
-						</div>
-						<!-- .info -->
-					</div>
-					<!-- .parking-section -->
+					<c:set var="doneLoop" value="false" />
+					<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
+						<c:if test="${parkDTO.seq_pinfo eq 3 && not doneLoop }">
+
+
+							<div class="parking-section">
+								<div class="icon-box">
+									<i class="${parkDTO.iconPark }" title="${parkDTO.pPart}">${parkDTO.pPart}</i>
+								</div>
+								<div class="info">
+									<p class="tit">${parkDTO.pPart}</p>
+									<ul class="dot-list">
+										<c:set var="doneLoop" value="true" />
+						</c:if>
+					</c:forEach>
+
+					<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
+						<c:if test="${parkDTO.seq_pinfo eq 3 }">
+							<li>${parkDTO.pInfo}</li>
+						</c:if>
+					</c:forEach>
+					</ul>
+				</div>
+				<!-- .info -->
+			</div>
+			<!-- .parking-section -->
 	</div>
 	<!-- 
 										<div class="icon-box">
@@ -1621,32 +1621,33 @@
 
 		<!-- 버스 정보 -->
 
-							<c:set var="doneLoop" value="false"/>
-							<c:forEach items="${trafficList}" var="trafficDTO">
-								<c:if test="${trafficDTO.seq_tpart eq 1 && not doneLoop }">
-									<div class="transportation-section">
-											<div class="icon-box">
-												<i class="${trafficDTO.iconTraffic }" title="${trafficDTO.traffic}">${trafficDTO.traffic}</i>
-											</div>
-											<div class="info">
-												<p class="tit">${trafficDTO.traffic}</p>
-										<ul class="dot-list">
-									<c:set var="doneLoop" value="true"/>
-								</c:if>
-							</c:forEach>
-									
-							<c:forEach items="${trafficList}" var="trafficDTO" varStatus="status">
-								<c:if test="${trafficDTO.seq_tpart eq 1}">
-										<li>${trafficDTO.root}</li>
-								</c:if>
-							</c:forEach>
-									</ul>
-						</div>
-						<!-- .info -->
+		<c:set var="doneLoop" value="false" />
+		<c:forEach items="${trafficList}" var="trafficDTO">
+			<c:if test="${trafficDTO.seq_tpart eq 1 && not doneLoop }">
+				<div class="transportation-section">
+					<div class="icon-box">
+						<i class="${trafficDTO.iconTraffic }"
+							title="${trafficDTO.traffic}">${trafficDTO.traffic}</i>
 					</div>
-					<!-- .trasportation-section -->
-			
-			<!-- 
+					<div class="info">
+						<p class="tit">${trafficDTO.traffic}</p>
+						<ul class="dot-list">
+							<c:set var="doneLoop" value="true" />
+			</c:if>
+		</c:forEach>
+
+		<c:forEach items="${trafficList}" var="trafficDTO" varStatus="status">
+			<c:if test="${trafficDTO.seq_tpart eq 1}">
+				<li>${trafficDTO.root}</li>
+			</c:if>
+		</c:forEach>
+		</ul>
+	</div>
+	<!-- .info -->
+	</div>
+	<!-- .trasportation-section -->
+
+	<!-- 
 			1번만 반복
 			<div class="icon-box">
 				<i class="iconset ico-bus" title="버스">버스</i>
@@ -1674,33 +1675,33 @@
 		</div>	.transportation-section
  -->
 
-		<!-- 지하철 정보 -->
-		<c:set var="doneLoop" value="false"/>
-							<c:forEach items="${trafficList}" var="trafficDTO">
-								<c:if test="${trafficDTO.seq_tpart eq 2 && not doneLoop }">
-									<div class="transportation-section">
-											<div class="icon-box">
-												<i class="${trafficDTO.iconTraffic }" title="${trafficDTO.traffic}">${trafficDTO.traffic}</i>
-											</div>
-											<div class="info">
-												<p class="tit">${trafficDTO.traffic}</p>
-										<ul class="dot-list">
-									<c:set var="doneLoop" value="true"/>
-								</c:if>
-							</c:forEach>
-									
-							<c:forEach items="${trafficList}" var="trafficDTO" varStatus="status">
-								<c:if test="${trafficDTO.seq_tpart eq 2}">
-										<li>${trafficDTO.root}</li>
-								</c:if>
-							</c:forEach>
-									</ul>
-						</div>
-						<!-- .info -->
-					</div>
-					<!-- .trasportation-section -->
-					
-			<!-- 
+	<!-- 지하철 정보 -->
+	<c:set var="doneLoop" value="false" />
+	<c:forEach items="${trafficList}" var="trafficDTO">
+		<c:if test="${trafficDTO.seq_tpart eq 2 && not doneLoop }">
+			<div class="transportation-section">
+				<div class="icon-box">
+					<i class="${trafficDTO.iconTraffic }" title="${trafficDTO.traffic}">${trafficDTO.traffic}</i>
+				</div>
+				<div class="info">
+					<p class="tit">${trafficDTO.traffic}</p>
+					<ul class="dot-list">
+						<c:set var="doneLoop" value="true" />
+		</c:if>
+	</c:forEach>
+
+	<c:forEach items="${trafficList}" var="trafficDTO" varStatus="status">
+		<c:if test="${trafficDTO.seq_tpart eq 2}">
+			<li>${trafficDTO.root}</li>
+		</c:if>
+	</c:forEach>
+	</ul>
+	</div>
+	<!-- .info -->
+	</div>
+	<!-- .trasportation-section -->
+
+	<!-- 
 		<div class="transportation-section">
 			<div class="icon-box">
 				<i class="iconset ico-metro" title="지하철">지하철</i>
@@ -1717,7 +1718,7 @@
 		</div>
 
  -->
-		<!-- 대중교통 정보가 없는 경우 -->
+	<!-- 대중교통 정보가 없는 경우 -->
 
 	</div>
 
@@ -1731,6 +1732,20 @@
 
 		<!-- accordion-list -->
 		<div class="accordion-list">
+			<ul>
+				<c:forEach items="${theaterNoticeList}" var="dto">
+					<li><div class="title">
+							<a href="" title="${dto.nTitle}">
+								<div class="cont-tit">${dto.nTitle}</div>
+								<p class="cont-admin">${dto.branch}</p>
+								<p class="cont-date">${dto.nRegidate}</p>
+							</a>
+						</div>
+						<div class="content" style="display: none">${dto.nContent}</div></li>
+				</c:forEach>
+			</ul>
+
+			<!-- 
 			<ul>
 				<li><div class="title ">
 						<a href="" title="[강남] 운영시간 임시 조정 안내">
@@ -1746,6 +1761,10 @@
 						30분 ~ 20시 30분)<br> <br> 지속적인 방역과 소독관리를 통해 안전한 관람 환경 조성에
 						최선을 다하겠습니다.<br> 감사합니다.
 					</div></li>
+					
+					
+					
+					
 				<li><div class="title ">
 						<a href="" title="[강남] 영화 관람 요금 변경 안내">
 							<div class="cont-tit">[강남] 영화 관람 요금 변경 안내</div>
@@ -1921,8 +1940,14 @@
 						<p>감사합니다.</p>
 					</div></li>
 			</ul>
+			 -->
+
 		</div>
 		<!--// accordion-list -->
+
+
+
+
 
 		<!-- pagination -->
 		<nav class="pagination">

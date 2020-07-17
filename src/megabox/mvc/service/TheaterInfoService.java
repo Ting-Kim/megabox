@@ -69,4 +69,15 @@ public class TheaterInfoService {
 		}
 		
 	} // trafficSelect
+	
+	public List<TheaterInfoDTO> theaterNoticeSelect(int seqBranch){
+		TheaterInfoDAO dao = TheaterInfoDAO.getInstance();
+		try (Connection conn = ConnectionProvider.getConnection()){
+			List<TheaterInfoDTO> theaterNoticeList = dao.TheaterNoticeList(conn, seqBranch);
+			return theaterNoticeList;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		
+	} // theaterNoticeSelect
 }

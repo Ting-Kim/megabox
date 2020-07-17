@@ -1,5 +1,7 @@
 package megabox.mvc.model;
 
+import java.sql.Date;
+
 public class TheaterInfoDTO {
 	// By 태호 ) 극장정보 페이지에 불러올 필드 선언 _20200715
 	private int seq_branch;
@@ -22,11 +24,39 @@ public class TheaterInfoDTO {
 	private String iconTraffic;
 	private String root;
 	private String traffic;
+	private int seq_nPart;
+	private String nTitle;
+	private String nContent;
+	private String nRegidate;
 	
 	
 	// By 태호 ) 필드 Getter, Setter 선언 _20200715
 	public int getSeq_pinfo() {
 		return seq_pinfo;
+	}
+	public String getnRegidate() {
+		return nRegidate;
+	}
+	public void setnRegidate(String nRegidate) {
+		this.nRegidate = nRegidate;
+	}
+	public int getSeq_nPart() {
+		return seq_nPart;
+	}
+	public void setSeq_nPart(int seq_nPart) {
+		this.seq_nPart = seq_nPart;
+	}
+	public String getnTitle() {
+		return nTitle;
+	}
+	public void setnTitle(String nTitle) {
+		this.nTitle = nTitle;
+	}
+	public String getnContent() {
+		return nContent;
+	}
+	public void setnContent(String nContent) {
+		this.nContent = nContent;
 	}
 	public String getTraffic() {
 		return traffic;

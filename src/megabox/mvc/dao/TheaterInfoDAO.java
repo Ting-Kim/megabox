@@ -244,14 +244,11 @@ public class TheaterInfoDAO {
 			return TrafficList;
 		}
 		
-	/*
-	  select seq_branch, seq_npart, title, content, to_char(regidate, 'YYYY.MM.dd')
-	  regidate from notice where seq_branch = ?
-	 */
+		// BY태호, 극정정보 내에 해당 지점에 대한 공지 정보를 가져오는 DAO 메서드. - 2020.07.17
 		public List<TheaterInfoDTO> TheaterNoticeList(Connection conn, int seqBranch) {
-			String sql = "select seq_branch, seq_npart, title, content, to_char(regidate, 'YYYY.MM.dd') " + 
-					"	  regidate from notice where seq_branch = ?";
-			// 해야함
+			String sql = "SELECT * " + 
+					"FROM THEATER_NOTICE where seq_branch = ?";
+
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;	
 			ArrayList<TheaterInfoDTO> theaterNoticeList = new ArrayList<TheaterInfoDTO>();
@@ -270,16 +267,16 @@ public class TheaterInfoDAO {
 					
 					dto.setSeq_branch(rs.getInt("seq_branch"));
 					dto.setBranch(rs.getString("branch"));
-					dto.setSeq_tpart(rs.getInt("seq_tpart"));
-					dto.setIconTraffic(rs.getString("icon"));
-					dto.setTraffic(rs.getString("traffic"));
-					dto.setRoot(rs.getString("root"));
+					dto.setSeq_nPart(rs.getInt("seq_npart"));
+					dto.setnTitle(rs.getString("ntitle"));
+					dto.setnContent(rs.getString("ncontent"));
+					dto.setnRegidate(rs.getString("nregidate"));
 
 					System.out.println(dto.getIconFacility());
-					TrafficList.add(dto);
+					theaterNoticeList.add(dto);
 				
 				}
-				return TrafficList;
+				return theaterNoticeList;
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
@@ -288,7 +285,7 @@ public class TheaterInfoDAO {
 				try {conn.close();} catch(SQLException e) {e.printStackTrace();}
 				
 			}
-			return TrafficList;
+			return theaterNoticeList;
 		}
 				
 		
