@@ -1950,6 +1950,34 @@
 
 
 		<!-- pagination -->
+		<script type="text/javascript">
+		$('.pagination a').click(fumction(){
+			$.ajax({
+				url: '',
+				type:'',
+				data: $('#accordion-list').serialize(),
+				success:function(data){
+					
+				}
+			})
+		})
+		
+		
+		
+		</script>
+		
+		<!-- 강사님 예제 참고.. 수정중.. -->
+		<nav class="pagination">
+			<c:forEach var="pageNum" begin="1"	end="${ viewData.pageTotalCount }">
+					<c:if test="${ pageNum eq viewData.currentPageNumber }">
+						<strong class="active">${ pageNum }</strong>
+					</c:if>
+					<c:if test="${ not (pageNum eq viewData.currentPageNumber) }">
+						<a title="${pageNum}페이지 보기" href="/theater/notice.ajax?pagenum=${ pageNum }" pagenum="${pageNum}">${ pageNum }</a>
+					</c:if>
+			</c:forEach>
+		</nav>
+		<!-- 
 		<nav class="pagination">
 			<strong class="active">1</strong> <a title="2페이지보기"
 				href="javascript:void(0)" pagenum="2">2</a> <a title="3페이지보기"
@@ -1960,6 +1988,7 @@
 				href="javascript:void(0)" pagenum="7">7</a> <a title="8페이지보기"
 				href="javascript:void(0)" pagenum="8">8</a>
 		</nav>
+		 -->
 		<!--// pagination -->
 	</div>
 

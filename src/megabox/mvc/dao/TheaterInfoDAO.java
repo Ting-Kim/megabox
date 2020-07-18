@@ -287,7 +287,30 @@ public class TheaterInfoDAO {
 			}
 			return theaterNoticeList;
 		}
+		
+		public List<Integer> theaterNoticeCount(Connection conn, int seqBranch) throws SQLException {
+			String sql = "select count(*) FROM THEATER_NOTICE where seq_branch = ?";
+			
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;	
+			
+			ArrayList<Integer> noticeCountList = new ArrayList<Integer>();
+			
+			try {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, seqBranch);
 				
+				rs = pstmt.executeQuery();
+				while (rs.next()) {
+					noticeCountList.add(rs.getInt(1));
+				}
+				return noticeCountList;
+			} finally {
+				JdbcUtil.close(pstmt);
+				try {rs.close();} catch(SQLException e) {e.printStackTrace();}
+				try {conn.close();} catch(SQLException e) {e.printStackTrace();}
+			}
+		}
 		
 }
 
