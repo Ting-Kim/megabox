@@ -9,18 +9,17 @@ import java.util.List;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
-import com.util.ConnectionProvider;
 import com.util.JdbcUtil;
 
 import megabox.mvc.model.TheaterInfoDTO;
 
-public class TheaterInfoDAO {
+public class TheaterInfoDAO2 {
 	// 싱글톤 방식
-		private static TheaterInfoDAO dao = null;
-		private TheaterInfoDAO() {}
-		public static TheaterInfoDAO getInstance() {
+		private static TheaterInfoDAO2 dao = null;
+		private TheaterInfoDAO2() {}
+		public static TheaterInfoDAO2 getInstance() {
 			if (dao == null) {
-				dao = new TheaterInfoDAO();
+				dao = new TheaterInfoDAO2();
 			}
 			return dao;
 		}
@@ -246,25 +245,18 @@ public class TheaterInfoDAO {
 		}
 		
 		// BY태호, 극정정보 내에 해당 지점에 대한 공지 정보를 가져오는 DAO 메서드. - 2020.07.17
-		public List<TheaterInfoDTO> TheaterNoticeList( int seqBranch, int pageNum) {
-			String sql = "select * " + 
-					"from " + 
-					"(select rownum ro, seq_branch, branch, ntitle, ncontent, nregidate  " + 
-					"from theater_notice " + 
-					"where seq_branch =?) " + 
-					"where ro >= ? and ro < ?";
-			Connection conn = null; 
+		public List<TheaterInfoDTO> TheaterNoticeList(Connection conn, int seqBranch, String pageNum) {
+			String sql = "SELECT * " + 
+					"FROM THEATER_NOTICE where seq_branch = ?";
+
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;	
 			ArrayList<TheaterInfoDTO> theaterNoticeList = new ArrayList<TheaterInfoDTO>();
 			TheaterInfoDTO dto = null;
 			
 			try {
-				conn = ConnectionProvider.getConnection();
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, seqBranch);
-				pstmt.setInt(2, (pageNum-1)*5+1);
-				pstmt.setInt(3,  (pageNum)*5+1);
 				
 				System.out.println(seqBranch);
 				
@@ -275,6 +267,7 @@ public class TheaterInfoDAO {
 					
 					dto.setSeq_branch(rs.getInt("seq_branch"));
 					dto.setBranch(rs.getString("branch"));
+					dto.setSeq_nPart(rs.getInt("seq_npart"));
 					dto.setnTitle(rs.getString("ntitle"));
 					dto.setnContent(rs.getString("ncontent"));
 					dto.setnRegidate(rs.getString("nregidate"));
@@ -295,101 +288,29 @@ public class TheaterInfoDAO {
 			return theaterNoticeList;
 		}
 		
-		public int targetPage(int seqBranch, int pageNum) {
-			String sql = " select count(*) " + 
-					"from " + 
-					"(select rownum ro, seq_branch, branch, ntitle, ncontent, nregidate  " + 
-					"from theater_notice " + 
-					"where seq_branch =?) " + 
-					"where ro > ?";
-			
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;	
-			TheaterInfoDTO dto = null;
-			
-			try {
-				conn = ConnectionProvider.getConnection();
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, seqBranch);
-				pstmt.setInt(2, (pageNum-1)*5);
-				
-				rs = pstmt.executeQuery();
-				
-				if (rs.next()) {
-					return rs.getInt(1)/5;
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-		         JdbcUtil.close(pstmt);
-				try {rs.close();} catch(SQLException e) {e.printStackTrace();}
-				try {conn.close();} catch(SQLException e) {e.printStackTrace();}
-				
-			}
-			return 0;
-		}
-		
-		public boolean nextPage(int seqBranch, int pageNum) {
-			String sql = "select * " + 
-					"from " + 
-					"(select rownum ro, seq_branch, branch, ntitle, ncontent, nregidate  " + 
-					"from theater_notice " + 
-					"where seq_branch =?) " + 
-					"where ro >= ?";
-			
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;	
-			TheaterInfoDTO dto = null;
-			
-			try {
-				conn = ConnectionProvider.getConnection();
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, seqBranch);
-				pstmt.setInt(2, (pageNum)*5+1);
-				
-				rs = pstmt.executeQuery();
-				
-				if (rs.next()) {
-					return true;
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-		         JdbcUtil.close(pstmt);
-				try {rs.close();} catch(SQLException e) {e.printStackTrace();}
-				try {conn.close();} catch(SQLException e) {e.printStackTrace();}
-				
-			}
-			return false;
-		}
-		
-		/*
-		public int theaterNoticeCount(Connection conn, int seqBranch) throws SQLException {
+		public List<Integer> theaterNoticeCount(Connection conn, int seqBranch) throws SQLException {
 			String sql = "select count(*) FROM THEATER_NOTICE where seq_branch = ?";
 			
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;	
 			
-			int theaterNoticeCount = 0;
+			ArrayList<Integer> noticeCountList = new ArrayList<Integer>();
 			
 			try {
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, seqBranch);
 				
 				rs = pstmt.executeQuery();
-				
-				if (rs.getInt(1) != 0) {
-					theaterNoticeCount = rs.getInt(1);
+				while (rs.next()) {
+					noticeCountList.add(rs.getInt(1));
 				}
-				return theaterNoticeCount;
+				return noticeCountList;
 			} finally {
 				JdbcUtil.close(pstmt);
 				try {rs.close();} catch(SQLException e) {e.printStackTrace();}
 				try {conn.close();} catch(SQLException e) {e.printStackTrace();}
 			}
 		}
-		*/
+		
 }
 

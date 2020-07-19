@@ -1,9 +1,27 @@
+<%@page import="megabox.mvc.model.TheaterInfoDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="megabox.mvc.dao.TheaterInfoDAO"%>
 <%@page import="java.util.List"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <% 
 	String path = request.getContextPath();
 	int branchSeq = Integer.parseInt(request.getParameter("branchSeq"));
+	
+	String pageNum = "1";
+	if(request.getParameter("pageNum") != null){
+		pageNum = request.getParameter("pageNum");
+	}
+	try{
+		Integer.parseInt(pageNum);
+	} catch(Exception e){
+		session.setAttribute("messageType", "오류 메시지");
+		session.setAttribute("messageContent", "페이지 번호가 잘못되었습니다.");
+		response.sendRedirect("theaterInfo.jsp");		
+		return;
+	}
+	//ArrayList theaterceList = new ArrayList();
+	ArrayList<TheaterInfoDTO> theaterNoticeList = (ArrayList)TheaterInfoDAO.getInstance().TheaterNoticeList(branchSeq, Integer.parseInt(pageNum));
 %>
 <!doctype html>
 <!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
@@ -24,7 +42,7 @@
 
 
 
-<title>(강남)극장정보 | 라이프씨어터, 메가박스</title>
+<title>(<c:forEach items="${titleList}" var="titleDTO">${titleDTO.branch}</c:forEach>) 극장정보 | 라이프씨어터, 메가박스</title>
 <meta property="name" id="metaTagTitle" content="극장정보 &lt; 극장" />
 <meta property="description" id="metaTagDtls"
 	content="반갑습니다. 메가박스 (강남)점 입니다." />
@@ -1325,6 +1343,8 @@
 							</div>
 							<!--// theater-area-list -->
 
+
+
 							<p class="name">
 								<c:forEach items="${titleList}" var="titleDTO">
 												${titleDTO.branch}</c:forEach>
@@ -1950,24 +1970,49 @@
 
 
 		<!-- pagination -->
-		<script type="text/javascript">
-		$('.pagination a').click(fumction(){
-			$.ajax({
-				url: '',
-				type:'',
-				data: $('#accordion-list').serialize(),
-				success:function(data){
-					
-				}
-			})
-		})
 		
-		
-		
-		</script>
-		
-		<!-- 강사님 예제 참고.. 수정중.. -->
 		<nav class="pagination">
+			
+			<%
+			int startPage = (Integer.parseInt(pageNum) / 10) * 10 + 1;
+			if(Integer.parseInt(pageNum) % 10 == 0) startPage -= 10;
+			int targetPage = TheaterInfoDAO.getInstance().targetPage(branchSeq, Integer.parseInt(pageNum)); 
+			if(startPage != 1){
+			%>
+				<a href = "theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=<%=startPage - 1%>#pagenumber" class = "control prev">prev</a>					
+			<%
+			} else {				
+			%>			
+			<%
+			}
+			for(int i = startPage; i < Integer.parseInt(pageNum); i++){
+			%>			
+				<a href = "theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=<%=i%>#pagenumber" class = ""><%=i %></a>					
+			<%
+			}
+			%>
+				<strong class = "active" name="pagenumber"><%=pageNum %></strong>					
+			<%
+				for(int i = Integer.parseInt(pageNum) +1 ; i < targetPage + Integer.parseInt(pageNum); i++){
+					if(i < startPage + 10){
+			%>
+						<a href="theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=<%=i%>#pagenumber"><%=i%></a>
+					
+			<%
+			%>
+			
+			<%
+					}
+				}
+			if(targetPage + Integer.parseInt(pageNum) > startPage + 9){
+				
+			%>
+				<a href="theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=<%=startPage+10%>#pagenumber" class="control next">next</a>
+			<%
+			}
+			%>
+				
+			<!-- 
 			<c:forEach var="pageNum" begin="1"	end="${ viewData.pageTotalCount }">
 					<c:if test="${ pageNum eq viewData.currentPageNumber }">
 						<strong class="active">${ pageNum }</strong>
@@ -1976,9 +2021,13 @@
 						<a title="${pageNum}페이지 보기" href="/theater/notice.ajax?pagenum=${ pageNum }" pagenum="${pageNum}">${ pageNum }</a>
 					</c:if>
 			</c:forEach>
+			 -->
+			
 		</nav>
 		<!-- 
 		<nav class="pagination">
+		<a title="처음 페이지 보기" href="javascript:void(0)" class="control first" pagenum="1">first</a>
+		<a title="이전 10페이지 보기" href="javascript:void(0)" class="control prev" pagenum="1">prev</a>
 			<strong class="active">1</strong> <a title="2페이지보기"
 				href="javascript:void(0)" pagenum="2">2</a> <a title="3페이지보기"
 				href="javascript:void(0)" pagenum="3">3</a> <a title="4페이지보기"
@@ -1987,6 +2036,8 @@
 				href="javascript:void(0)" pagenum="6">6</a> <a title="7페이지보기"
 				href="javascript:void(0)" pagenum="7">7</a> <a title="8페이지보기"
 				href="javascript:void(0)" pagenum="8">8</a>
+				<a title="이후 10페이지 보기" href="javascript:void(0)" class="control next" pagenum="21">next</a>
+				<a title="마지막 페이지 보기" href="javascript:void(0)" class="control last" pagenum="38">last</a>
 		</nav>
 		 -->
 		<!--// pagination -->

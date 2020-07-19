@@ -12,7 +12,7 @@ import megabox.mvc.dao.TheaterListDAO;
 import megabox.mvc.model.TheaterInfoDTO;
 import megabox.mvc.model.TheaterListDTO;
 
-public class TheaterInfoService {	
+public class TheaterInfoService2 {	
 
 	
 	public List<TheaterInfoDTO> infoSelect(int seqBranch){
@@ -71,8 +71,8 @@ public class TheaterInfoService {
 	} // trafficSelect
 	
 	// 상수 선언 : 한페이지에 5개의 공지사항 .
-	private static final int NOTICE_COUNT_PER_PAGE = 5;
-	/*
+	private static final int NOTICE_COUNT_PER_PAGE = 3;
+	
 	// 현재페이지 번호
 	public PaginationList getNoticeList(int pageNumber, int seqBranch) {
 		Connection conn = null;
@@ -82,7 +82,7 @@ public class TheaterInfoService {
 			
 			TheaterInfoDAO theaterInfoDao = TheaterInfoDAO.getInstance();
 			
-			int noticeTotalCount = theaterInfoDao.theaterNoticeCount(conn, seqBranch);
+			List<Integer> noticeTotalCount = theaterInfoDao.theaterNoticeCount(conn, seqBranch);
 			
 			List<TheaterInfoDTO> noticeList = null;
 			int firstRow = 0;
@@ -113,12 +113,11 @@ public class TheaterInfoService {
 		
 		
 	}
-	*/
 	
-	public List<TheaterInfoDTO> theaterNoticeSelect(int seqBranch, int pageNum){
+	public List<TheaterInfoDTO> theaterNoticeSelect(int seqBranch, String pageNum){
 		TheaterInfoDAO dao = TheaterInfoDAO.getInstance();
-		try {
-			List<TheaterInfoDTO> theaterNoticeList = dao.TheaterNoticeList(seqBranch, pageNum);
+		try (Connection conn = ConnectionProvider.getConnection()){
+			List<TheaterInfoDTO> theaterNoticeList = dao.TheaterNoticeList(conn, seqBranch);
 			return theaterNoticeList;
 		} catch (Exception e) {
 			throw new RuntimeException(e);

@@ -679,7 +679,7 @@
 										<ul>
 											<c:forEach items="${ list }" var="dto">
 												<c:if test="${ dto.seq_loc eq 1 }">
-													<li><a href="<%=path %>/theaterInfo.do?branchSeq=${dto.seq_branch}" title="">${dto.branch }</a></li>
+													<li><a href="<%=path %>/theaterInfo.do?branchSeq=${dto.seq_branch}&pageNum=1" title="">${dto.branch }</a></li>
 												</c:if>
 											</c:forEach>
  

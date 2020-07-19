@@ -15,6 +15,7 @@ public class TheaterInfoHandler implements CommandHandler{
 		System.out.println("TheaterInfoHandler.process() 호출됨..");
 		
 		int seqBranch = Integer.parseInt(request.getParameter("branchSeq"));
+		int pageNum = Integer.parseInt(request.getParameter("pageNum"));
 		System.out.println(seqBranch);
 		TheaterInfoService infoService = new TheaterInfoService();
 		List<TheaterInfoDTO> titleList = infoService.infoSelect(seqBranch); 
@@ -22,7 +23,8 @@ public class TheaterInfoHandler implements CommandHandler{
 		List<TheaterInfoDTO> floorList = infoService.floorSelect(seqBranch); 
 		List<TheaterInfoDTO> parkList = infoService.parkSelect(seqBranch); 
 		List<TheaterInfoDTO> trafficSelect = infoService.trafficSelect(seqBranch); 
-		List<TheaterInfoDTO> theaterNoticeSelect = infoService.theaterNoticeSelect(seqBranch); 
+		//int theaterCount = infoService.count
+		List<TheaterInfoDTO> theaterNoticeSelect = infoService.theaterNoticeSelect(seqBranch, pageNum); 
 		request.setAttribute("titleList", titleList);
 		request.setAttribute("facilityList", facilityList);
 		request.setAttribute("floorList", floorList);
