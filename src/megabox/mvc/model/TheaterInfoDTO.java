@@ -6,6 +6,7 @@ public class TheaterInfoDTO {
 	// By 태호 ) 극장정보 페이지에 불러올 필드 선언 _20200715
 	private int seq_branch;
 	private int seq_loc;
+	private String loc;
 	private String branch;
 	private String title;
 	private String specific;
@@ -31,8 +32,15 @@ public class TheaterInfoDTO {
 	
 	
 	// By 태호 ) 필드 Getter, Setter 선언 _20200715
+	
 	public int getSeq_pinfo() {
 		return seq_pinfo;
+	}
+	public String getLoc() {
+		return loc;
+	}
+	public void setLoc(String loc) {
+		this.loc = loc;
 	}
 	public String getnRegidate() {
 		return nRegidate;

@@ -4,10 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
 import com.util.ConnectionProvider;
 import com.util.JdbcUtil;
@@ -15,7 +14,7 @@ import com.util.JdbcUtil;
 import megabox.mvc.model.TheaterInfoDTO;
 
 public class TheaterInfoDAO {
-	// 싱글톤 방식
+		// 싱글톤 방식
 		private static TheaterInfoDAO dao = null;
 		private TheaterInfoDAO() {}
 		public static TheaterInfoDAO getInstance() {
@@ -49,6 +48,7 @@ public class TheaterInfoDAO {
 					
 					dto.setSeq_branch(rs.getInt("seq_branch"));
 					dto.setSeq_loc(rs.getInt("seq_loc"));
+					dto.setLoc(rs.getString("loc"));
 					dto.setBranch(rs.getString("branch"));
 					dto.setTitle(rs.getString("title"));
 					dto.setSpecific(rs.getString("specific"));
@@ -68,6 +68,43 @@ public class TheaterInfoDAO {
 				
 			}
 			return titleList;
+			
+			
+		}
+		
+		public List<TheaterInfoDTO> TheaterList(Connection conn){
+			String sql = "select * " + 
+					" from THEATER_INFO ";
+			
+			Statement stmt = null;
+			ResultSet rs = null;	
+			ArrayList<TheaterInfoDTO> TheaterList = new ArrayList<TheaterInfoDTO>();
+			TheaterInfoDTO dto = null;
+			
+			try {
+				stmt = conn.createStatement();
+				rs = stmt.executeQuery(sql);
+				
+				while (rs.next()) {
+					dto = new TheaterInfoDTO();
+					
+					dto.setSeq_branch(rs.getInt("seq_branch"));
+					dto.setSeq_loc(rs.getInt("seq_loc"));
+					dto.setLoc(rs.getString("loc"));
+					dto.setBranch(rs.getString("branch"));
+					TheaterList.add(dto);
+				
+				}
+				return TheaterList;
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+		         JdbcUtil.close(stmt);
+				try {rs.close();} catch(SQLException e) {e.printStackTrace();}
+				try {conn.close();} catch(SQLException e) {e.printStackTrace();}
+				
+			}
+			return TheaterList;
 			
 			
 		}

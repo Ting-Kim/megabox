@@ -5,7 +5,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import megabox.mvc.model.CalendarDTO;
+import megabox.mvc.model.ScreenMovieDTO;
+import megabox.mvc.model.ScreenTableDTO;
 import megabox.mvc.model.TheaterInfoDTO;
+import megabox.mvc.service.ScreenTableService;
 import megabox.mvc.service.TheaterInfoService;
 
 public class TheaterInfoHandler implements CommandHandler{
@@ -16,22 +20,31 @@ public class TheaterInfoHandler implements CommandHandler{
 		
 		int seqBranch = Integer.parseInt(request.getParameter("branchSeq"));
 		int pageNum = Integer.parseInt(request.getParameter("pageNum"));
-		System.out.println(seqBranch);
+		String calendarDate = request.getParameter("calendarDate");
+
 		TheaterInfoService infoService = new TheaterInfoService();
+		ScreenTableService screenTableService = new ScreenTableService();
+
 		List<TheaterInfoDTO> titleList = infoService.infoSelect(seqBranch); 
+		List<TheaterInfoDTO> TheaterList = infoService.listSelect(); 
 		List<TheaterInfoDTO> facilityList = infoService.facilitySelect(seqBranch); 
 		List<TheaterInfoDTO> floorList = infoService.floorSelect(seqBranch); 
 		List<TheaterInfoDTO> parkList = infoService.parkSelect(seqBranch); 
 		List<TheaterInfoDTO> trafficSelect = infoService.trafficSelect(seqBranch); 
-		//int theaterCount = infoService.count
-		List<TheaterInfoDTO> theaterNoticeSelect = infoService.theaterNoticeSelect(seqBranch, pageNum); 
+		List<TheaterInfoDTO> theaterNoticeSelect = infoService.theaterNoticeSelect(seqBranch, pageNum);
+		List<ScreenTableDTO> screenTableList = screenTableService.screenTableSelect(seqBranch);
+		List<CalendarDTO> calendarList = screenTableService.calendarSelect();
+		List<ScreenMovieDTO> screenMovieList = screenTableService.screenMovieSelect(seqBranch, calendarDate);
+
 		request.setAttribute("titleList", titleList);
+		request.setAttribute("TheaterList", TheaterList);
 		request.setAttribute("facilityList", facilityList);
 		request.setAttribute("floorList", floorList);
 		request.setAttribute("parkList", parkList);
 		request.setAttribute("trafficList", trafficSelect);
 		request.setAttribute("theaterNoticeList", theaterNoticeSelect);
-		System.out.println("dd");
+		request.setAttribute("calendarList", calendarList);
+		request.setAttribute("screenMovieList", screenMovieList);
 		
 		return "/theater/theaterInfo";
 		

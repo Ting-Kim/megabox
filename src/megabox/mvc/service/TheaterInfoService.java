@@ -26,6 +26,18 @@ public class TheaterInfoService {
 		
 	} // infoSelect
 	
+	public List<TheaterInfoDTO> listSelect(){
+		TheaterInfoDAO dao = TheaterInfoDAO.getInstance();
+		try (Connection conn = ConnectionProvider.getConnection()){
+			List<TheaterInfoDTO> TheaterList = dao.TheaterList(conn);
+			return TheaterList;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+		
+	} // infoSelect
+	
+	
 	public List<TheaterInfoDTO> facilitySelect(int seqBranch){
 		TheaterInfoDAO dao = TheaterInfoDAO.getInstance();
 		try (Connection conn = ConnectionProvider.getConnection()){
