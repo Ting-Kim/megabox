@@ -2,6 +2,7 @@ package megabox.mvc.dao;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class test {
@@ -16,6 +17,15 @@ public class test {
 		}
 		
 		System.out.println(test);
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(test);
+		cal.add(Calendar.MINUTE, 50);
+		
+		String today = dateFormat.format(cal.getTime());
+		
+		
+		System.out.println(today);
+		
 		
 	}
 	

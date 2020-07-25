@@ -14,11 +14,10 @@
 	SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy.MM.dd");
 	SimpleDateFormat format2 = new SimpleDateFormat ( "HH:mm");
 	SimpleDateFormat format3 = new SimpleDateFormat ( "yyMMdd");
-	Calendar time = Calendar.getInstance();
-	String nowTime = format1.format(time.getTime());
-	Date day1 = null;
-	Date day2 = null;
-	String screenDay = format3.format(time.getTime());
+	Calendar cal = Calendar.getInstance();
+	
+	String nowTime = format1.format(cal.getTime());
+	String screenDay = format3.format(cal.getTime());
 	
 	String path = request.getContextPath();
 	int branchSeq = Integer.parseInt(request.getParameter("branchSeq"));
@@ -785,7 +784,7 @@
 													<c:if test="${dto.seq_loc eq 1 }">
 														<li><a
 															href="<%=path %>/theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=1"
-															title="${dto.branch} 상세보기">${dto.branch }</a></li>
+															title="${dto.branch} 상세보기">${dteneno.branch }</a></li>
 													</c:if>
 												</c:forEach>
 
@@ -821,37 +820,7 @@
 															title="${dto.branch} 상세보기">${dto.branch }</a></li>
 													</c:if>
 												</c:forEach>
-												<!-- 
-												<li><a href="/theater?brchNo=4041" title="검단 상세보기">검단
-
-
-												</a></li>
-
-												<li><a href="/theater?brchNo=4062" title="송도 상세보기">송도
-
-
-												</a></li>
-
-												<li><a href="/theater?brchNo=4001" title="영종 상세보기">영종
-
-
-												</a></li>
-
-												<li><a href="/theater?brchNo=4051" title="인천논현 상세보기">인천논현
-
-
-												</a></li>
-
-												<li><a href="/theater?brchNo=4042" title="청라 상세보기">청라
-
-
-												</a></li>
-
-												<li><a href="/theater?brchNo=4043" title="청라지젤 상세보기">청라지젤
-
-
-												</a></li>
- -->
+												
 											</ul>
 										</div></li>
 
@@ -1008,13 +977,12 @@
 
 						<div class="tab-list fixed mb40 tab-layer">
 							<ul>
-								<li><a href="#tab01" title="극장정보 탭으로 이동"
+								<li class="on"><a href="#tab01" title="극장정보 탭으로 이동"
 									onclick="tabOn('01');">극장정보</a></li>
 								<li><a href="#tab02" title="상영시간표 탭으로 이동"
 									onclick="tabOn('02');">상영시간표</a></li>
 								<li><a href="#tab03" title="관람료 탭으로 이동"
 									onclick="tabOn('03');">관람료</a></li>
-
 							</ul>
 						</div>
 
@@ -1084,7 +1052,7 @@
 								</div>
 
 
-
+								<%-- Parking Part --%>
 								<h3 class="tit small mt30">주차</h3>
 
 								<div class="parking-info">
@@ -1093,7 +1061,7 @@
 
 									<c:set var="doneLoop" value="false" />
 									<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
-										<c:if test="${parkDTO.seq_pinfo eq 2 && not doneLoop }">
+										<c:if test="${parkDTO.seq_pinfo eq 1 && not doneLoop }">
 
 											<div class="parking-section">
 												<div class="icon-box">
@@ -1107,7 +1075,7 @@
 									</c:forEach>
 
 									<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
-										<c:if test="${parkDTO.seq_pinfo eq 2 }">
+										<c:if test="${parkDTO.seq_pinfo eq 1 }">
 											<li>${parkDTO.pInfo}</li>
 										</c:if>
 									</c:forEach>
@@ -1196,7 +1164,7 @@
 					<div class="info">
 						<p class="tit">${trafficDTO.traffic}</p>
 						<ul class="dot-list">
-							<c:set var="doneLoop" value="true" />
+				<c:set var="doneLoop" value="true" />
 			</c:if>
 		</c:forEach>
 
@@ -1207,6 +1175,7 @@
 		</c:forEach>
 		</ul>
 		<!-- .info -->
+		</div>
 	</div>
 	<!-- .trasportation-section -->
 
@@ -1227,17 +1196,17 @@
 		</c:if>
 	</c:forEach>
 
-	<c:forEach items="${trafficList}" var="trafficDTO" varStatus="status">
+	<c:forEach items="${trafficList}" var="trafficDTO">
 		<c:if test="${trafficDTO.seq_tpart eq 2}">
 			<li>${trafficDTO.root}</li>
 		</c:if>
 	</c:forEach>
 	</ul>
-	</div>
 	<!-- .info -->
 	</div>
+	</div>
 	<!-- .trasportation-section -->
-
+	</div>
 	<!-- 대중교통 정보가 없는 경우 -->
 
 	<!--// location-info -->
@@ -1425,9 +1394,7 @@
 		</ul>
 	</div>
 	</div>
-	</div>
-
-	</div>
+	
 	<!---------------------------------------tab02 -------------------------------------------->
 
 
@@ -1471,143 +1438,7 @@
 										</span>
 								</button>
 							</c:forEach>
-						<!-- 	
-							<button class="disabled" type="button" date-data="2020.07.22"
-								month="6" tabindex="-1">
-								<span class="ir">2020년 7월</span><em
-									style="pointer-events: none;">22<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">수</span><span
-									class="day-en" style="pointer-events: none; display: none">Wed</span>
-							</button>
-							<button class="on" type="button" date-data="2020.07.23" month="6">
-								<span class="ir">2020년 7월</span><em
-									style="pointer-events: none;">23<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">오늘</span><span
-									class="day-en" style="pointer-events: none; display: none">Thu</span>
-							</button>
-							<button class="" type="button" date-data="2020.07.24" month="6">
-								<span class="ir">2020년 7월</span><em
-									style="pointer-events: none;">24<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">내일</span><span
-									class="day-en" style="pointer-events: none; display: none">Fri</span>
-							</button>
-							<button class="sat" type="button" date-data="2020.07.25"
-								month="6">
-								<span class="ir">2020년 7월</span><em
-									style="pointer-events: none;">25<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">토</span><span
-									class="day-en" style="pointer-events: none; display: none">Sat</span>
-							</button>
-							<button class="holi" type="button" date-data="2020.07.26"
-								month="6">
-								<span class="ir">2020년 7월</span><em
-									style="pointer-events: none;">26<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">일</span><span
-									class="day-en" style="pointer-events: none; display: none">Sun</span>
-							</button>
-							<button class="disabled" type="button" date-data="2020.07.27"
-								month="6">
-								<span class="ir">2020년 7월</span><em
-									style="pointer-events: none;">27<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">월</span><span
-									class="day-en" style="pointer-events: none; display: none">Mon</span>
-							</button>
-							<button class="" type="button" date-data="2020.07.28" month="6">
-								<span class="ir">2020년 7월</span><em
-									style="pointer-events: none;">28<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">화</span><span
-									class="day-en" style="pointer-events: none; display: none">Tue</span>
-							</button>
-							<button class="" type="button" date-data="2020.07.29" month="6">
-								<span class="ir">2020년 7월</span><em
-									style="pointer-events: none;">29<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">수</span><span
-									class="day-en" style="pointer-events: none; display: none">Wed</span>
-							</button>
-							<button class="" type="button" date-data="2020.07.30" month="6">
-								<span class="ir">2020년 7월</span><em
-									style="pointer-events: none;">30<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">목</span><span
-									class="day-en" style="pointer-events: none; display: none">Thu</span>
-							</button>
-							<button class="" type="button" date-data="2020.07.31" month="6">
-								<span class="ir">2020년 7월</span><em
-									style="pointer-events: none;">31<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">금</span><span
-									class="day-en" style="pointer-events: none; display: none">Fri</span>
-							</button>
-							<button class="sat" type="button" date-data="2020.08.01"
-								month="7">
-								<span class="ir">2020년 8월</span><em
-									style="pointer-events: none;">1<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">토</span><span
-									class="day-en" style="pointer-events: none; display: none">Sat</span>
-							</button>
-							<button class="holi" type="button" date-data="2020.08.02"
-								month="7">
-								<span class="ir">2020년 8월</span><em
-									style="pointer-events: none;">2<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">일</span><span
-									class="day-en" style="pointer-events: none; display: none">Sun</span>
-							</button>
-							<button class="disabled" type="button" date-data="2020.08.03"
-								month="7">
-								<span class="ir">2020년 8월</span><em
-									style="pointer-events: none;">3<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">월</span><span
-									class="day-en" style="pointer-events: none; display: none">Mon</span>
-							</button>
-							<button class="" type="button" date-data="2020.08.04" month="7">
-								<span class="ir">2020년 8월</span><em
-									style="pointer-events: none;">4<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">화</span><span
-									class="day-en" style="pointer-events: none; display: none">Tue</span>
-							</button>
-							<button class="" type="button" date-data="2020.08.05" month="7">
-								<span class="ir">2020년 8월</span><em
-									style="pointer-events: none;">5<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">수</span><span
-									class="day-en" style="pointer-events: none; display: none">Wed</span>
-							</button>
-							<button class="" type="button" date-data="2020.08.06" month="7"
-								tabindex="-1">
-								<span class="ir">2020년 8월</span><em
-									style="pointer-events: none;">6<span
-									style="pointer-events: none;" class="ir">일</span></em><span
-									class="day-kr"
-									style="pointer-events: none; display: inline-block">목</span><span
-									class="day-en" style="pointer-events: none; display: none">Thu</span>
-							</button> -->
+						
 							
 						</div>
 					</div>
@@ -1666,7 +1497,7 @@
 					<div class="theater-type-box">
 					<div class="theater-type">
 						<p class="theater-name">${screenTheaterDTO.theater}</p>
-						<p class="chair">총 ${screenTheaterDTO.seat}석</p>
+						<p class="chair">총 ${screenTheaterDTO.seats} 석</p>
 					</div>
 					<div class="theater-time">
 						<div class="theater-type-area">2D</div>
@@ -1701,20 +1532,26 @@
 															<i class="iconset ico-off"></i>
 														</div>
 														<p class="time">${tableDTO.screen_time}</p>
-														<p class="chair">${tableDTO.seat }석</p>
+														<p class="chair">${tableDTO.seat}석</p>
 														<div class="play-time">
-															<p><%-- ${tableDTO.screen_time} --%>~
-															<fmt:parseDate var="endTime" value="${tableDTO.screen_time}" pattern="HH:mm"/> 
-															<%-- <c:set var="endTimeCal" value="${endTime + tableDTO.runTime}"></c:set> --%>
-															<fmt:formatDate var = "endTimeParse" value="${endTime}" pattern="HH:mm"/>
-															${endTimeParse}/
+															<p>
+															<c:set var="screen_time" value="${tableDTO.screen_time}"></c:set>
+															<c:set var="run_time" value="${tableDTO.runTime}"></c:set>
+															<!-- java 라이브러리 Date, Calendar 이용-->
+															<%
+																String screenTime = (String)pageContext.getAttribute("screen_time");
+																int runTime = (int)pageContext.getAttribute("run_time")+10;	//	런타임 + 광고 10분
+																Date day1 = null;
+																day1 = format2.parse(screenTime);
+																cal.setTime(day1);
+																cal.add(Calendar.MINUTE, runTime);
+																String endTime = format2.format(cal.getTime());
+															%>
+															${tableDTO.screen_time}~<%=endTime%>
 															
-															<!-- Calendar 객체로 계산해야할 듯..? -->
-															<%-- <c:set var="endTimeCal" value="${endTimeParse + tableDTO.parseRunTime}"/> --%>
-															${endTimeCal }
-															<%-- <fmt:parseDate var="endTime" value="${endTimeCal}" pattern="HHmm"/> /  17:01 --%>
 															</p>
-															<p>3회차</p>
+															<%-- 회차 계산 기능 추가..? --%>
+															<p>3회차</p>		
 														</div>
 													</a>
 												</div>
@@ -1888,9 +1725,21 @@
 
 	</div>
 
-	<!-- by 태호, 극장정보, 상영시간표, 관람료 탭 선택시 해당 <div> class On 효과    2020.07.21-->
+	<!-- by 태호, 극장정보, 상영시간표, 관람료 탭 선택시 해당 <div> class On 효과    2020.07.21
+		   by 태호, 극장정보, 상영시간표, 관람료 탭 선택시 해당 <li> 태그 class On 효과	   2020.07.26
+	-->
 	<script type="text/javascript">
 		function tabOn(tab) {
+			
+			var tab_list = document.querySelector('.tab-list.fixed.mb40.tab-layer').firstChild.nextSibling.firstChild.nextSibling;
+			var tab_list2 = tab_list.nextSibling.nextSibling;
+			var tab_list3 = tab_list2.nextSibling.nextSibling;
+			
+			
+			tab_list.classList.toggle('on', tab=='01');
+			tab_list2.classList.toggle('on', tab=='02');
+			tab_list3.classList.toggle('on', tab=='03');
+			
 			for (var i = 1; i <= 3; i++) {
 				var title = document.querySelector('#tab0' + i);
 				if (title.classList.contains('on')) {

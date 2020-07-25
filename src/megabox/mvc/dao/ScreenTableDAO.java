@@ -168,13 +168,13 @@ public class ScreenTableDAO {
 	public List<ScreenMovieDTO> ScreenTheaterList(int seqBranch, String calendarDate){
 
 		String sql = " select distinct SEQ_BRANCH, BRANCH, SEQ_THEATER, THEATER, SEQ_MOVIE " + 
-				" , MOVIE_NAME, to_char(SCREEN_TIME, 'yy.MM.dd') screenday, runtime " + 
+				" , MOVIE_NAME, to_char(SCREEN_TIME, 'yy.MM.dd') screenday, SEAT, RUNTIME " + 
 				" from screen_table " + 
 				" where seq_branch = ? and to_char(SCREEN_TIME, 'yyMMdd') = ?";
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ArrayList<ScreenMovieDTO> screenMovieList = new ArrayList<ScreenMovieDTO>();
+		ArrayList<ScreenMovieDTO> screenTheaterList = new ArrayList<ScreenMovieDTO>();
 		ScreenMovieDTO dto = null;
 		ResultSet rs = null;
 
@@ -197,9 +197,10 @@ public class ScreenTableDAO {
 				dto.setMovie_name(rs.getString("movie_name"));
 				dto.setScreenDay(rs.getString("screenday"));
 				dto.setRunTime(rs.getInt("runtime"));
+				dto.setSeats(rs.getInt("seat"));
 
 
-				screenMovieList.add(dto);				
+				screenTheaterList.add(dto);				
 			}
 
 		} catch (Exception e) {
@@ -210,7 +211,7 @@ public class ScreenTableDAO {
 			try {conn.close();} catch (SQLException e) {e.printStackTrace();}
 		} 
 
-		return screenMovieList;
+		return screenTheaterList;
 
 	}
 	

@@ -1,7 +1,5 @@
 package megabox.mvc.model;
 
-import java.sql.Timestamp;
-
 public class ScreenMovieDTO {
 	private int seq_branch;
 	private String branch;
@@ -12,8 +10,15 @@ public class ScreenMovieDTO {
 	private int seq_theater;
 	private String theater;
 	private int seat;
+	private int seats;	// seat 연동 이상해서 screenTheaterList에 따로 넣음
 	
 	
+	public int getSeats() {
+		return seats;
+	}
+	public void setSeats(int seats) {
+		this.seats = seats;
+	}
 	public int getSeat() {
 		return seat;
 	}
