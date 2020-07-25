@@ -38,9 +38,7 @@ public class TheaterInfoDAO {
 			try {
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, seqBranch);
-				
-				System.out.println(seqBranch);
-				
+								
 				rs = pstmt.executeQuery();
 				
 				while (rs.next()) {
@@ -54,7 +52,6 @@ public class TheaterInfoDAO {
 					dto.setSpecific(rs.getString("specific"));
 					dto.setAddress_form(rs.getString("address_form"));
 					dto.setAddress(rs.getString("address"));
-					System.out.println(dto.getTitle());
 					titleList.add(dto);
 				
 				}
@@ -123,7 +120,6 @@ public class TheaterInfoDAO {
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, seqBranch);
 				
-				System.out.println(seqBranch);
 				
 				rs = pstmt.executeQuery();
 				
@@ -134,8 +130,6 @@ public class TheaterInfoDAO {
 					dto.setBranch(rs.getString("branch"));
 					dto.setIconFacility(rs.getString("iconfacility"));
 					dto.setmFacility(rs.getString("mfacility"));
-
-					System.out.println(dto.getIconFacility());
 					facilityList.add(dto);
 				
 				}
@@ -165,9 +159,7 @@ public class TheaterInfoDAO {
 			try {
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, seqBranch);
-				
-				System.out.println(seqBranch);
-				
+								
 				rs = pstmt.executeQuery();
 				
 				while (rs.next()) {
@@ -177,8 +169,6 @@ public class TheaterInfoDAO {
 					dto.setBranch(rs.getString("branch"));
 					dto.setFloor(rs.getString("floor"));
 					dto.setInformation(rs.getString("information"));
-
-					System.out.println(dto.getIconFacility());
 					floorList.add(dto);
 				
 				}
@@ -208,7 +198,6 @@ public class TheaterInfoDAO {
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, seqBranch);
 				
-				System.out.println(seqBranch);
 				
 				rs = pstmt.executeQuery();
 				
@@ -221,8 +210,6 @@ public class TheaterInfoDAO {
 					dto.setpPart(rs.getString("ppart"));
 					dto.setpInfo(rs.getString("pinfo"));
 					dto.setSeq_pinfo(rs.getInt("seq_pinfo"));
-
-					System.out.println(dto.getIconFacility());
 					parkList.add(dto);
 				
 				}
@@ -252,7 +239,6 @@ public class TheaterInfoDAO {
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setInt(1, seqBranch);
 				
-				System.out.println(seqBranch);
 				
 				rs = pstmt.executeQuery();
 				
@@ -266,7 +252,6 @@ public class TheaterInfoDAO {
 					dto.setTraffic(rs.getString("traffic"));
 					dto.setRoot(rs.getString("root"));
 
-					System.out.println(dto.getIconFacility());
 					TrafficList.add(dto);
 				
 				}
@@ -303,7 +288,6 @@ public class TheaterInfoDAO {
 				pstmt.setInt(2, (pageNum-1)*5+1);
 				pstmt.setInt(3,  (pageNum)*5+1);
 				
-				System.out.println(seqBranch);
 				
 				rs = pstmt.executeQuery();
 				
@@ -316,7 +300,6 @@ public class TheaterInfoDAO {
 					dto.setnContent(rs.getString("ncontent"));
 					dto.setnRegidate(rs.getString("nregidate"));
 
-					System.out.println(dto.getIconFacility());
 					theaterNoticeList.add(dto);
 				
 				}

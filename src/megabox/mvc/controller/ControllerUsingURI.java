@@ -68,7 +68,6 @@ public class ControllerUsingURI extends HttpServlet{
 		if(  requestURI.indexOf( request.getContextPath() ) == 0) {
 			requestURI = requestURI.substring(request.getContextPath().length());
 		}
-		//System.out.println("> 요청 URI : " + requestURI );
 // list.do -> GetMessageListHandler
 		CommandHandler handler = commandHandlerMap.get(requestURI);
 		String viewPage = null;

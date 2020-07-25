@@ -13,7 +13,7 @@ public class TheaterListHandler  implements CommandHandler{
 
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-System.out.println("TheaterListHandler.process() 호출됨.");
+		System.out.println("TheaterListHandler.process() 호출됨.");
 		
 		try {
 

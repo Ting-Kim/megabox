@@ -10,10 +10,10 @@ import megabox.mvc.model.ScreenTableDTO;
 
 
 public class ScreenTableService {
-	public List<ScreenTableDTO> screenTableSelect(int seqBranch){
+	public List<ScreenTableDTO> screenTableSelect(int seqBranch, String calendarDate){
 		ScreenTableDAO dao = ScreenTableDAO.getInstance();
 		try{
-			List<ScreenTableDTO> tableList = dao.ScreenTableList(seqBranch);
+			List<ScreenTableDTO> tableList = dao.ScreenTableList(seqBranch, calendarDate);
 			return tableList;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
@@ -41,4 +41,14 @@ public class ScreenTableService {
 			throw new RuntimeException(e);
 		}
 	} // screenMovieSelect
+	
+	public List<ScreenMovieDTO> screenTheaterSelect(int seqBranch, String calendarDate){
+		ScreenTableDAO dao = ScreenTableDAO.getInstance();
+		try{
+			List<ScreenMovieDTO> screenTheaterList = dao.ScreenTheaterList(seqBranch, calendarDate);
+			return screenTheaterList;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	} // screenTheaterSelect
 }	

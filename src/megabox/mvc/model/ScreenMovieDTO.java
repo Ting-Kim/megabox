@@ -9,6 +9,29 @@ public class ScreenMovieDTO {
 	private String movie_name;
 	private String screenDay;
 	private int runTime;
+	private int seq_theater;
+	private String theater;
+	private int seat;
+	
+	
+	public int getSeat() {
+		return seat;
+	}
+	public void setSeat(int seat) {
+		this.seat = seat;
+	}
+	public int getSeq_theater() {
+		return seq_theater;
+	}
+	public void setSeq_theater(int seq_theater) {
+		this.seq_theater = seq_theater;
+	}
+	public String getTheater() {
+		return theater;
+	}
+	public void setTheater(String theater) {
+		this.theater = theater;
+	}
 	public int getSeq_branch() {
 		return seq_branch;
 	}

@@ -32,9 +32,10 @@ public class TheaterInfoHandler implements CommandHandler{
 		List<TheaterInfoDTO> parkList = infoService.parkSelect(seqBranch); 
 		List<TheaterInfoDTO> trafficSelect = infoService.trafficSelect(seqBranch); 
 		List<TheaterInfoDTO> theaterNoticeSelect = infoService.theaterNoticeSelect(seqBranch, pageNum);
-		List<ScreenTableDTO> screenTableList = screenTableService.screenTableSelect(seqBranch);
+		List<ScreenTableDTO> screenTableList = screenTableService.screenTableSelect(seqBranch, calendarDate);
 		List<CalendarDTO> calendarList = screenTableService.calendarSelect();
 		List<ScreenMovieDTO> screenMovieList = screenTableService.screenMovieSelect(seqBranch, calendarDate);
+		List<ScreenMovieDTO> screenTheaterList = screenTableService.screenTheaterSelect(seqBranch, calendarDate);
 
 		request.setAttribute("titleList", titleList);
 		request.setAttribute("TheaterList", TheaterList);
@@ -44,7 +45,9 @@ public class TheaterInfoHandler implements CommandHandler{
 		request.setAttribute("trafficList", trafficSelect);
 		request.setAttribute("theaterNoticeList", theaterNoticeSelect);
 		request.setAttribute("calendarList", calendarList);
+		request.setAttribute("screenTableList", screenTableList);
 		request.setAttribute("screenMovieList", screenMovieList);
+		request.setAttribute("screenTheaterList", screenTheaterList);
 		
 		return "/theater/theaterInfo";
 		

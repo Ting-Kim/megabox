@@ -63,11 +63,11 @@ public class ScreenTableDAO {
 		return calendarList;
 	}
 
-	public List<ScreenTableDTO> ScreenTableList(int seqBranch){
+	public List<ScreenTableDTO> ScreenTableList(int seqBranch, String calendarDate){
 
 		String sql = " select * "
 				+ " from screen_table "
-				+ " where seq_branch = ? ";
+				+ " where seq_branch = ? and to_char(SCREEN_TIME, 'yyMMdd') = ? ";
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -80,6 +80,7 @@ public class ScreenTableDAO {
 			conn = ConnectionProvider.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, seqBranch);
+			pstmt.setString(2, calendarDate);
 			rs = pstmt.executeQuery();
 			SimpleDateFormat sdfd = new SimpleDateFormat("yyyy.MM.dd");
 			SimpleDateFormat sdft = new SimpleDateFormat("HH:mm");
@@ -99,7 +100,7 @@ public class ScreenTableDAO {
 				dto.setScreen_time(sdft.format(rs.getTimestamp("screen_time")));
 				dto.setSeat(rs.getInt("seat"));
 				dto.setRunTime(rs.getInt("runtime"));
-
+				dto.setParseRunTime(rs.getInt("runtime")*60*1000);	//	 분을 밀리초로 변환..
 
 				tableList.add(dto);				
 			}
@@ -121,7 +122,7 @@ public class ScreenTableDAO {
 		String sql = " select distinct SEQ_BRANCH, BRANCH, SEQ_MOVIE " + 
 				"  , MOVIE_NAME, to_char(SCREEN_TIME, 'yy/MM/dd') screenday, runtime " + 
 				"from screen_table "
-				+ " where seq_branch = ? and to_char(SCREEN_TIME, 'yy.MM.dd') = ? ";
+				+ " where seq_branch = ? and to_char(SCREEN_TIME, 'yyMMdd') = ? ";
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -129,7 +130,7 @@ public class ScreenTableDAO {
 		ScreenMovieDTO dto = null;
 		ResultSet rs = null;
 
-
+		System.out.println(calendarDate);
 		try {
 			conn = ConnectionProvider.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -162,4 +163,57 @@ public class ScreenTableDAO {
 		return screenMovieList;
 
 	}
+	
+	// 영화는 jsp에서 c:if 로..
+	public List<ScreenMovieDTO> ScreenTheaterList(int seqBranch, String calendarDate){
+
+		String sql = " select distinct SEQ_BRANCH, BRANCH, SEQ_THEATER, THEATER, SEQ_MOVIE " + 
+				" , MOVIE_NAME, to_char(SCREEN_TIME, 'yy.MM.dd') screenday, runtime " + 
+				" from screen_table " + 
+				" where seq_branch = ? and to_char(SCREEN_TIME, 'yyMMdd') = ?";
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ArrayList<ScreenMovieDTO> screenMovieList = new ArrayList<ScreenMovieDTO>();
+		ScreenMovieDTO dto = null;
+		ResultSet rs = null;
+
+
+		try {
+			conn = ConnectionProvider.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, seqBranch);
+			pstmt.setString(2, calendarDate);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				dto = new ScreenMovieDTO();
+
+				dto.setSeq_branch(seqBranch);
+				dto.setBranch(rs.getString("branch"));
+				dto.setSeq_theater(rs.getInt("seq_theater"));
+				dto.setTheater(rs.getString("theater"));
+				dto.setSeq_movie(rs.getInt("seq_movie"));
+				dto.setMovie_name(rs.getString("movie_name"));
+				dto.setScreenDay(rs.getString("screenday"));
+				dto.setRunTime(rs.getInt("runtime"));
+
+
+				screenMovieList.add(dto);				
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {rs.close();} catch (SQLException e) {e.printStackTrace();}
+			try {pstmt.close();} catch (SQLException e) {e.printStackTrace();}
+			try {conn.close();} catch (SQLException e) {e.printStackTrace();}
+		} 
+
+		return screenMovieList;
+
+	}
+	
+	
+	
 }

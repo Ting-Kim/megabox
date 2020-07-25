@@ -1,6 +1,7 @@
 package megabox.mvc.model;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 public class ScreenTableDTO {
 	private int seq_branch;
@@ -15,9 +16,16 @@ public class ScreenTableDTO {
 	private String screen_time;
 	private int seat;
 	private int runTime;
+	private int parseRunTime;
 	
 	
 	
+	public int getParseRunTime() {
+		return parseRunTime;
+	}
+	public void setParseRunTime(int parseRunTime) {
+		this.parseRunTime = parseRunTime;
+	}
 	public String getScreen_date() {
 		return screen_date;
 	}
