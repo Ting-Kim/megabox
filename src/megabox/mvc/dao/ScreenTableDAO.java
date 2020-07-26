@@ -28,7 +28,8 @@ public class ScreenTableDAO {
 
 	public List<CalendarDTO> CalendarList(){
 
-		String sql = " select seq_calendar, calendar, to_char(calendar, 'dy') weekday from calendar ";
+		String sql = " select rownum, seq_calendar, calendar, to_char(calendar, 'dy') weekday from calendar"
+				+ " where  calendar >= sysdate-1 and rownum < 15";
 
 		Connection conn = null;
 		Statement stmt = null;

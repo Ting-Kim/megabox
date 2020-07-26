@@ -1419,15 +1419,68 @@
 							style="position: relative; width: 2100px; border: none; left: -70px;">
 							
 							<!-- button class, tabindex 수정 필요..... -->
-							<c:forEach items="${calendarList}" var="dto">
-								<button class="disabled" type="button" date-data="${dto.calendar}"
-								month="6" tabindex="-1">
-									<span class="ir">${fn:substring(dto.calendar, 0, 4)}년 ${fn:substring(dto.calendar, 6, 7)}월</span><em
-										style="pointer-events: none;">${fn:substring(dto.calendar, 8,10)}<span
-										style="pointer-events: none;" class="ir">일</span></em><span
-										class="day-kr"
-										style="pointer-events: none; display: inline-block">${dto.weekday}</span><span
-										class="day-en" style="pointer-events: none; display: none">
+							<c:forEach items="${calendarList}" var="dto" varStatus="status">
+								<button class='<c:if test="${dto.weekday eq '토'}">sat</c:if>
+													<c:if test="${dto.weekday eq '일'}">holi</c:if>
+													<c:if test="${status.index eq 1}">  on</c:if>' 
+								 type="button" date-data="${dto.calendar}"
+								month="${fn:substring(dto.calendar, 6, 7)-1}" 
+								tabindex="<c:if test='${status.first || status.end}'>-1</c:if>" 
+								onclick="btn_onOff(this)">
+									<span class="ir">${fn:substring(dto.calendar, 0, 4)}년 ${fn:substring(dto.calendar, 6, 7)}월</span>
+									<em	style="pointer-events: none;">${fn:substring(dto.calendar, 8,10)}<span
+										style="pointer-events: none;" class="ir">일</span></em>
+										<span class="day-kr"	style="pointer-events: none; display: inline-block">
+							
+							<!-- by태호, 상영시간표에서 날짜 선택할 때 Class에 on, 토, 일 입력    2020.07.26-->													
+							<script>
+								function btn_onOff(obj){
+									$('.wrap').children('.on').removeClass('on');
+									$(obj).addClass('on');
+								}
+								
+							<!-- todo..! -->
+								//$(function(){
+								//	$('.wrap').children('.on').removeClass('on');
+								//	var children = $('.theater-list').val();
+								//	if (typeof children == "undefined") {
+								//		$(obj).addClass('disabled');
+								//	}
+								//})
+							</script>
+											
+											
+							<c:set value="${dto.calendar}" var="calendarDate"/>
+							<%
+								String calendarString = (String)pageContext.getAttribute("calendarDate");
+								Date calendarDateParse = format1.parse(calendarString);
+								Date todayParse = new Date();
+								Date tomarrowParse = null;
+								cal.setTime(todayParse);
+								cal.add(Calendar.DATE, +1);
+								tomarrowParse = cal.getTime();
+								String calendarDate = format1.format(calendarDateParse);
+								String today = format1.format(todayParse);
+								String tomarrow = format1.format(tomarrowParse);
+							%>
+
+											<% if(calendarDate.equals(today)){
+											%>
+												오늘
+											<% 
+											} else if(calendarDate.equals(tomarrow)){
+											%>
+												내일
+											<%
+											} else{
+											%>
+												${dto.weekday}
+											<%
+											}
+											%>
+											
+										</span>
+										<span class="day-en" style="pointer-events: none; display: none">
 										<c:if test="${dto.weekday} eq '수'">Wed</c:if>
 										<c:if test="${dto.weekday} eq '목'">Thu</c:if>
 										<c:if test="${dto.weekday} eq '금'">Fri</c:if>
@@ -1481,7 +1534,7 @@
 	
 			<!-- By 태호, 선택한 지점과 해당 날짜에 상영하는 영화 종류만큼 반복    2020.07.23-->
 			<c:forEach items="${screenMovieList}" var="screenMovieDTO">
-				<div class="theater-list">
+				<div class="theater-list" value='1'>
 			
 					<div class="theater-tit">
 						<p class="movie-grade age-15"></p>
@@ -1726,8 +1779,7 @@
 	</div>
 
 	<!-- by 태호, 극장정보, 상영시간표, 관람료 탭 선택시 해당 <div> class On 효과    2020.07.21
-		   by 태호, 극장정보, 상영시간표, 관람료 탭 선택시 해당 <li> 태그 class On 효과	   2020.07.26
-	-->
+		   by 태호, 극장정보, 상영시간표, 관람료 탭 선택시 해당 <li> 태그 class On 효과	   2020.07.26 -->
 	<script type="text/javascript">
 		function tabOn(tab) {
 			

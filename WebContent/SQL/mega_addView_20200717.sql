@@ -16,3 +16,6 @@ SELECT * FROM BOARD
 WHERE BOARDGROUP > (SELECT MAX(BOARDGROUP) FROM BOARD) - ?
         AND BOARDGROUP <= (SELECT MAX(BOARDGROUP) FROM BOARD) - ? 
 ORDER BY BOARDGROUP DESC, BOARDSEQUENCE ASC
+
+select rownum, seq_calendar, calendar, to_char(calendar, 'dy') weekday from calendar
+ where  calendar >= sysdate and rownum < 15;
