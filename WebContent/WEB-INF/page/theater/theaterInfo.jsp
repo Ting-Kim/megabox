@@ -1396,6 +1396,21 @@
 	</div>
 	
 	<!---------------------------------------tab02 -------------------------------------------->
+	<% 
+		Date todayParse = new Date();
+		cal.setTime(todayParse);
+		String today = format1.format(todayParse);
+		String nowMonth = today.substring(0,7);
+		Calendar cal2 = Calendar.getInstance();
+		Calendar cal3 = Calendar.getInstance();
+		cal2.setTime(todayParse);
+		cal3.setTime(todayParse);
+		cal3.add(Calendar.MONTH, 1);
+		Date whatNextMonth = cal3.getTime();
+		String whatMonth = format1.format(whatNextMonth);
+		Date whatDayParse = null; 
+		String whatDay = "";
+	%>
 
 
 	<div id="tab02" class="tab-cont">
@@ -1411,8 +1426,37 @@
 				</button>
 				<div class="date-list">
 					<div class="year-area">
-						<div class="year" style="left: 30px; z-index: 1; opacity: 1;">2020.07</div>
-						<div class="year" style="left: 660px; z-index: 1; opacity: 1;">2020.08</div>
+						<div class="year" style="left: 30px; z-index: 1; opacity: 1;">
+						<!-- 2020.07 -->
+						<%=nowMonth %></div>
+						<div class="year" style="left:
+						<% 
+							int i = 0;
+							do{
+								whatDayParse = cal2.getTime();
+								cal2.add(Calendar.DATE, 1);
+								whatDay = format1.format(whatDayParse);
+								i++;
+							}while(!whatDay.substring(5, 7).equalsIgnoreCase(whatMonth.substring(5,7)));
+							if(i >= 13){
+						%>
+						<%=30+13*70%>px; z-index: 1; opacity: 1;">						
+						<%
+							} else{	
+						%>
+							<%=30+(i-1)*70%>px; z-index: 1; opacity: 1;">		
+						<%
+							}
+						%>
+						<!-- 2020.08 -->
+						<%=whatMonth.substring(0, 7)%>
+						</div>
+						<%
+								
+						%>
+						<%
+							
+						%>
 					</div>
 					<div class="date-area">
 						<div class="wrap"
@@ -1432,14 +1476,30 @@
 										style="pointer-events: none;" class="ir">일</span></em>
 										<span class="day-kr"	style="pointer-events: none; display: inline-block">
 							
-							<!-- by태호, 상영시간표에서 날짜 선택할 때 Class에 on, 토, 일 입력    2020.07.26-->													
+							<!-- by태호, 상영시간표에서 날짜 선택할 때 Class에 on, 토, 일 입력    2020.07.26-->				
+							<c:set value="${dto.calendar}" var="calendarDate"/>
+							<%
+								String calendarString = (String)pageContext.getAttribute("calendarDate");
+								Date calendarDateParse = format1.parse(calendarString);
+								Date tomarrowParse = null;
+								cal.add(Calendar.DATE, +1);
+								tomarrowParse = cal.getTime();
+								String calendarDate = format1.format(calendarDateParse);
+								String tomarrow = format1.format(tomarrowParse);
+								String timeTableCalendarDate = format3.format(calendarDateParse);
+							%>
 							<script>
 								function btn_onOff(obj){
 									$('.wrap').children('.on').removeClass('on');
 									$(obj).addClass('on');
+									
+									var calendarSplit = $(obj).attr('date-data').split('.');		//	2020.07.27
+									var calendar = calendarSplit[0]+calendarSplit[1]+calendarSplit[2];
+									
+									window.location.href='<%=path%>/theater/theaterTimeTable.ajax?calendarDate='+calendar;
 								}
 								
-							<!-- todo..! -->
+								
 								//$(function(){
 								//	$('.wrap').children('.on').removeClass('on');
 								//	var children = $('.theater-list').val();
@@ -1447,22 +1507,10 @@
 								//		$(obj).addClass('disabled');
 								//	}
 								//})
+								
 							</script>
 											
 											
-							<c:set value="${dto.calendar}" var="calendarDate"/>
-							<%
-								String calendarString = (String)pageContext.getAttribute("calendarDate");
-								Date calendarDateParse = format1.parse(calendarString);
-								Date todayParse = new Date();
-								Date tomarrowParse = null;
-								cal.setTime(todayParse);
-								cal.add(Calendar.DATE, +1);
-								tomarrowParse = cal.getTime();
-								String calendarDate = format1.format(calendarDateParse);
-								String today = format1.format(todayParse);
-								String tomarrow = format1.format(tomarrowParse);
-							%>
 
 											<% if(calendarDate.equals(today)){
 											%>
@@ -1490,6 +1538,12 @@
 										<c:if test="${dto.weekday} eq '화'">Tue</c:if>
 										</span>
 								</button>
+								
+								<c:if test="${fn:substring(dto.calendar, 6, 7) }">
+									<script>
+										
+									</script>
+								</c:if>
 							</c:forEach>
 						
 							
@@ -1533,6 +1587,8 @@
 			</div>
 	
 			<!-- By 태호, 선택한 지점과 해당 날짜에 상영하는 영화 종류만큼 반복    2020.07.23-->
+			
+			
 			<c:forEach items="${screenMovieList}" var="screenMovieDTO">
 				<div class="theater-list" value='1'>
 			
@@ -1625,6 +1681,22 @@
 		</div>
 			</c:forEach>
 			<!-- c:forEach screenMovieList -->
+			
+		<script type="text/javascript">
+			$(function(){
+				var ajax = $.ajax({
+					type:"GET",
+			//		url:"", 	필요? 버튼 onclick에 준 window.location.href('')랑 무슨차이?
+					dataType: 'json',
+					async: true,
+					data:{"calendar":"test"}	//	파라미터
+				})	
+			})
+			
+		
+		</script>
+			
+			
 		</div>
 		<div class="box-border v1 mt30">
 			<li>지연입장에 의한 관람불편을 최소화하고자 본 영화는 약 10분 후 시작됩니다.</li>

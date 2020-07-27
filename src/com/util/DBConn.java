@@ -10,7 +10,7 @@ public class DBConn {
 	
 	public static Connection getConnection() {
 		if (connection == null) {
-			String url = "jdbc:oracle:thin:@110.12.212.241:1521:xe";
+			String url = "jdbc:oracle:thin:@121.124.37.182:1521:xe";
 			String user = "megabox", password = "1234";
 //			String url = "jdbc:oracle:thin:@localhost:1521:xe"; // Type 4
 //			String user = "scott";

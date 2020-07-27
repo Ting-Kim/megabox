@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class test {
 	public static void main(String[] args) {
+		/*
 		SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
 		Date test = null;
 		
@@ -25,7 +26,9 @@ public class test {
 		
 		
 		System.out.println(today);
-		
+		*/
+		int a = (Integer) null;
+		System.out.println(a);
 		
 	}
 	
