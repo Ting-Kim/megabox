@@ -1,26 +1,19 @@
-
-
-
-
-
-
-
-
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
 <!doctype html>
 <!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
 <!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
 
-<!-- Mirrored from www.megabox.co.kr/theater?brchNo=1572 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jul 2020 06:35:58 GMT -->
+<!-- Mirrored from www.megabox.co.kr/theater/list by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jul 2020 06:34:33 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-	<link rel="shortcut icon" href="static/pc/images/favicon.ico" />
+	<link rel="shortcut icon" href="../static/pc/images/favicon.ico" />
 
     
 	
@@ -28,9 +21,9 @@
 
 
 
-		<title>(마곡)극장정보 | 라이프씨어터, 메가박스</title>
-		<meta property="name"			id="metaTagTitle"	content="극장정보 &lt; 극장"/>
-		<meta property="description"	id="metaTagDtls"	content="반갑습니다. 메가박스 (마곡)점 입니다."/>
+		<title>전체극장 | 라이프씨어터, 메가박스</title>
+		<meta property="name"			id="metaTagTitle"	content="전체극장"/>
+		<meta property="description"	id="metaTagDtls"	content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남과 소통의 즐거움이 가득한 공간 메가박스 입니다. "/>
 		<meta property="keywords"		id="metaTagKeyword"	content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox"/>
 
 		<meta property="fb:app_id" 		id="fbAppId" 	content="546913502790694"/>
@@ -38,25 +31,25 @@
 
 		<meta property="og:site_name" 	id="fbSiteName"	content="메가박스"/>
 		<meta property="og:type" 		id="fbType"		content="movie"/>
-		<meta property="og:url" 		id="fbUrl"		content="theatera83c.html?brchNo=1572" />
-		<meta property="og:title" 		id="fbTitle"	content="극장정보 &lt; 극장" />
-		<meta property="og:description"	id="fbDtls"		content="반갑습니다. 메가박스 (마곡)점 입니다."/>
-		<meta property="og:image" 		id="fbImg"		content="../img.megabox.co.kr/SharedImg/metaTag/2020/02/04/gFfTzMwwiCxhBwcUV5TRGMFX9Cmoj64W.jpg" />
+		<meta property="og:url" 		id="fbUrl"		content="list.html" />
+		<meta property="og:title" 		id="fbTitle"	content="전체극장" />
+		<meta property="og:description"	id="fbDtls"		content="삶의 의미와 즐거움을 소통하는 공간, 함께 더 행복한 가치있는 콘텐츠를 추구하는 만남과 소통의 즐거움이 가득한 공간 메가박스 입니다. "/>
+		<meta property="og:image" 		id="fbImg"		content="../../img.megabox.co.kr/SharedImg/metaTag/2020/02/04/gFfTzMwwiCxhBwcUV5TRGMFX9Cmoj64W.jpg" />
 		
 
 
 	
 	
      	
-     		<link rel="stylesheet" href="static/pc/dist/megabox.min.css" media="all" />
+     		<link rel="stylesheet" href="../static/pc/dist/megabox.min.css" media="all" />
      		<!-- Global site tag (gtag.js) - Google Analytics -->
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-30006739-3"></script>
 			<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-30006739-3');</script>
-		    <script src="static/pc/dist/megabox.api.min.js"></script>
-			<script src="static/mb/js/lozad.min.js"></script>
-			<script src="js/common/dist/megabox.common.min.js"></script>
-     		<script src="js/netfunnel/dist/megabox.netfunnel.min.js"></script>
-			<script src="../cast.imp.joins.com/persona.js" async></script>
+		    <script src="../static/pc/dist/megabox.api.min.js"></script>
+			<script src="../static/mb/js/lozad.min.js"></script>
+			<script src="../js/common/dist/megabox.common.min.js"></script>
+     		<script src="../js/netfunnel/dist/megabox.netfunnel.min.js"></script>
+			<script src="../../cast.imp.joins.com/persona.js" async></script>
 		
 		
 	
@@ -112,8 +105,8 @@
         
 <!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script> -->
-<script src="static/mb/js/hmac-sha256.js"></script>
-<script src="static/mb/js/enc-base64-min.js"></script>
+<script src="../static/mb/js/hmac-sha256.js"></script>
+<script src="../static/mb/js/enc-base64-min.js"></script>
 <script type="text/javascript">
 /*전역변수
 아이디
@@ -1013,7 +1006,7 @@ $(function(){
 	                    } else if(loginPopupCallScn == "MySbscDtlsL"){
 	                    	$('.before').hide();
 	            			$('.after').show();
-	            			location.href = 'index.html?currPage=1&amp;searchText=';
+	            			location.href = '../index.html?currPage=1&amp;searchText=';
 	                    }
 	                }
 	                else {
@@ -1108,7 +1101,7 @@ function fn_viewLoginPopup(viewId,deviceType,bokdLoginAt,bokdLoginParam,reloadYn
   	//로그인 폼 호출시 광고영역 노출
     if( $("#Rw6jtk0hQTuOBSzFbvGGlw").html() == "" ){
 
-    	$("#Rw6jtk0hQTuOBSzFbvGGlw").append('<a href="" target="_blank"><img id="pageBannerRnbImage" src="static/pc/images/common/bg/bg-noimage-main.png" /></a>');
+    	$("#Rw6jtk0hQTuOBSzFbvGGlw").append('<a href="" target="_blank"><img id="pageBannerRnbImage" src="../static/pc/images/common/bg/bg-noimage-main.png" /></a>');
 
     	var header ={"typ": "JWT","alg": "HS256"}
         var data = {
@@ -1629,16 +1622,16 @@ $(function(){
 										<button id="btnLogin" type="button" class="button purple large btn-login">로그인<!--로그인--></button>
 
 										<div class="link">
-											<a href="user-find.html" title="ID/PW 찾기 선택">ID/PW 찾기<!--ID/PW 찾기--></a>
-											<a href="join.html" title="회원가입 선택">회원가입<!--회원가입--></a>
-											<a href="on/oh/ohg/MbLogin/viewNonMbLogin.html" title="비회원 예매확인 선택">비회원 예매확인<!--비회원 예매확인--></a>
+											<a href="../user-find.html" title="ID/PW 찾기 선택">ID/PW 찾기<!--ID/PW 찾기--></a>
+											<a href="../join.html" title="회원가입 선택">회원가입<!--회원가입--></a>
+											<a href="../on/oh/ohg/MbLogin/viewNonMbLogin.html" title="비회원 예매확인 선택">비회원 예매확인<!--비회원 예매확인--></a>
 										</div>
 
 										<div class="sns-login">
-											<a href="javaScript:void(0)" lnkgTy="FACEBOOK" title="페이스북으로 로그인 선택"><img src="static/pc/images/member/ico-facebook.png"  alt="페이스북"><!--페이스북--> 페이스북으로 로그인<!--페이스북으로 로그인--></a>
-											<a href="javaScript:void(0)" lnkgTy="NAVER"    title="네이버로 로그인 선택"><img src="static/pc/images/member/ico-naver.png"     alt="네이버"><!--네이버-->   네이버로 로그인<!--네이버로 로그인--></a>
-											<a href="javaScript:void(0)" lnkgTy="KAKAO"    title="카카오톡으로 로그인 선택" ><img src="static/pc/images/member/ico-kakao.png"    alt="카카오톡"><!--카카오톡--> 카카오톡으로 로그인<!--카카오톡으로 로그인--></a>
-											<a href="javaScript:void(0)" lnkgTy="PAYCO"    title="페이코로 로그인 선택"><img src="static/pc/images/member/ico-payco.png"     alt="페이코"><!--페이코-->   페이코로 로그인<!--페이코로 로그인--></a>
+											<a href="javaScript:void(0)" lnkgTy="FACEBOOK" title="페이스북으로 로그인 선택"><img src="../static/pc/images/member/ico-facebook.png"  alt="페이스북"><!--페이스북--> 페이스북으로 로그인<!--페이스북으로 로그인--></a>
+											<a href="javaScript:void(0)" lnkgTy="NAVER"    title="네이버로 로그인 선택"><img src="../static/pc/images/member/ico-naver.png"     alt="네이버"><!--네이버-->   네이버로 로그인<!--네이버로 로그인--></a>
+											<a href="javaScript:void(0)" lnkgTy="KAKAO"    title="카카오톡으로 로그인 선택" ><img src="../static/pc/images/member/ico-kakao.png"    alt="카카오톡"><!--카카오톡--> 카카오톡으로 로그인<!--카카오톡으로 로그인--></a>
+											<a href="javaScript:void(0)" lnkgTy="PAYCO"    title="페이코로 로그인 선택"><img src="../static/pc/images/member/ico-payco.png"     alt="페이코"><!--페이코-->   페이코로 로그인<!--페이코로 로그인--></a>
 										</div>
 									</div>
 								</div>
@@ -1875,7 +1868,7 @@ $(function(){
 
 <!-- header -->
 <header id="header" >
-    <h1 class="ci"><a href="index.html" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a></h1>
+    <h1 class="ci"><a href="../index.html" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a></h1>
 
 	<!-- 브라우저 다운로드 -->
     
@@ -1904,7 +1897,7 @@ $(function(){
 		<div class="dimd"></div>
 		<div class="wrap">
 			<p class="tit">
-				<img src="static/pc/images/ie/txt-update.png" alt="megabox 홈페이지는 internet explrer10이상에서 최적화된 서비스 이용이 가능합니다. ie9 이하에서는 예매가 정상적으로 진행되지 않을 수 있으니, 브라우저를 업그레이드하시거나 다른 예매수단을 이용해 주세요!" />
+				<img src="../static/pc/images/ie/txt-update.png" alt="megabox 홈페이지는 internet explrer10이상에서 최적화된 서비스 이용이 가능합니다. ie9 이하에서는 예매가 정상적으로 진행되지 않을 수 있으니, 브라우저를 업그레이드하시거나 다른 예매수단을 이용해 주세요!" />
 			</p>
 
 			<div class="box">
@@ -1913,13 +1906,13 @@ $(function(){
 
 					<div class="link">
 						<a href="https://www.microsoft.com/ko-kr/download/internet-explorer.aspx" title="internet explorer 새 버전 다운로드" target="_blank">
-							<img src="static/pc/images/ie/btn-ie.png" alt="internet explorer 새 버전 다운로드" />
+							<img src="../static/pc/images/ie/btn-ie.png" alt="internet explorer 새 버전 다운로드" />
 						</a>
 					</div>
 
 					<div class="link">
 						<a href="http://www.google.com/chrome?hl=ko" title="chrome 다운로드" target="_blank">
-							<img src="static/pc/images/ie/btn-chrome.png" alt="chrome 다운로드">
+							<img src="../static/pc/images/ie/btn-chrome.png" alt="chrome 다운로드">
 						</a>
 					</div>
 				</div>
@@ -1929,13 +1922,13 @@ $(function(){
 
 					<div class="link">
 						<a href="https://itunes.apple.com/us/app/megabox/id894443858?l=ko&amp;ls=1&amp;mt=8" title="available on the app store" target="_blank">
-							<img  src="static/pc/images/ie/btn-appstore.png" alt="available on the app store">
+							<img  src="../static/pc/images/ie/btn-appstore.png" alt="available on the app store">
 						</a>
 					</div>
 
 					<div class="link">
 						<a href="https://play.google.com/store/apps/details?id=com.megabox.mop&amp;hl=ko" title="available on the google play" target="_blank">
-							<img src="static/pc/images/ie/btn-google.png" alt="available on the google play">
+							<img src="../static/pc/images/ie/btn-google.png" alt="available on the google play">
 						</a>
 					</div>
 				</div>
@@ -1960,21 +1953,21 @@ $(function(){
 	<!-- 2019-04-15 마크업 수정 : 고객요청  -->
     <div class="util-area">
         <div class="left-link">
-            <a href="benefit/viplounge.html" 	title="VIP LOUNGE">VIP LOUNGE</a>
-            <a href="benefit/membership.html"	title="멤버십">멤버십</a>
-            <a href="support.html"				title="고객센터">고객센터</a>
+            <a href="../benefit/viplounge.html" 	title="VIP LOUNGE">VIP LOUNGE</a>
+            <a href="../benefit/membership.html"	title="멤버십">멤버십</a>
+            <a href="../support.html"				title="고객센터">고객센터</a>
         </div>
 
         <div class="right-link">
             <!-- 로그인전 -->
             <div class="before" style="display:none">
                 <a href="javaScript:fn_viewLoginPopup('default','pc')" title="로그인">로그인</a>
-                <a href="join.html" title="회원가입">회원가입</a>
+                <a href="../join.html" title="회원가입">회원가입</a>
             </div>
 
             <!-- 로그인후 -->
             <div class="after" style="display:none">
-                <a href="index.html" class="" title="로그아웃">로그아웃</a>
+                <a href="../index.html" class="" title="로그아웃">로그아웃</a>
                 <a href="#" class="notice" title="알림">알림</a>
 
                 <!-- layer-header-notice -->
@@ -2008,7 +2001,7 @@ $(function(){
 
             </div>
 
-            <a href="booking.html">빠른예매</a>
+            <a href="../booking.html">빠른예매</a>
         </div>
     </div>
     <!--// 2019-04-15 마크업 수정 : 고객요청  -->
@@ -2016,7 +2009,7 @@ $(function(){
     <div class="link-area">
         <a href="#layer_sitemap" 		class="header-open-layer btn-layer-sitemap"	title="사이트맵">사이트맵</a>
         <a href="#layer_header_search" 	class="header-open-layer btn-layer-search"	title="검색">검색</a>
-        <a href="booking/timetable.html" 	class="link-ticket" 						title="상영시간표">상영시간표</a>
+        <a href="../booking/timetable.html" 	class="link-ticket" 						title="상영시간표">상영시간표</a>
         <a href="#layer_mymega" 		class="header-open-layer btn-layer-mymega" 	title="나의 메가박스">나의 메가박스</a>
     </div>
 
@@ -2028,31 +2021,31 @@ $(function(){
     
     <nav id="gnb">
         <ul class="gnb-depth1">
-            <li><a href="movie.html" class="gnb-txt-movie" title="영화">영화</a>
+            <li><a href="../movie.html" class="gnb-txt-movie" title="영화">영화</a>
                 <div class="gnb-depth2">
                     <ul>
-                        <li><a href="movie.html"					title="전체영화">전체영화</a></li>
-                        <li><a href="curation/specialcontent.html"	title="큐레이션">큐레이션</a></li>
+                        <li><a href="../movie.html"					title="전체영화">전체영화</a></li>
+                        <li><a href="../curation/specialcontent.html"	title="큐레이션">큐레이션</a></li>
                         
-                        <li id="festivalArea" style="display: none;"><a href="festival.html" title="영화제">영화제</a></li>
-                        <li><a href="moviepost/all.html"			title="무비포스트">무비포스트</a></li>
+                        <li id="festivalArea" style="display: none;"><a href="../festival.html" title="영화제">영화제</a></li>
+                        <li><a href="../moviepost/all.html"			title="무비포스트">무비포스트</a></li>
                     </ul>
                 </div>
             </li>
-            <li><a href="booking.html" class="gnb-txt-reserve" title="예매">예매</a>
+            <li><a href="../booking.html" class="gnb-txt-reserve" title="예매">예매</a>
                 <div class="gnb-depth2">
                     <ul>
-                        <li><a href="booking.html"					title="빠른예매">빠른예매</a></li>
-                        <li><a href="booking/timetable.html"		title="상영시간표">상영시간표</a></li>
-                        <li><a href="booking/privatebooking.html"	title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a></li>
+                        <li><a href="../booking.html"					title="빠른예매">빠른예매</a></li>
+                        <li><a href="../booking/timetable.html"		title="상영시간표">상영시간표</a></li>
+                        <li><a href="../booking/privatebooking.html"	title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a></li>
                     </ul>
                 </div>
             </li>
-            <li><a href="theater/list.html" class="gnb-txt-theater" title="극장">극장</a>
+            <li><a href="list.html" class="gnb-txt-theater" title="극장">극장</a>
                 <div class="gnb-depth2">
                     <ul>
-                        <li><a href="theater/list.html" title="전체극장">전체극장</a></li>
-                        <li><a href="specialtheater/list.html" title="특별관">특별관</a></li>
+                        <li><a href="list.html" title="전체극장">전체극장</a></li>
+                        <li><a href="../specialtheater/list.html" title="특별관">특별관</a></li>
                     </ul>
                 </div>
             </li>
@@ -2066,11 +2059,11 @@ $(function(){
                 </div>
             </li>
             <li><a href="javascript:void(0)" onclick="NetfunnelChk.aTag('STORE_LIST','/store');return false;" class="gnb-txt-store" title="스토어">스토어</a></li>
-            <li><a href="benefit/membership.html" class="gnb-txt-benefit" title="혜택">혜택</a>
+            <li><a href="../benefit/membership.html" class="gnb-txt-benefit" title="혜택">혜택</a>
                 <div class="gnb-depth2">
                     <ul>
-                        <li><a href="benefit/membership.html" title="메가박스 멤버십">메가박스 멤버십</a></li>
-                        <li><a href="benefit/discount/guide.html" title="제휴/할인">제휴/할인</a></li>
+                        <li><a href="../benefit/membership.html" title="메가박스 멤버십">메가박스 멤버십</a></li>
+                        <li><a href="../benefit/discount/guide.html" title="제휴/할인">제휴/할인</a></li>
                     </ul>
                 </div>
             </li>
@@ -2105,10 +2098,10 @@ $(function(){
                 <p class="tit-depth">영화</p>
 
                 <ul class="list-depth">
-                    <li><a href="movie.html" title="전체영화">전체영화</a></li>
-                    <li><a href="curation/specialcontent.html" title="큐레이션">큐레이션</a></li>
+                    <li><a href="../movie.html" title="전체영화">전체영화</a></li>
+                    <li><a href="../curation/specialcontent.html" title="큐레이션">큐레이션</a></li>
                     <li><a href="javascript:void(0)" onclick="javascript:MegaboxUtil.Common.moveMovieFilmCheck();" title="영화제">영화제</a></li>
-                    <li><a href="moviepost/all.html" title="무비포스트">무비포스트</a></li>
+                    <li><a href="../moviepost/all.html" title="무비포스트">무비포스트</a></li>
                 </ul>
             </div>
 
@@ -2116,9 +2109,9 @@ $(function(){
                 <p class="tit-depth">예매</p>
 
                 <ul class="list-depth">
-                    <li><a href="booking.html" title="빠른예매">빠른예매</a></li>
-                    <li><a href="booking/timetable.html" title="상영시간표">상영시간표</a></li>
-                    <li><a href="booking/privatebooking.html" title="더 부티크 프라빗 예매">더 부티크 프라이빗 예매</a></li>
+                    <li><a href="../booking.html" title="빠른예매">빠른예매</a></li>
+                    <li><a href="../booking/timetable.html" title="상영시간표">상영시간표</a></li>
+                    <li><a href="../booking/privatebooking.html" title="더 부티크 프라빗 예매">더 부티크 프라이빗 예매</a></li>
                     <!-- <li><a href="/booking?megaboxLanguage=en" title="English Ticketing">English Ticketing</a></li> -->
                 </ul>
             </div>
@@ -2127,8 +2120,8 @@ $(function(){
                 <p class="tit-depth">극장</p>
 
                 <ul class="list-depth">
-                    <li><a href="theater/list.html" title="전체극장">전체극장</a></li>
-                    <li><a href="specialtheater/list.html" title="특별관">특별관</a></li>
+                    <li><a href="list.html" title="전체극장">전체극장</a></li>
+                    <li><a href="../specialtheater/list.html" title="특별관">특별관</a></li>
                 </ul>
             </div>
 
@@ -2180,9 +2173,9 @@ $(function(){
                 <p class="tit-depth">혜택</p>
 
                 <ul class="list-depth">
-                    <li><a href="benefit/membership.html" title="멤버십 안내">멤버십 안내</a></li>
-                    <li><a href="benefit/viplounge.html" title="VIP LOUNGE">VIP LOUNGE</a></li>
-                    <li><a href="benefit/discount/guide.html" title="제휴/할인">제휴/할인</a></li>
+                    <li><a href="../benefit/membership.html" title="멤버십 안내">멤버십 안내</a></li>
+                    <li><a href="../benefit/viplounge.html" title="VIP LOUNGE">VIP LOUNGE</a></li>
+                    <li><a href="../benefit/discount/guide.html" title="제휴/할인">제휴/할인</a></li>
                 </ul>
             </div>
 
@@ -2190,12 +2183,12 @@ $(function(){
                 <p class="tit-depth">고객센터</p>
 
                 <ul class="list-depth">
-                    <li><a href="support.html" 			title="고객센터 홈">고객센터 홈</a></li>
-                    <li><a href="support/faq.html"		title="자주묻는질문">자주묻는질문</a></li>
-                    <li><a href="support/notice.html"	title="공지사항">공지사항</a></li>
-                    <li><a href="support/inquiry.html"	title="1:1문의">1:1문의</a></li>
-                    <li><a href="support/rent.html"		title="단체/대관문의">단체/대관문의</a></li>
-                    <li><a href="support/lost.html"		title="분실물문의">분실물문의</a></li>
+                    <li><a href="../support.html" 			title="고객센터 홈">고객센터 홈</a></li>
+                    <li><a href="../support/faq.html"		title="자주묻는질문">자주묻는질문</a></li>
+                    <li><a href="../support/notice.html"	title="공지사항">공지사항</a></li>
+                    <li><a href="../support/inquiry.html"	title="1:1문의">1:1문의</a></li>
+                    <li><a href="../support/rent.html"		title="단체/대관문의">단체/대관문의</a></li>
+                    <li><a href="../support/lost.html"		title="분실물문의">분실물문의</a></li>
                 </ul>
             </div>
 
@@ -2203,13 +2196,13 @@ $(function(){
                 <p class="tit-depth">회사소개</p>
 
                 <ul class="list-depth">
-                    <li><a href="megaboxinfo.html" 			target="_blank" title="메가박스소개">메가박스소개</a></li>
-                    <li><a href="socialcontribution.html" 	target="_blank" title="사회공헌">사회공헌</a></li>
-                    <li><a href="advertize.html" 			target="_blank" title="홍보자료">홍보자료</a></li>
-                    <li><a href="partner.html" 				target="_blank" title="제휴/부대사업문의">제휴/부대사업문의</a></li>
-                    <li><a href="onlinereport.html" 		target="_blank" title="온라인제보센터">온라인제보센터</a></li>
-                    <li><a href="ir.html" 					target="_blank" title="자료">IR자료</a></li>
-                    <li><a href="recruit.html" 				target="_blank" title="인재채용림">인재채용</a></li>
+                    <li><a href="../megaboxinfo.html" 			target="_blank" title="메가박스소개">메가박스소개</a></li>
+                    <li><a href="../socialcontribution.html" 	target="_blank" title="사회공헌">사회공헌</a></li>
+                    <li><a href="../advertize.html" 			target="_blank" title="홍보자료">홍보자료</a></li>
+                    <li><a href="../partner.html" 				target="_blank" title="제휴/부대사업문의">제휴/부대사업문의</a></li>
+                    <li><a href="../onlinereport.html" 		target="_blank" title="온라인제보센터">온라인제보센터</a></li>
+                    <li><a href="../ir.html" 					target="_blank" title="자료">IR자료</a></li>
+                    <li><a href="../recruit.html" 				target="_blank" title="인재채용림">인재채용</a></li>
                     <li><a href="https://jebo.joonganggroup.com/main.do" target="_blank" title="윤리경영">윤리경영</a></li>
                 </ul>
             </div>
@@ -2218,9 +2211,9 @@ $(function(){
                 <p class="tit-depth">이용정책</p>
 
                 <ul class="list-depth">
-                    <li><a href="support/terms.html"		title="이용약관">이용약관</a></li>
-                    <li><a href="support/privacy.html"		title="개인정보처리방침">개인정보처리방침</a></li>
-                    <li><a href="support/screenrule.html"	title="스크린수배정에관한기준">스크린수배정에관한기준</a></li>
+                    <li><a href="../support/terms.html"		title="이용약관">이용약관</a></li>
+                    <li><a href="../support/privacy.html"		title="개인정보처리방침">개인정보처리방침</a></li>
+                    <li><a href="../support/screenrule.html"	title="스크린수배정에관한기준">스크린수배정에관한기준</a></li>
                 </ul>
             </div>
 
@@ -2271,7 +2264,7 @@ $(function(){
                     </div>
 
                     <div class="btn-fixed">
-                        <a href="index.html" class="button" title="나의  메가박스">나의  메가박스</a>
+                        <a href="../index.html" class="button" title="나의  메가박스">나의  메가박스</a>
                     </div>
                 </div>
 
@@ -2284,7 +2277,7 @@ $(function(){
                         </p>
 
                         <div class="btn-fixed">
-                            <a href="index.html" class="button" title="멤버십 포인트" >멤버십 포인트</a>
+                            <a href="../index.html" class="button" title="멤버십 포인트" >멤버십 포인트</a>
                         </div>
                     </div>
                 </div>
@@ -2299,8 +2292,8 @@ $(function(){
                         </p>
 
                         <div class="btn-fixed">
-                            <a href="index.html" class="button" title="쿠폰">쿠폰</a>
-                            <a href="index.html" class="button" title="관람권">관람권</a>
+                            <a href="../index.html" class="button" title="쿠폰">쿠폰</a>
+                            <a href="../index.html" class="button" title="관람권">관람권</a>
                         </div>
                     </div>
                 </div>
@@ -2312,7 +2305,7 @@ $(function(){
                         <p class="txt"></p>
 
                         <div class="btn-fixed">
-                            <a href="index.html" class="button" title="예매내역">예매내역 </a>
+                            <a href="../index.html" class="button" title="예매내역">예매내역 </a>
                         </div>
                     </div>
                 </div>
@@ -2328,7 +2321,7 @@ $(function(){
                     </div>
 
                     <div class="btn-fixed">
-                        <a href="index.html?tab=02" class="button" title="구매내역">구매내역</a>
+                        <a href="../index.html?tab=02" class="button" title="구매내역">구매내역</a>
                     </div>
                 </div>
             </div>
@@ -2344,7 +2337,7 @@ $(function(){
                     <a href="#layer_login_common" id="moveLogin" title="로그인" class="button w120px btn-modal-open" w-data='850' h-data='484'>로그인</a>
                 </div>
 
-                <a href="join.html" class="link" title="혹시 아직 회원이 아니신가요?">혹시 아직 회원이 아니신가요?</a>
+                <a href="../join.html" class="link" title="혹시 아직 회원이 아니신가요?">혹시 아직 회원이 아니신가요?</a>
             </div>
         </div>
         <!--// wrap -->
@@ -2363,1515 +2356,1269 @@ $(function(){
 
 
 
+<script>
 
+	$(function(){
 
+		if ($('.theater-swiper').length > 0) {
 
+			// swiper 전체 count
+			var cntAll   = $('.theater-swiper .cell').length;
+			var cntDupli = $('.theater-swiper .swiper-slide-duplicate').length;
+			var cntReal  = cntAll - cntDupli;
+			var cntView  = 3;
 
+			var theater_swiper = new Swiper('.theater-swiper', {
+				autoplay: {
+					delay: 3000,
+					disableOnInteraction: true,
+				},
+				loop : cntReal >= cntView,
+				slidesPerView: cntView,
+				spaceBetween: 40,
+				pagination: {
+					el: '.theater-pagination',
+					clickable: false,
+				},
+				navigation : {
+					prevEl : '.theater-prev',
+					nextEl : '.theater-next',
+				},
+				ally : {
+					enabled : true
+				}
+			});
 
-<script type="text/javascript">
-var localeCode = "kr";			   //한영 구분 코드
-$(function(){
-});
+			$('.theater-main .theater-count .total' ).text(cntReal);
+			$('.theater-main .theater-count .active').text(theater_swiper.realIndex + 1);
 
-function fn_setMeta(scnDiv) {
-	var paramData = null;
+			// 현재 활성화된 swiper
+			theater_swiper.on('slideChange', function() {
+				$('.theater-main .theater-count .active').text(theater_swiper.realIndex + 1);
+			});
 
-	if( scnDiv == undefined ){
+			// 자동실행 정지
+			$('.theater-util .pause').on('click', function() {
+				theater_swiper.autoplay.stop();
 
-		switch(tmpData.tabIndx){
+				$(this).removeClass('on');
+				$('.theater-util .play').addClass('on').focus();
+			});
 
-		case 0: //영화별
-			url = location.protocol + '//' + document.domain + '/booking/timetable';
-			paramData = {
-					'scnTitle'         : '영화별 상영시간표 < 상영시간표 | 라이프씨어터, 메가박스'
-					, 'metaTagTitle'   : '영화별상영시간표 < 상영시간표 | 라이프씨어터, 메가박스'
-					, 'metaTagDtls'    : '메가박스의 영화별 상영시간표를 알려드립니다.'
-					, 'metaTagKeyword' : ''
-					, 'metaTagUrl'     : url
-				};
-				break;
+			// 자동실행 시작
+			$('.theater-util .play').on('click', function() {
+				theater_swiper.autoplay.start();
 
-		case 1: //극장별
-			url = location.protocol + '//' + document.domain + '/booking/timetable';
-			paramData = {
-					'scnTitle'         : '극장별 상영시간표 < 상영시간표 | 라이프씨어터, 메가박스'
-					, 'metaTagTitle'   : '극장별상영시간표 < 상영시간표 | 라이프씨어터, 메가박스'
-					, 'metaTagDtls'    : '메가박스의 극장별 상영시간표를 알려드립니다.'
-					, 'metaTagKeyword' : ''
-					, 'metaTagUrl'     : url
-				};
-				break;
+				$(this).removeClass('on');
+				$('.theater-util .pause').addClass('on').focus();
+			});
 
-		case 2: //특별관
-			url = location.protocol + '//' + document.domain + '/booking/timetable';
-			paramData = {
-					'scnTitle'         : '특별관 상영시간표 < 상영시간표 | 라이프씨어터, 메가박스'
-					, 'metaTagTitle'   : '특별관상영시간표 < 상영시간표 | 라이프씨어터, 메가박스'
-					, 'metaTagDtls'    : '메가박스의 특별관 상영시간표를 알려드립니다.'
-					, 'metaTagKeyword' : ''
-					, 'metaTagUrl'     : url
-				};
-				break;
+			// 좌우 이동시 자동실행 정지됨
+			$(document).on('click','.theater-prev, .theater-next', function() {
+				$('.theater-util .pause').removeClass('on');
+				$('.theater-util .play').addClass('on');
+			});
+
+			$(window).resize(function() {
+				theater_swiper.update();
+			}).resize();
 		}
-
-	}else{
-		url = location.protocol + '//' + document.domain + '/booking';
-		paramData = {
-				'scnTitle'         : '빠른예매 < 예매 | 라이프씨어터, 메가박스'
-				, 'metaTagTitle'   : '빠른예매 < 예매 | 라이프씨어터, 메가박스'
-				, 'metaTagDtls'    : '메가박스에서 영화를 간편하고 빠르게 예약해보세요.'
-				, 'metaTagKeyword' : ''
-				, 'metaTagUrl'     : url
-			};
-	}
-
-	//이전버튼을 위한 현재 메타태그 정보 저장
-	saveCurrentMeta();
-
-	//URL 변경
-	history.replaceState( null, null, url );
-
-	//메타태그 설정
-	settingMeta(paramData);
-}
-
-
-
-//좌석도로 파라메타 전달
-function fn_setSmapParam(param) {
-
-	NetfunnelChk.script("BOOK_STEP2",function(){
-
-		//param : 좌석도 화면 구동에 필요한 상영스케줄번호
-		//scnDiv : 네비게이션 표시를 위한 진입화면 구분 playTime : 예매 > 상영시간표, brch : 극장, spclBrch : 특별관
-		var frameBokdMSeatBodyObj    = $('#frameBokdMSeat').get(0).contentWindow.document.body;	//좌석도 프레임 바디 오브젝트
-		var framePayBookingBodyObj   = $('#framePayBooking').get(0).contentWindow.document.body;	//결제화면 프레임 바디 오브젝트
-		var frameBokdMSeatContentObj = $('#frameBokdMSeat').get(0).contentWindow;
-		var innerHtml = "<span>Home</span>";
-		var smapPlaySchdlNo = param[0];
-		var scnDiv = param[1];
-
-		fn_setMeta(scnDiv);
-
-		if("default" == scnDiv){
-			innerHtml += "<a href=\"/booking\" title=\"/예매 페이지로 이동\">예매</a>";
-			innerHtml += "<a href=\"/booking\" title=\"/빠른예매 페이지로 이동\">빠른예매</a>";
-		}
-		else if("playTime" == scnDiv){
-			innerHtml += "<a href=\"/booking\" title=\"/예매 페이지로 이동\">예매</a>";
-			innerHtml += "<a href=\"/booking/timetable\" title=\"/상영시간표 페이지로 이동\">상영시간표</a>";
-		}
-		else if("brch" == scnDiv){
-			innerHtml += "<a href=\"/theater/list\" title=\"/극장 페이지로 이동\">극장</a>";
-			innerHtml += "<a href=\"/theater/list\" title=\"/예매 페이지로 이동\">전체극장</a>";
-			innerHtml += "<a href=\"\" title=\"/극장정보\">극장정보</a>";
-		}
-		else if("TBQ" == scnDiv){
-			innerHtml += "<a href=\"/theater/list\" title=\"/극장 페이지로 이동\">극장</a>";
-			innerHtml += "<a href=\"/on/oh/ohc/BrchSpecial/mainPage.do\" title=\"/특별관 페이지로 이동\">특별관</a>";
-			innerHtml += "<a href=\"/on/oh/ohc/BrchSpecial/boutqInfoPage.do\" title=\"/부티크 페이지로 이동\">부티크</a>";
-		}
-		else if("MX" == scnDiv){
-			innerHtml += "<a href=\"/theater/list\" title=\"/극장 페이지로 이동\">극장</a>";
-			innerHtml += "<a href=\"/on/oh/ohc/BrchSpecial/mainPage.do\" title=\"/특별관 페이지로 이동\">특별관</a>";
-			innerHtml += "<a href=\"/on/oh/ohc/BrchSpecial/mxInfoPage.do\" title=\"/MX 페이지로 이동\">MX</a>";
-		}
-		else if("CFT" == scnDiv){
-			innerHtml += "<a href=\"/theater/list\" title=\"/극장 페이지로 이동\">극장</a>";
-			innerHtml += "<a href=\"/on/oh/ohc/BrchSpecial/mainPage.do\" title=\"/특별관 페이지로 이동\">특별관</a>";
-			innerHtml += "<a href=\"/on/oh/ohc/BrchSpecial/comfortInfoPage.do\" title=\"/COMFORT 페이지로 이동\">COMFORT</a>";
-		}
-		else if("MKB" == scnDiv){
-			innerHtml += "<a href=\"/theater/list\" title=\"/극장 페이지로 이동\">극장</a>";
-			innerHtml += "<a href=\"/on/oh/ohc/BrchSpecial/mainPage.do\" title=\"/특별관 페이지로 이동\">특별관</a>";
-			innerHtml += "<a href=\"/on/oh/ohc/BrchSpecial/kidsInfoPage.do\" title=\"/MEGABOX KIDS 페이지로 이동\">MEGABOX KIDS</a>";
-		}
-		else if("TFC" == scnDiv){
-			innerHtml +="<a href=\"/theater/list\" title=\"/극장 페이지로 이동\">극장</a>";
-			innerHtml +="<a href=\"/on/oh/ohc/BrchSpecial/mainPage.do\" title=\"/특별관 페이지로 이동\">특별관</a>";
-			innerHtml +="<a href=\"/on/oh/ohc/BrchSpecial/firstClubInfoPage.do\" title=\"/THE FIRST CLUB 페이지로 이동\">THE FIRST CLUB</a>";
-		}
-		else if("BCY" == scnDiv){
-			innerHtml +="<a href=\"/theater/list\" title=\"/극장 페이지로 이동\">극장</a>";
-			innerHtml +="<a href=\"/on/oh/ohc/BrchSpecial/mainPage.do\" title=\"/특별관 페이지로 이동\">특별관</a>";
-			innerHtml +="<a href=\"/on/oh/ohc/BrchSpecial/balconyInfoPage.do\" title=\"/BALCONY 페이지로 이동\">BALCONY</a>";
-		}
-
-		$('#bokdContainer .inner-wrap .location').html(innerHtml);	//네비게이션 표시
-		$(frameBokdMSeatBodyObj).find(".quick-reserve h2").html('');	//좌석도 타이틀 숨김
-		$(framePayBookingBodyObj).find(".quick-reserve h2").html('');	//결제   타이틀 숨김
-
-		$('#bokdContainer').show();		//좌석도, 결제 컨테이너 보임
-		$('#schdlContainer').hide();	//상영시간표 컨테이너 숨김
-		$('#bokdMSeat').show();			//좌석도 보임
-		$(frameBokdMSeatBodyObj).find('#playSchdlNo').val(smapPlaySchdlNo);
-		frameBokdMSeatContentObj.fn_search();	//좌석도 좌석조회
-
-	// 	$('#frameBokdMSeat').attr('src','/on/oh/ohz/PcntSeatChoi/selectPcntSeatChoi.do?playSchdlNo='+obj.attr("play-schdl-no"));
-	// 	$('#frameBokdMSeat').attr('src','/main');
 	});
-}
-
-//좌석도에서 이전 버튼 클릭
-function fn_goPrePagePcntSeatChoi() {
-	var frameBokdMSeatContentObj = $('#frameBokdMSeat').get(0).contentWindow;
-	$('#bokdContainer').hide();		//좌석도, 결제 컨테이너 보임
-	$('#schdlContainer').show();	//상영시간표 컨테이너 숨김
-
-	//결제에서 예매이동 처리 추가
-	$('#bokdMSeat').hide();			//좌석도 숨김
-	$('#bokdMPayBooking').hide();
-	$('#frameBokdMSeat').attr("src", "/on/oh/ohz/PcntSeatChoi/selectPcntSeatChoi.do"); //좌석도 화면초기화
-	$('#framePayBooking').attr("src", "/on/oh/ohz/PayBooking/completeSeat.do"); //결제화면 초기화
-
-	//이전 메타태그 정보로 설정 (preMetaFormat:전역변수)
-	settingMeta(preMetaFormat);
-	//URL 변경
-	history.replaceState( null, null, preMetaFormat.metaTagUrl );
-}
-
-//좌석도에서 다음 버튼 클릭
-function fn_goNextPagePcntSeatChoi(param) {
-	//로그인 여부 체크
-	fn_validLoginAt(param);
-	//데이터 보정 체크
-	//fn_validLoginAt();
-	//오입력 체크
-	//블랙리스트 체크
-	//결제로이동
-}
-
-
-//결제화면으로로 파라메타 전달 및 화면 이동
-function fn_setBookingParamMove(options) {
-
-	NetfunnelChk.script("BOOK_STEP3",function(){
-
-		var framePayBookingBodyObj    = $('#framePayBooking').get(0).contentWindow.document.body;	//결제화면 프레임 바디 오브젝트
-		var framePayBookingContentObj = $('#framePayBooking').get(0).contentWindow;
-
-		//좌석도에서 세팅한 param 값
-		var playSchdlNo   = options.playSchdlNo;	//상영스케쥴
-		var seatOccupText = options.seatOccupText;	//좌석/티켓 상세정보
-		var totalAmt      = options.totalAmt;		//총금액
-
-		$(framePayBookingBodyObj).find('#playSchdlNo').val(playSchdlNo);
-		$(framePayBookingBodyObj).find('#seatOccupText').val(seatOccupText);
-		$(framePayBookingBodyObj).find('#totalAmt').val(totalAmt);
-
-		framePayBookingContentObj.completeSeat();
-		$('#bokdMPayBooking').show();
-		//프레임 높이 자동 조정
-		calcFrameHeight($('#bokdMPayBooking'), $('#framePayBooking'));
-
-		$('#bokdMSeat').hide();  //좌석도 숨김
-
-	});
-}
-
-//결제화면에서 이전 버튼 클릭
-function fn_goPrePagePayBooking() {
-	var framePayBookingContentObj = $('#framePayBooking').get(0).contentWindow;
-	var frameBokdMSeatContentObj = $('#frameBokdMSeat').get(0).contentWindow;
-	$('#bokdMPayBooking').hide();
-	$('#framePayBooking').attr("src", "/on/oh/ohz/PayBooking/completeSeat.do"); //결제화면 초기화
-	$('#bokdMSeat').show();	//좌석도 표시
-	$("html,body").scrollTop(0);
-
-	frameBokdMSeatContentObj.fn_display_init();
-}
-
-//결제화면에서 이전 버튼 클릭 및 블랙리스트 팝업
-function fn_altBlackgoPrePagePayBooking(blackListParam) {
-	var framePayBookingContentObj = $('#framePayBooking').get(0).contentWindow;
-	var frameBokdMSeatContentObj = $('#frameBokdMSeat').get(0).contentWindow;
-	$('#bokdMPayBooking').hide();
-	$('#framePayBooking').attr("src", "/on/oh/ohz/PayBooking/completeSeat.do"); //결제화면 초기화
-	$('#bokdMSeat').show();	//좌석도 표시
-	$("html,body").scrollTop(0);
-
-	frameBokdMSeatContentObj.fn_display_init();
-
-	frameBokdMSeatContentObj.shwoBlackListPopup(blackListParam);
-}
-
-//결제화면에서 오류 발생시 좌석도로 이동(기선점 존재, 시간 초과 등)
-function fn_goPrePageInitSeat(msg) {
-	var framePayBookingContentObj = $('#framePayBooking').get(0).contentWindow;
-	$('#bokdMPayBooking').hide();
-	$('#framePayBooking').attr("src", "/on/oh/ohz/PayBooking/completeSeat.do"); //결제화면 초기화
-
-	//좌석도 초기화
-	var frameBokdMSeatContentObj = $('#frameBokdMSeat').get(0).contentWindow;
-	frameBokdMSeatContentObj.fn_search('N');  //새로 조회 및 최초진입 팝업 띄우지 않음
-	$('#bokdMSeat').show();	//좌석도 표시
-	$("html,body").scrollTop(0);
-
-	if (msg != null && msg != "") {
-		gfn_alertMsgBox("결제가능 시간이 초과되어<br/> 좌석선택부터 다시 진행바랍니다.");
-	}
-
-	frameBokdMSeatContentObj.fn_display_init();
-}
-
-//프레임 height 자동조정 : 결제만 적용가능
-function calcFrameHeight(divObj, frameObj) { //div obj, frame obj
-	var frameBodyObj = $(frameObj).get(0).contentWindow.document.body;	//프레임 바디 오브젝트
-	var height = $(frameObj).contents().find('.inner-wrap').outerHeight();
-	$(divObj).height(height + 130);
-	$(frameObj).height(height + 130);
-}
-
-//로그인여부 체크
-function fn_validLoginAt(param){
-	$.ajaxMegaBox({
-        url    : "/on/oh/ohg/MbLogin/selectLoginSession.do",
-        //data   : JSON.stringify(paramData),
-        success: function(result){
-        	var loginAt = result.resultMap.result;	//로그인 여부
-
-        	//비로그인 상태
-			if(loginAt  == "N"){
-				//로그인 팝업 표시
-				fn_viewLoginPopup('SimpleBokdM','pc','Y',JSON.stringify(param));
-			}
-        	//로그인 상태
-			else {
-				//데이터 보정 체크
-				fn_validDataRevisn(param);
-			}
-        }
-    });
-}
-
-//데이터 보정 체크
-function fn_validDataRevisn(param){
-
-	fn_vlaidBlackList(param);
-
-// 	$.ajaxMegaBox({
-//         url    : "/on/oh/ohg/MbLogin/selectDataRevisn.do",
-//         //data   : JSON.stringify(paramData),
-//         success: function(result){
-//         	var dataRevisnAt = result.resultMap.result;	//로그인 여부
-//         	//자료보정대상
-// 			if(dataRevisnAt  == "Y"){
-// 				//자료 보정 안내 메세지 표시
-// 				var arguments=result.resultMap.birthDe+' / '+result.resultMap.mblpTelno;
-// 				var frameBokdMSeatContentObj = $('#frameBokdMSeat').get(0).contentWindow;	//좌석도 프레임 컨텐츠 오브젝트
-// 				frameBokdMSeatContentObj.shwoDataRevisnPopup(arguments,param);
-//  			}
-//  			//자료보정대상아님
-//  			else {
-//  				//블랙리스트 체크
-// 				fn_vlaidBlackList(param);
-//  			}
-//         }
-//     });
-}
-
-//블랙리스트 체크
-function fn_vlaidBlackList(param){
-
-
-	var paramData = { BokdCnt : param.bokdCnt
-					, BokdBrch : param.brchNo
-					};
-
-// 	//좌석수 param
-	$.ajaxMegaBox({
-        url    : "/on/oh/ohg/MbLogin/selectBlackList.do",
-        data   : JSON.stringify(paramData),
-        success: function(result){
-        	var dataBlackListAt = result.resultMap.result;
-        	//블랙리스트 대상
-			if(dataBlackListAt  == "Y"){
-				//블랙리스트 안내 메세지 표시
-				var frameBokdMSeatContentObj = $('#frameBokdMSeat').get(0).contentWindow;
-				var blackListParam = { bokdAbleBrch: result.resultMap.bokdAbleBrch
-									, bokdAbleCnt: result.resultMap.bokdAbleCnt
-									, bokdAbleQty: result.resultMap.bokdAbleQty
-									 }
-				frameBokdMSeatContentObj.shwoBlackListPopup(blackListParam);
-			}
-			//블랙리스트 비 대상
-			else {
-				//결제로 이동
- 				fn_setBookingParamMove(param);
-			}
-        }
-    });
-}
-
-//페이지 이동
-function fn_mvPage(page){
-	$("#bokdMForm").attr("method","post");
-	$("#bokdMForm").attr("action",page);
-	$("#bokdMForm").submit();
-}
-
-//언어변환
-function setLangChg(){
-    if(localeCode == "en"){
-        location.href="booking4b68.html?megaboxLanguage=kr";
-    }
-    else {
-        location.href="booking00ea.html?megaboxLanguage=en";
-    }
-}
-
-
-//페이지 리로드
-function fn_bokdReload(page){
-	fn_goPrePagePcntSeatChoi();
-}
-
-</script>
-<form id="bokdMForm">
-	<input type="hidden" name="returnURL" value="info"/>
-</form>
-<!-- container -->
-<div id="bokdContainer" class="container" style="padding-bottom:200px; display:none">
-<input type="hidden" id="playDe" name="playDe" value=""/>
-    <div class="page-util">
-        <div class="inner-wrap">
-            <div class="location"></div>
-
-        </div>
-    </div>
-
-    <div id="bokdMSeat" style="overflow:hidden; display:none; height:736px;">
-        <iframe id="frameBokdMSeat" src="on/oh/ohz/PcntSeatChoi/selectPcntSeatChoi4b68.html?megaboxLanguage=kr" title="관람인원선택 프레임" scrolling="no" frameborder="0" class="reserve-iframe" style="width:100%; height:736px;"></iframe>
-	</div>
-
-    <div id="bokdMPayBooking" style="overflow:hidden; display:none; height:736px;">
-       <iframe id="framePayBooking" src="on/oh/ohz/PayBooking/completeSeat4b68.html?megaboxLanguage=kr" title="예매 결제" scrolling="no" frameborder="0" class="reserve-iframe" style="width:100%; height:736px;"></iframe>
-	</div>
-
-</div>
-<!--// container -->
-<script src="js/megabox-brch.js"></script>
-<script src="js/megabox-simpleBokd.js"></script>
-
-<script type="text/javascript">
-
-	// Tab Index
-	var tabIdx = 01 -1;
-
-	// 최초 1번 조회 여부 Index로 관리함
-	var arrTab = [0, 0, 0];
 
 	$(function() {
-
-		// 화면준비
-		$(document).ready(function(){
-
-			// 요청 탭 조회
-			$('#contents div.tab-list a').eq(tabIdx).click();
-		});
 
 		// 이벤트 버블현상 공통 제거
 		$('#contents').on('click', 'a', function(e) {
 
-			if (($(this).attr('href') || '').indexOf('index.html') == -1) {
+			if (($(this).attr('href') || '').indexOf('../index.html') == -1) {
 				e.preventDefault();
 			}
 		});
 
+		// 전체극장 > 지역 선택
+		$('.sel-city').on('click', function() {
+
+			$("div.theater-place li.on").removeClass('on');
+			$(this).parent().addClass('on');
+
+			var _h1 = $('.user-theater').outerHeight();
+			var _h2 = $('.theater-place').outerHeight();
+			var _h0 = $("div.theater-place li.on .theater-list").outerHeight();
+			var _hAll = _h0 + _h1 + _h2;
+
+			$('.theater-box').outerHeight(_hAll);
+		});
+
 		// 로그인 버튼
-		$(document).on('click', '#moveLogin', function() {
+		$('#moveLogin').click(function() {
 
 			fn_viewLoginPopup('default','pc');
 		});
 
-		// 선호극장
-		$('#favorBrch').on('click', function() {
+		// 전체극장 > 선호영화관 관리
+		$('.user-theater a.float-r').click(function() {
 
-			if ($(this).hasClass('on')) {
+			// 선호극장 호출 및 콜백
+			gfn_favorBrchReg(function(param){
 
-				gfn_confirmMsgBox('등록된 선호극장을 삭제하시겠습니까?', fn_chgFavor);
+				var $li;
 
-			} else {
+				// 선호극장 목록 삭제
+				$('.theater-circle li').remove();
 
-				fn_chgFavor('N');
-			}
-		});
+				// 선호극장 class 전체 삭제
+				$('.theater-list span.favorit-theater').remove();
 
-		// Tab 선택
-		$('#contents div.tab-list a').click(function() {
+				// 선호극장 처리
+				$.each(param, function(i, data){
 
-			var index = $('#contents div.tab-list a').index(this);
+					// 전체극장에서 관련 극장 찾기
+					$li = $('.theater-list li[data-brch-no="'+ data.favorCdVal +'"]');
 
-			// 최초 접근 일때 서버에서 조회해 옴
-			if (arrTab[index] == 0) {
+					if ($li.length != 0) {
 
-				switch(index){
-				case 0 : fn_brchInfo();     break; //극장정보
-				case 1 : fn_callSchedule(); break; //상영시간표
-				case 2 : fn_callPrice();    break; //관람료
-				}
+						// 선호극장 class 추가
+						$li.prepend('<span class="favorit-theater"><i class="iconset ico-favo-theater"></i></span>');
 
-				arrTab[index] = 1;
-			}
-
-			// 메타테그/네비게인션 설정
-			setMetaTagNNavi(index);
-
-			// 상단으로 스크롤
-			window.scrollTo(0, 0);
+						// 선호영화관 추가
+						$('ul.theater-circle').append(' '); //기존 줄바꿈이 스페이스 영역이라 추가
+						$('ul.theater-circle').append($('<li>').html($li.find('a, input').clone()));
+					}
+				})
+			});
 		});
 	});
 
-	// 선호극장 등록 및 취소
-	function fn_chgFavor(deleteYn) {
-
-		if (deleteYn == undefined) deleteYn = 'Y';
-
-		var paramData = {'brchNo' : '1572', 'deleteYn' : deleteYn};
-
-		$.ajaxMegaBox({
-			url      : '/on/oh/ohc/Brch/updateFavorBrch.do',
-			data     : JSON.stringify(paramData),
-			sessionAt: true,
-			success  : function (data, textStatus, jqXHR) {
-
-				// 결과
-				switch(data.result){
-				case 'max'   : gfn_alertMsgBox('최대 3개까지 설정 가능합니다.'); return;
-				case 'login' : gfn_alertMsgBox('로그인 해주세요.');           return;
-				}
-
-				switch(deleteYn){
-				case 'N' : $('.btn-like').addClass('on');    break;
-				case 'Y' : $('.btn-like').removeClass('on'); break;
-				}
-			}
-		});
-	}
-
-	// 극장 정보(Tab01) > 극장 정보 조회
-	function fn_brchInfo() {
-
-		var paramData = {'areaCd' : '10', 'brchNo' : '1572'};
-
-		$.ajaxMegaBox({
-			dataType : 'html',
-			url      : '/on/oh/ohc/Brch/infoPage.do',
-			data     : JSON.stringify(paramData),
-			success  : function (data, textStatus, jqXHR) {
-
-				// html 설정
-				$('#tab01').html(data);
-
-				// 소식조회
-				fn_noticeList();
-			}
-		});
-	}
-
-	// 극장 정보(Tab01) > 소식 조회
-	function fn_noticeList() {
-
-		var options = {};
-
-		// 페이징할 기본 SIZE 기본값 10
-		options.recordCountPerPage = 5;
-
-		// 호출 URL
-		options.url = "/on/oh/ohc/Brch/noticeList.do";
-
-		// 파라메터
-		options.paramData = {'brchNo' : '1572'};
-
-		// 그리기
-		options.successCallBack = function( data, textStatus, jqXHR ){
-
-			var html = '';
-
-			// 값이 없으면 소식 영역 삭제
-			if (data.list == undefined || data.list.length == 0) {
-				$('#brchNoti').remove();
-				return;
-			}
-
-			// 내용 생성
-			$.each(data.list, function(i, param) {
-				var artiCn = "";
-				//param.cls = (i==0)? 'on' : '';
-
-				html += '<li>';
-				html += '<div class="title ">';
-				html += '	<a href="" title="'+ param.artiTitle +'">';
-				html += '		<div class="cont-tit">'+ param.artiTitle   +'</div>';
-				html += '		<p class="cont-admin">'+ param.cate2Nm     +'</p>';
-				html += '		<p class="cont-date">' + param.fstRegDtStr +'</p>';
-				html += '	</a>';
-				html += '</div>';
-				if(param.artiCn != null){
-					artiCn = $.parseHTML(param.artiCn)[0].textContent
-				}
-				html += '<div class="content" style="display:none">'+ artiCn +'</div>';
-				html += '</li>';
-			});
-
-			// 게시글 노출
-			$('#tab01 .accordion-list ul').html(html);
-
-			// 아코디언 이벤트 연결
-			mbThToggle.init({target:'accordion-list'});
-		};
-
-		// page 이벤트 연결
-		gfn_setPage(options);
-	}
-
-	// 상영시간표(Tab02) 조회
-	function fn_callSchedule(playDe) {
-
-		var paramData = {};
-		var option    = {movieObj  : $('#tab02 > h2:last'), movieData : paramData}
-
-		paramData.masterType = 'brch';
-		paramData.brchNo     = '1572';
-		paramData.brchNm     = '마곡';
-
-		MegaboxUtil.Brch.init(option);
-	}
-
-	// 관람료(Tab03) > 관람료 조회
-	function fn_callPrice() {
-
-		var paramData = {};
-		var option    = {priceObj  : $('#tab03 > h2'), brchData : paramData}
-
-		paramData.zoneAt  = 'Y';
-		paramData.brchNo  = '1572';
-		paramData.brchNm  = '마곡';
-
-		MegaboxUtil.Brch.init(option);
-	}
-
-
-	// 메타테그/네비게인션 설정
-	function setMetaTagNNavi(index) {
-
-		var tabNm = $('#contents .tab-layer a').eq(index).html();
-		var title = tabNm + ' 페이지로 이동';
-
-		var paramData = { 'scnTitle'     : '(마곡)' + tabNm + ' > 전체극장 , 메가박스'
-						, 'metaTagTitle' : '(마곡)' + tabNm + ' > 전체극장 , 메가박스'
-						, 'metaTagImg'   : 'http://image2.megabox.co.kr/mop/event.html/2018/6F/03D492-6FD4-485F-AE3F-2D3E2A41046F.jpg'};
-
-		switch (index) {
-		case 0 :
-			paramData.metaTagUrl    = location.protocol + '//' + document.domain + '/theater?brchNo=1572';
-			paramData.metaTagMenuId = 'ON00000038';
-			paramData.metaTagDtls   = '반갑습니다. 메가박스 마곡점 입니다.';
-			break;
-		case 1 :
-			paramData.metaTagUrl    = location.protocol + '//' + document.domain + '/theater/time?brchNo=1572';
-			paramData.metaTagMenuId = 'ON00000037';
-			paramData.metaTagDtls   = '반갑습니다. 메가박스 마곡점 입니다.';
-			break;
-		case 2 :
-			paramData.metaTagUrl    = location.protocol + '//' + document.domain + '/theater/price?brchNo=1572';
-			paramData.metaTagMenuId = 'ON00000039';
-			paramData.metaTagDtls   = '메가박스 마곡점의 관람료를 확인하세요.';
-			break;
-		}
-
-		// 메타테그 설정
-		settingMeta(paramData);
-
-		// 네비게이션 설정
-		$('#schdlContainer .location a:last').attr({'href': paramData.metaTagUrl.replace('&', ''), 'title' : title}).html(tabNm);
-
-		// URL 주소 변경
-		history.replaceState( null, null, paramData.metaTagUrl );
-	}
-
 </script>
 
-<div id="schdlContainer" class="container">
+<div class="container">
+
 	<div class="page-util">
 		<div class="inner-wrap">
 			<div class="location">
 				<span>Home</span>
-				<a href="theater/list.html" title="극장 페이지로 이동">극장</a>
-				<a href="theater/list.html" title="전체극장 페이지로 이동">전체극장</a>
-				<a href="theater.html" title="극장정보 페이지로 이동">극장정보</a>
+				<a href="list.html" title="극장 페이지로 이동">극장</a>
+				<a href="list.html" title="전체극장 페이지로 이동">전체극장</a>
 			</div>
 		</div>
 	</div>
 
-	<!-- contents -->
+	<!-- content -->
 	<div id="contents" class="no-padding">
 
-		<!-- theater-detail-page -->
-		<div class="theater-detail-page">
+		
+			<!-- theater-main -->
+			<div class="theater-main mb40">
+				<div class="inner-wrap">
+					<div class="left">
+						<p class="slogun">megabox life theater</p>
+						<p class="txt">메가박스<br />새로운 지점을<br />소개합니다.</p>
 
-			<div class="bg-img" style="background-image:url('static/pc/images/theater/img-theater-detail.jpg');"></div>
-			<div class="bg-pattern"></div>
-			<div class="bg-mask"></div>
+						<!-- swiper-control -->
+						<div class="swiper-control">
+							<div class="theater-pagination"></div>
 
-			<!-- theater-all -->
-			<div class="theater-all">
-				<!-- theater-area-list -->
-				<div class="theater-area-list">
-					<ul class="area-depth1">
-						
+							<div class="theater-util">
+								<button type="button" class="theater-prev">이전 이벤트 보기</button>
+								<button type="button" class="theater-next">다음 이벤트 보기</button>
+								<button type="button" class="pause on">일시정지</button>
+								<button type="button" class="play">자동재생</button>
+							</div>
+
+							<div class="theater-count">
+								<span title="현재 페이지" class="active">0</span> /
+								<span title="전체 페이지" class="total">0</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- theater-swiper -->
+					<div class="theater-swiper">
+						<div class="swiper-wrapper">
 							
-							<li>
-								<a href="#" class="depth1" title="서울 선택">서울</a>
-								<div class="area-depth2">
+								<div class="cell swiper-slide" tabindex="0">
+									<a href="#" class="eventBtn" data-no="8448" data-netfunnel="" title="힐링 프리미엄 극장, 창원내서 6월 24일&#40;수&#41; OPEN! 상세보기">
+
+										
+											
+												
+											
+											
+											
+											
+											
+										
+
+										<div class="img new"></div>
+
+										<div class="cont new">
+											<p class="label">
+												
+													
+													
+														신규오픈
+													
+												
+											</p>
+											<p class="local">부산/대구/경상</p>
+											<p class="name"> 창원내서</p>
+											<p class="date">20.06.24</p>
+										</div>
+									</a>
+								</div>
+							
+								<div class="cell swiper-slide" tabindex="0">
+									<a href="#" class="eventBtn" data-no="8447" data-netfunnel="" title="세종에서 제일 편안한 극장, 세종청사 6월 24일&#40;수&#41; OPEN! 상세보기">
+
+										
+											
+												
+											
+											
+											
+											
+											
+										
+
+										<div class="img new"></div>
+
+										<div class="cont new">
+											<p class="label">
+												
+													
+													
+														신규오픈
+													
+												
+											</p>
+											<p class="local">대전/충청/세종</p>
+											<p class="name"> 세종청사</p>
+											<p class="date">20.06.24</p>
+										</div>
+									</a>
+								</div>
+							
+								<div class="cell swiper-slide" tabindex="0">
+									<a href="#" class="eventBtn" data-no="8446" data-netfunnel="" title="품격있는 당신을 위한 명품극장, 대전현대아울렛 6월 24일&#40;수&#41; OPEN! 상세보기">
+
+										
+											
+												
+											
+											
+											
+											
+											
+										
+
+										<div class="img new"></div>
+
+										<div class="cont new">
+											<p class="label">
+												
+													
+													
+														신규오픈
+													
+												
+											</p>
+											<p class="local">대전/충청/세종</p>
+											<p class="name"> 대전현대아울렛</p>
+											<p class="date">20.06.24</p>
+										</div>
+									</a>
+								</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		<!--// theater-main -->
+
+		<div class="inner-wrap">
+			
+
+			<h2 class="tit new">전체극장</h2>
+
+			<div class="theater-box">
+				<div class="theater-place">
+					<ul>
+						
+							<li class="on">
+								<button type="button" class="sel-city">서울
+									
+								</button>
+
+								<div class="theater-list">
 									<ul>
 										
-											<li>
-												<a href="theateredf1.html?brchNo=1372" title="강남 상세보기">강남
+											<li data-brch-no="1372">
+												
 
-													
-												</a>
+												<a href="../theateredf1.html?brchNo=1372" title="강남 상세보기">강남</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater2384.html?brchNo=1359" title="강남대로&#40;씨티&#41; 상세보기">강남대로&#40;씨티&#41;
+											<li data-brch-no="1359">
+												
 
-													
-												</a>
+												<a href="../theater2384.html?brchNo=1359" title="강남대로&#40;씨티&#41; 상세보기">강남대로&#40;씨티&#41;</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater04fa.html?brchNo=1341" title="강동 상세보기">강동
+											<li data-brch-no="1341">
+												
 
-													
-												</a>
+												<a href="../theater04fa.html?brchNo=1341" title="강동 상세보기">강동</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theateraa59.html?brchNo=1431" title="군자 상세보기">군자
+											<li data-brch-no="1431">
+												
 
-													
-												</a>
+												<a href="../theateraa59.html?brchNo=1431" title="군자 상세보기">군자</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterfb37.html?brchNo=1003" title="동대문 상세보기">동대문
+											<li data-brch-no="1003">
+												
 
-													
-												</a>
+												<a href="../theaterfb37.html?brchNo=1003" title="동대문 상세보기">동대문</a>
+
+												
 											</li>
 										
-											<li class="on">
-												<a href="theatera83c.html?brchNo=1572" title="마곡 상세보기">마곡
+											<li data-brch-no="1572">
+												
 
-													
-												</a>
+												<a href="../theatera83c.html?brchNo=1572" title="마곡 상세보기">마곡</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater1177.html?brchNo=1581" title="목동 상세보기">목동
+											<li data-brch-no="1581">
+												
 
-													
-												</a>
+												<a href="../theater1177.html?brchNo=1581" title="목동 상세보기">목동</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater3a3b.html?brchNo=1311" title="상봉 상세보기">상봉
+											<li data-brch-no="1311">
+												
 
-													
-												</a>
+												<a href="../theater3a3b.html?brchNo=1311" title="상봉 상세보기">상봉</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater37ed.html?brchNo=1211" title="상암월드컵경기장 상세보기">상암월드컵경기장
+											<li data-brch-no="1211">
+												
 
-													
-												</a>
+												<a href="../theater37ed.html?brchNo=1211" title="상암월드컵경기장 상세보기">상암월드컵경기장</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater426b.html?brchNo=1331" title="성수 상세보기">성수
+											<li data-brch-no="1331">
+												
 
-													
-												</a>
+												<a href="../theater426b.html?brchNo=1331" title="성수 상세보기">성수</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatera260.html?brchNo=1371" title="센트럴 상세보기">센트럴
+											<li data-brch-no="1371">
+												
 
-													
-												</a>
+												<a href="../theatera260.html?brchNo=1371" title="센트럴 상세보기">센트럴</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater7f75.html?brchNo=1381" title="송파파크하비오 상세보기">송파파크하비오
+											<li data-brch-no="1381">
+												
 
-													
-												</a>
+												<a href="../theater7f75.html?brchNo=1381" title="송파파크하비오 상세보기">송파파크하비오</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater6f66.html?brchNo=1202" title="신촌 상세보기">신촌
+											<li data-brch-no="1202">
+												
 
-													
-												</a>
+												<a href="../theater6f66.html?brchNo=1202" title="신촌 상세보기">신촌</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater64ed.html?brchNo=1221" title="은평 상세보기">은평
+											<li data-brch-no="1221">
+												
 
-													
-												</a>
+												<a href="../theater64ed.html?brchNo=1221" title="은평 상세보기">은평</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater8128.html?brchNo=1561" title="이수 상세보기">이수
+											<li data-brch-no="1561">
+												
 
-													
-												</a>
+												<a href="../theater8128.html?brchNo=1561" title="이수 상세보기">이수</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater5fe7.html?brchNo=1321" title="창동 상세보기">창동
+											<li data-brch-no="1321">
+												
 
-													
-												</a>
+												<a href="../theater5fe7.html?brchNo=1321" title="창동 상세보기">창동</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater58af.html?brchNo=1351" title="코엑스 상세보기">코엑스
+											<li data-brch-no="1351">
+												
 
-													
-												</a>
+												<a href="../theater58af.html?brchNo=1351" title="코엑스 상세보기">코엑스</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatere717.html?brchNo=1212" title="홍대 상세보기">홍대
+											<li data-brch-no="1212">
+												
 
-													
-												</a>
+												<a href="../theatere717.html?brchNo=1212" title="홍대 상세보기">홍대</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater447d.html?brchNo=1571" title="화곡 상세보기">화곡
+											<li data-brch-no="1571">
+												
 
-													
-												</a>
+												<a href="../theater447d.html?brchNo=1571" title="화곡 상세보기">화곡</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater2f8e.html?brchNo=1562" title="ARTNINE 상세보기">ARTNINE
+											<li data-brch-no="1562">
+												
 
-													
-												</a>
+												<a href="../theater2f8e.html?brchNo=1562" title="ARTNINE 상세보기">ARTNINE</a>
+
+												
 											</li>
 										
 									</ul>
 								</div>
 							</li>
 						
-							
 							<li>
-								<a href="#" class="depth1" title="경기 선택">경기</a>
-								<div class="area-depth2">
+								<button type="button" class="sel-city">경기
+									
+								</button>
+
+								<div class="theater-list">
 									<ul>
 										
-											<li>
-												<a href="theateraafd.html?brchNo=4121" title="고양스타필드 상세보기">고양스타필드
+											<li data-brch-no="4121">
+												
 
-													
-												</a>
+												<a href="../theateraafd.html?brchNo=4121" title="고양스타필드 상세보기">고양스타필드</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatercc27.html?brchNo=4152" title="김포한강신도시 상세보기">김포한강신도시
+											<li data-brch-no="4152">
+												
 
-													
-												</a>
+												<a href="../theatercc27.html?brchNo=4152" title="김포한강신도시 상세보기">김포한강신도시</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater707f.html?brchNo=4721" title="남양주 상세보기">남양주
+											<li data-brch-no="4721">
+												
 
-													
-												</a>
+												<a href="../theater707f.html?brchNo=4721" title="남양주 상세보기">남양주</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatere938.html?brchNo=4451" title="동탄 상세보기">동탄
+											<li data-brch-no="4451">
+												
 
-													
-												</a>
+												<a href="../theatere938.html?brchNo=4451" title="동탄 상세보기">동탄</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater93aa.html?brchNo=4652" title="미사강변 상세보기">미사강변
+											<li data-brch-no="4652">
+												
 
-													
-												</a>
+												<a href="../theater93aa.html?brchNo=4652" title="미사강변 상세보기">미사강변</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater0d0b.html?brchNo=4113" title="백석 상세보기">백석
+											<li data-brch-no="4113">
+												
 
-													
-												</a>
+												<a href="../theater0d0b.html?brchNo=4113" title="백석 상세보기">백석</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterbdf4.html?brchNo=4722" title="별내 상세보기">별내
+											<li data-brch-no="4722">
+												
 
-													
-												</a>
+												<a href="../theaterbdf4.html?brchNo=4722" title="별내 상세보기">별내</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater49f6.html?brchNo=4221" title="부천스타필드시티 상세보기">부천스타필드시티
+											<li data-brch-no="4221">
+												
 
-													
-												</a>
+												<a href="../theater49f6.html?brchNo=4221" title="부천스타필드시티 상세보기">부천스타필드시티</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatera216.html?brchNo=4631" title="분당 상세보기">분당
+											<li data-brch-no="4631">
+												
 
-													
-												</a>
+												<a href="../theatera216.html?brchNo=4631" title="분당 상세보기">분당</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater7265.html?brchNo=4411" title="수원 상세보기">수원
+											<li data-brch-no="4411">
+												
 
-													
-												</a>
+												<a href="../theater7265.html?brchNo=4411" title="수원 상세보기">수원</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater0ceb.html?brchNo=4421" title="수원남문 상세보기">수원남문
+											<li data-brch-no="4421">
+												
 
-													
-												</a>
+												<a href="../theater0ceb.html?brchNo=4421" title="수원남문 상세보기">수원남문</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater33fc.html?brchNo=4291" title="시흥배곧 상세보기">시흥배곧
+											<li data-brch-no="4291">
+												
 
-													
-												</a>
+												<a href="../theater33fc.html?brchNo=4291" title="시흥배곧 상세보기">시흥배곧</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater73b9.html?brchNo=4253" title="안산중앙 상세보기">안산중앙
+											<li data-brch-no="4253">
+												
 
-													
-												</a>
+												<a href="../theater73b9.html?brchNo=4253" title="안산중앙 상세보기">안산중앙</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater7059.html?brchNo=4821" title="양주 상세보기">양주
+											<li data-brch-no="4821">
+												
 
-													
-												</a>
+												<a href="../theater7059.html?brchNo=4821" title="양주 상세보기">양주</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater1893.html?brchNo=4431" title="영통 상세보기">영통
+											<li data-brch-no="4431">
+												
 
-													
-												</a>
+												<a href="../theater1893.html?brchNo=4431" title="영통 상세보기">영통</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater5692.html?brchNo=0012" title="용인기흥 상세보기">용인기흥
+											<li data-brch-no="0012">
+												
 
-													
-												</a>
+												<a href="../theater5692.html?brchNo=0012" title="용인기흥 상세보기">용인기흥</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater2cae.html?brchNo=4462" title="용인테크노밸리 상세보기">용인테크노밸리
+											<li data-brch-no="4462">
+												
 
-													
-												</a>
+												<a href="../theater2cae.html?brchNo=4462" title="용인테크노밸리 상세보기">용인테크노밸리</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatered3d.html?brchNo=4804" title="의정부민락 상세보기">의정부민락
+											<li data-brch-no="4804">
+												
 
-													
-												</a>
+												<a href="../theatered3d.html?brchNo=4804" title="의정부민락 상세보기">의정부민락</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater645e.html?brchNo=4111" title="일산 상세보기">일산
+											<li data-brch-no="4111">
+												
 
-													
-												</a>
+												<a href="../theater645e.html?brchNo=4111" title="일산 상세보기">일산</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater8a8f.html?brchNo=4104" title="일산벨라시타 상세보기">일산벨라시타
+											<li data-brch-no="4104">
+												
 
-													
-												</a>
+												<a href="../theater8a8f.html?brchNo=4104" title="일산벨라시타 상세보기">일산벨라시타</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatered65.html?brchNo=4112" title="킨텍스 상세보기">킨텍스
+											<li data-brch-no="4112">
+												
 
-													
-												</a>
+												<a href="../theatered65.html?brchNo=4112" title="킨텍스 상세보기">킨텍스</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater46c1.html?brchNo=4132" title="파주금촌 상세보기">파주금촌
+											<li data-brch-no="4132">
+												
 
-													
-												</a>
+												<a href="../theater46c1.html?brchNo=4132" title="파주금촌 상세보기">파주금촌</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatercbb7.html?brchNo=4115" title="파주운정 상세보기">파주운정
+											<li data-brch-no="4115">
+												
 
-													
-												</a>
+												<a href="../theatercbb7.html?brchNo=4115" title="파주운정 상세보기">파주운정</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater85dd.html?brchNo=4131" title="파주출판도시 상세보기">파주출판도시
+											<li data-brch-no="4131">
+												
 
-													
-												</a>
+												<a href="../theater85dd.html?brchNo=4131" title="파주출판도시 상세보기">파주출판도시</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterfb0e.html?brchNo=4501" title="평택 상세보기">평택
+											<li data-brch-no="4501">
+												
 
-													
-												</a>
+												<a href="../theaterfb0e.html?brchNo=4501" title="평택 상세보기">평택</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatera64a.html?brchNo=4651" title="하남스타필드 상세보기">하남스타필드
+											<li data-brch-no="4651">
+												
 
-													
-												</a>
+												<a href="../theatera64a.html?brchNo=4651" title="하남스타필드 상세보기">하남스타필드</a>
+
+												
 											</li>
 										
 									</ul>
 								</div>
 							</li>
 						
-							
 							<li>
-								<a href="#" class="depth1" title="인천 선택">인천</a>
-								<div class="area-depth2">
+								<button type="button" class="sel-city">인천
+									
+								</button>
+
+								<div class="theater-list">
 									<ul>
 										
-											<li>
-												<a href="theater1901.html?brchNo=4041" title="검단 상세보기">검단
+											<li data-brch-no="4041">
+												
 
-													
-												</a>
+												<a href="../theater1901.html?brchNo=4041" title="검단 상세보기">검단</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterf177.html?brchNo=4062" title="송도 상세보기">송도
+											<li data-brch-no="4062">
+												
 
-													
-												</a>
+												<a href="../theaterf177.html?brchNo=4062" title="송도 상세보기">송도</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterd1b8.html?brchNo=4001" title="영종 상세보기">영종
+											<li data-brch-no="4001">
+												
 
-													
-												</a>
+												<a href="../theaterd1b8.html?brchNo=4001" title="영종 상세보기">영종</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterf17c.html?brchNo=4051" title="인천논현 상세보기">인천논현
+											<li data-brch-no="4051">
+												
 
-													
-												</a>
+												<a href="../theaterf17c.html?brchNo=4051" title="인천논현 상세보기">인천논현</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater5ff0.html?brchNo=4042" title="청라 상세보기">청라
+											<li data-brch-no="4042">
+												
 
-													
-												</a>
+												<a href="../theater5ff0.html?brchNo=4042" title="청라 상세보기">청라</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatera346.html?brchNo=4043" title="청라지젤 상세보기">청라지젤
+											<li data-brch-no="4043">
+												
 
-													
-												</a>
+												<a href="../theatera346.html?brchNo=4043" title="청라지젤 상세보기">청라지젤</a>
+
+												
 											</li>
 										
 									</ul>
 								</div>
 							</li>
 						
-							
 							<li>
-								<a href="#" class="depth1" title="대전/충청/세종 선택">대전/충청/세종</a>
-								<div class="area-depth2">
+								<button type="button" class="sel-city">대전/충청/세종
+									
+								</button>
+
+								<div class="theater-list">
 									<ul>
 										
-											<li>
-												<a href="theater4a88.html?brchNo=3141" title="공주 상세보기">공주
+											<li data-brch-no="3141">
+												
 
-													
-												</a>
+												<a href="../theater4a88.html?brchNo=3141" title="공주 상세보기">공주</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterab4a.html?brchNo=3021" title="대전 상세보기">대전
+											<li data-brch-no="3021">
+												
 
-													
-												</a>
+												<a href="../theaterab4a.html?brchNo=3021" title="대전 상세보기">대전</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatere837.html?brchNo=0009" title="대전유성 상세보기">대전유성
+											<li data-brch-no="0009">
+												
 
-													
-												</a>
+												<a href="../theatere837.html?brchNo=0009" title="대전유성 상세보기">대전유성</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater7124.html?brchNo=3011" title="대전중앙로 상세보기">대전중앙로
+											<li data-brch-no="3011">
+												
 
-													
-												</a>
+												<a href="../theater7124.html?brchNo=3011" title="대전중앙로 상세보기">대전중앙로</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterb681.html?brchNo=0017" title="대전현대아울렛 상세보기">대전현대아울렛
+											<li data-brch-no="0017">
+												
 
+												<a href="../theaterb681.html?brchNo=0017" title="대전현대아울렛 상세보기">대전현대아울렛</a>
+
+												
 													
 														
-															
-																<i class="iconset ico-theater-new"></i>
-															
-															
-															
-															
+															<i class="iconset ico-theater-new"></i>
+														
+														
+														
 														
 													
-												</a>
+												
 											</li>
 										
-											<li>
-												<a href="theater1653.html?brchNo=3391" title="세종&#40;조치원&#41; 상세보기">세종&#40;조치원&#41;
+											<li data-brch-no="3391">
+												
 
-													
-												</a>
+												<a href="../theater1653.html?brchNo=3391" title="세종&#40;조치원&#41; 상세보기">세종&#40;조치원&#41;</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatera094.html?brchNo=3392" title="세종나성 상세보기">세종나성
+											<li data-brch-no="3392">
+												
 
-													
-												</a>
+												<a href="../theatera094.html?brchNo=3392" title="세종나성 상세보기">세종나성</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater131d.html?brchNo=0008" title="세종청사 상세보기">세종청사
+											<li data-brch-no="0008">
+												
 
+												<a href="../theater131d.html?brchNo=0008" title="세종청사 상세보기">세종청사</a>
+
+												
 													
 														
-															
-																<i class="iconset ico-theater-new"></i>
-															
-															
-															
-															
+															<i class="iconset ico-theater-new"></i>
+														
+														
+														
 														
 													
-												</a>
+												
 											</li>
 										
-											<li>
-												<a href="theatera73b.html?brchNo=3631" title="오창 상세보기">오창
+											<li data-brch-no="3631">
+												
 
-													
-												</a>
+												<a href="../theatera73b.html?brchNo=3631" title="오창 상세보기">오창</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theateradd7.html?brchNo=3901" title="제천 상세보기">제천
+											<li data-brch-no="3901">
+												
 
-													
-												</a>
+												<a href="../theateradd7.html?brchNo=3901" title="제천 상세보기">제천</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater27eb.html?brchNo=3651" title="진천 상세보기">진천
+											<li data-brch-no="3651">
+												
 
-													
-												</a>
+												<a href="../theater27eb.html?brchNo=3651" title="진천 상세보기">진천</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater346d.html?brchNo=3301" title="천안 상세보기">천안
+											<li data-brch-no="3301">
+												
 
-													
-												</a>
+												<a href="../theater346d.html?brchNo=3301" title="천안 상세보기">천안</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterfa35.html?brchNo=0013" title="청주사창 상세보기">청주사창
+											<li data-brch-no="0013">
+												
 
+												<a href="../theaterfa35.html?brchNo=0013" title="청주사창 상세보기">청주사창</a>
+
+												
 													
 														
-															
-															
-															
-																<i class="iconset ico-theater-open"></i>
-															
-															
+														
+														
+															<i class="iconset ico-theater-open"></i>
+														
 														
 													
-												</a>
+												
 											</li>
 										
-											<li>
-												<a href="theaterd4a3.html?brchNo=3801" title="충주 상세보기">충주
+											<li data-brch-no="3801">
+												
 
-													
-												</a>
+												<a href="../theaterd4a3.html?brchNo=3801" title="충주 상세보기">충주</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater994b.html?brchNo=3501" title="홍성내포 상세보기">홍성내포
+											<li data-brch-no="3501">
+												
 
-													
-												</a>
+												<a href="../theater994b.html?brchNo=3501" title="홍성내포 상세보기">홍성내포</a>
+
+												
 											</li>
 										
 									</ul>
 								</div>
 							</li>
 						
-							
 							<li>
-								<a href="#" class="depth1" title="부산/대구/경상 선택">부산/대구/경상</a>
-								<div class="area-depth2">
+								<button type="button" class="sel-city">부산/대구/경상
+									
+								</button>
+
+								<div class="theater-list">
 									<ul>
 										
-											<li>
-												<a href="theateraa6f.html?brchNo=6701" title="거창 상세보기">거창
+											<li data-brch-no="6701">
+												
 
-													
-												</a>
+												<a href="../theateraa6f.html?brchNo=6701" title="거창 상세보기">거창</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater9e4c.html?brchNo=7602" title="경북도청 상세보기">경북도청
+											<li data-brch-no="7602">
+												
 
-													
-												</a>
+												<a href="../theater9e4c.html?brchNo=7602" title="경북도청 상세보기">경북도청</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater8b57.html?brchNo=7122" title="경산하양 상세보기">경산하양
+											<li data-brch-no="7122">
+												
 
-													
-												</a>
+												<a href="../theater8b57.html?brchNo=7122" title="경산하양 상세보기">경산하양</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater710e.html?brchNo=7801" title="경주 상세보기">경주
+											<li data-brch-no="7801">
+												
 
-													
-												</a>
+												<a href="../theater710e.html?brchNo=7801" title="경주 상세보기">경주</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater2c90.html?brchNo=7303" title="구미강동 상세보기">구미강동
+											<li data-brch-no="7303">
+												
 
-													
-												</a>
+												<a href="../theater2c90.html?brchNo=7303" title="구미강동 상세보기">구미강동</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatera9e6.html?brchNo=7401" title="김천 상세보기">김천
+											<li data-brch-no="7401">
+												
 
-													
-												</a>
+												<a href="../theatera9e6.html?brchNo=7401" title="김천 상세보기">김천</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterfef9.html?brchNo=7901" title="남포항 상세보기">남포항
+											<li data-brch-no="7901">
+												
 
-													
-												</a>
+												<a href="../theaterfef9.html?brchNo=7901" title="남포항 상세보기">남포항</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater9193.html?brchNo=7022" title="대구&#40;칠성로&#41; 상세보기">대구&#40;칠성로&#41;
+											<li data-brch-no="7022">
+												
 
-													
-												</a>
+												<a href="../theater9193.html?brchNo=7022" title="대구&#40;칠성로&#41; 상세보기">대구&#40;칠성로&#41;</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater879c.html?brchNo=7011" title="대구신세계&#40;동대구&#41; 상세보기">대구신세계&#40;동대구&#41;
+											<li data-brch-no="7011">
+												
 
-													
-												</a>
+												<a href="../theater879c.html?brchNo=7011" title="대구신세계&#40;동대구&#41; 상세보기">대구신세계&#40;동대구&#41;</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatere7e7.html?brchNo=7012" title="대구이시아 상세보기">대구이시아
+											<li data-brch-no="7012">
+												
 
-													
-												</a>
+												<a href="../theatere7e7.html?brchNo=7012" title="대구이시아 상세보기">대구이시아</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theatera237.html?brchNo=6161" title="덕천 상세보기">덕천
+											<li data-brch-no="6161">
+												
 
-													
-												</a>
+												<a href="../theatera237.html?brchNo=6161" title="덕천 상세보기">덕천</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater9caa.html?brchNo=6312" title="마산 상세보기">마산
+											<li data-brch-no="6312">
+												
 
-													
-												</a>
+												<a href="../theater9caa.html?brchNo=6312" title="마산 상세보기">마산</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater593d.html?brchNo=7451" title="문경 상세보기">문경
+											<li data-brch-no="7451">
+												
 
-													
-												</a>
+												<a href="../theater593d.html?brchNo=7451" title="문경 상세보기">문경</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater2d17.html?brchNo=6001" title="부산극장 상세보기">부산극장
+											<li data-brch-no="6001">
+												
 
-													
-												</a>
+												<a href="../theater2d17.html?brchNo=6001" title="부산극장 상세보기">부산극장</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater4e2a.html?brchNo=6906" title="부산대 상세보기">부산대
+											<li data-brch-no="6906">
+												
 
-													
-												</a>
+												<a href="../theater4e2a.html?brchNo=6906" title="부산대 상세보기">부산대</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater4f39.html?brchNo=7021" title="북대구&#40;칠곡&#41; 상세보기">북대구&#40;칠곡&#41;
+											<li data-brch-no="7021">
+												
 
-													
-												</a>
+												<a href="../theater4f39.html?brchNo=7021" title="북대구&#40;칠곡&#41; 상세보기">북대구&#40;칠곡&#41;</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterbb69.html?brchNo=6641" title="사천 상세보기">사천
+											<li data-brch-no="6641">
+												
 
-													
-												</a>
+												<a href="../theaterbb69.html?brchNo=6641" title="사천 상세보기">사천</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater128f.html?brchNo=6642" title="삼천포 상세보기">삼천포
+											<li data-brch-no="6642">
+												
 
-													
-												</a>
+												<a href="../theater128f.html?brchNo=6642" title="삼천포 상세보기">삼천포</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterd230.html?brchNo=6261" title="양산 상세보기">양산
+											<li data-brch-no="6261">
+												
 
-													
-												</a>
+												<a href="../theaterd230.html?brchNo=6261" title="양산 상세보기">양산</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater77c9.html?brchNo=6262" title="양산라피에스타 상세보기">양산라피에스타
+											<li data-brch-no="6262">
+												
 
-													
-												</a>
+												<a href="../theater77c9.html?brchNo=6262" title="양산라피에스타 상세보기">양산라피에스타</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater5908.html?brchNo=6811" title="울산 상세보기">울산
+											<li data-brch-no="6811">
+												
 
-													
-												</a>
+												<a href="../theater5908.html?brchNo=6811" title="울산 상세보기">울산</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterffaa.html?brchNo=6191" title="정관 상세보기">정관
+											<li data-brch-no="6191">
+												
 
-													
-												</a>
+												<a href="../theaterffaa.html?brchNo=6191" title="정관 상세보기">정관</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater4c5f.html?brchNo=6421" title="창원 상세보기">창원
+											<li data-brch-no="6421">
+												
 
-													
-												</a>
+												<a href="../theater4c5f.html?brchNo=6421" title="창원 상세보기">창원</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterd1f1.html?brchNo=0014" title="창원내서 상세보기">창원내서
+											<li data-brch-no="0014">
+												
 
+												<a href="../theaterd1f1.html?brchNo=0014" title="창원내서 상세보기">창원내서</a>
+
+												
 													
 														
-															
-																<i class="iconset ico-theater-new"></i>
-															
-															
-															
-															
+															<i class="iconset ico-theater-new"></i>
+														
+														
+														
 														
 													
-												</a>
+												
 											</li>
 										
-											<li>
-												<a href="theaterbf4d.html?brchNo=6121" title="해운대&#40;장산&#41; 상세보기">해운대&#40;장산&#41;
+											<li data-brch-no="6121">
+												
 
-													
-												</a>
-											</li>
-										
-									</ul>
-								</div>
-							</li>
-						
-							
-							<li>
-								<a href="#" class="depth1" title="광주/전라 선택">광주/전라</a>
-								<div class="area-depth2">
-									<ul>
-										
-											<li>
-												<a href="theaterc0f6.html?brchNo=5021" title="광주상무 상세보기">광주상무
+												<a href="../theaterbf4d.html?brchNo=6121" title="해운대&#40;장산&#41; 상세보기">해운대&#40;장산&#41;</a>
 
-													
-												</a>
-											</li>
-										
-											<li>
-												<a href="theater2dda.html?brchNo=5061" title="광주하남 상세보기">광주하남
-
-													
-												</a>
-											</li>
-										
-											<li>
-												<a href="theater5f27.html?brchNo=5901" title="남원 상세보기">남원
-
-													
-												</a>
-											</li>
-										
-											<li>
-												<a href="theater4dce.html?brchNo=5302" title="목포하당&#40;포르모&#41; 상세보기">목포하당&#40;포르모&#41;
-
-													
-												</a>
-											</li>
-										
-											<li>
-												<a href="theater0e1c.html?brchNo=5612" title="송천 상세보기">송천
-
-													
-												</a>
-											</li>
-										
-											<li>
-												<a href="theater72d0.html?brchNo=5401" title="순천 상세보기">순천
-
-													
-												</a>
-											</li>
-										
-											<li>
-												<a href="theater2e43.html?brchNo=5552" title="여수웅천 상세보기">여수웅천
-
-													
-												</a>
-											</li>
-										
-											<li>
-												<a href="theaterbf92.html?brchNo=0010" title="전대&#40;광주&#41; 상세보기">전대&#40;광주&#41;
-
-													
-												</a>
-											</li>
-										
-											<li>
-												<a href="theater3732.html?brchNo=5064" title="첨단 상세보기">첨단
-
-													
-												</a>
+												
 											</li>
 										
 									</ul>
 								</div>
 							</li>
 						
-							
 							<li>
-								<a href="#" class="depth1" title="강원 선택">강원</a>
-								<div class="area-depth2">
+								<button type="button" class="sel-city">광주/전라
+									
+								</button>
+
+								<div class="theater-list">
 									<ul>
 										
-											<li>
-												<a href="theaterd9b3.html?brchNo=2001" title="남춘천 상세보기">남춘천
+											<li data-brch-no="5021">
+												
 
-													
-												</a>
+												<a href="../theaterc0f6.html?brchNo=5021" title="광주상무 상세보기">광주상무</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theaterd854.html?brchNo=2171" title="속초 상세보기">속초
+											<li data-brch-no="5061">
+												
 
-													
-												</a>
+												<a href="../theater2dda.html?brchNo=5061" title="광주하남 상세보기">광주하남</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater8875.html?brchNo=2201" title="원주 상세보기">원주
+											<li data-brch-no="5901">
+												
 
-													
-												</a>
+												<a href="../theater5f27.html?brchNo=5901" title="남원 상세보기">남원</a>
+
+												
 											</li>
 										
-											<li>
-												<a href="theater83c6.html?brchNo=2202" title="원주센트럴 상세보기">원주센트럴
+											<li data-brch-no="5302">
+												
 
-													
-												</a>
+												<a href="../theater4dce.html?brchNo=5302" title="목포하당&#40;포르모&#41; 상세보기">목포하당&#40;포르모&#41;</a>
+
+												
+											</li>
+										
+											<li data-brch-no="5612">
+												
+
+												<a href="../theater0e1c.html?brchNo=5612" title="송천 상세보기">송천</a>
+
+												
+											</li>
+										
+											<li data-brch-no="5401">
+												
+
+												<a href="../theater72d0.html?brchNo=5401" title="순천 상세보기">순천</a>
+
+												
+											</li>
+										
+											<li data-brch-no="5552">
+												
+
+												<a href="../theater2e43.html?brchNo=5552" title="여수웅천 상세보기">여수웅천</a>
+
+												
+											</li>
+										
+											<li data-brch-no="0010">
+												
+
+												<a href="../theaterbf92.html?brchNo=0010" title="전대&#40;광주&#41; 상세보기">전대&#40;광주&#41;</a>
+
+												
+											</li>
+										
+											<li data-brch-no="5064">
+												
+
+												<a href="../theater3732.html?brchNo=5064" title="첨단 상세보기">첨단</a>
+
+												
 											</li>
 										
 									</ul>
 								</div>
 							</li>
 						
-							
 							<li>
-								<a href="#" class="depth1" title="제주 선택">제주</a>
-								<div class="area-depth2">
+								<button type="button" class="sel-city">강원
+									
+								</button>
+
+								<div class="theater-list">
 									<ul>
 										
-											<li>
-												<a href="theater7fb8.html?brchNo=6901" title="제주 상세보기">제주
+											<li data-brch-no="2001">
+												
 
-													
-												</a>
+												<a href="../theaterd9b3.html?brchNo=2001" title="남춘천 상세보기">남춘천</a>
+
+												
+											</li>
+										
+											<li data-brch-no="2171">
+												
+
+												<a href="../theaterd854.html?brchNo=2171" title="속초 상세보기">속초</a>
+
+												
+											</li>
+										
+											<li data-brch-no="2201">
+												
+
+												<a href="../theater8875.html?brchNo=2201" title="원주 상세보기">원주</a>
+
+												
+											</li>
+										
+											<li data-brch-no="2202">
+												
+
+												<a href="../theater83c6.html?brchNo=2202" title="원주센트럴 상세보기">원주센트럴</a>
+
+												
+											</li>
+										
+									</ul>
+								</div>
+							</li>
+						
+							<li>
+								<button type="button" class="sel-city">제주
+									
+								</button>
+
+								<div class="theater-list">
+									<ul>
+										
+											<li data-brch-no="6901">
+												
+
+												<a href="../theater7fb8.html?brchNo=6901" title="제주 상세보기">제주</a>
+
+												
 											</li>
 										
 									</ul>
@@ -3880,67 +3627,137 @@ function fn_bokdReload(page){
 						
 					</ul>
 				</div>
-				<!--// theater-area-list -->
 
-				<p class="name">마곡</p>
+				<div class="user-theater">
+					
+						
+						
+							<!-- 로그인 전 -->
+							<div>
+								<i class="iconset ico-favo-theater"></i> 나의 선호영화관 정보
+								<a href="#" class="button small ml10" id="moveLogin" title="로그인하기">로그인하기</a>
+							</div>
+						
+					
+				</div>
+			</div>
 
-				<div class="btn-util right">
+			
+				<div class="tit-util mt70 mb15">
+					<h3 class="tit">극장 이벤트</h3>
+					<a href="#" onclick="NetfunnelChk.aTag('STORE_DTL','/event/theater');return false;" class="more" title="극장 이벤트 더보기">더보기 <i class="iconset ico-arr-right-gray"></i></a>
+				</div>
 
-					<div class="block">
+				<div class="event-box">
+					<ul>
+						
+							<li>
+								<a href="#" class="eventBtn" data-no="8204" data-netfunnel="N" title="[신촌 | 이벤트] 앵콜연장! 별별 닉네임 상영관 상세보기">
+									<img src="../../img.megabox.co.kr/SharedImg/event/2020/03/17/x23DPxjY0lBYKEGgOv0au8URBgUTbDPb.jpg" alt="[신촌 | 이벤트] 앵콜연장! 별별 닉네임 상영관" onerror="noImg(this)" />
+								</a>
+							</li>
+						
+							<li>
+								<a href="#" class="eventBtn" data-no="8483" data-netfunnel="N" title="[청라지젤 | 시즌권] 지젤M 하반기 시즌권 런칭 상세보기">
+									<img src="../../img.megabox.co.kr/SharedImg/event/2020/06/29/I7zwF8YsPKpSB6OTJeYQWFveuxhgIvlr.jpg" alt="[청라지젤 | 시즌권] 지젤M 하반기 시즌권 런칭" onerror="noImg(this)" />
+								</a>
+							</li>
+						
+					</ul>
+				</div>
+			
 
+			<div class="tit-util mt70 mb15">
+				<h3 class="tit">극장 공지사항</h3>
+				<a href="../support/notice6b88.html?ti=3" class="more" title="극장 공지사항 더보기">더보기 <i class="iconset ico-arr-right-gray"></i></a>
+			</div>
+
+			<div class="table-wrap">
+				<table class="board-list">
+					<caption>극장, 제목, 지역, 등록일이 들어간 극장 공지사항 목록</caption>
+					<colgroup>
+						<col style="width:150px;">
+						<col>
+						<col style="width:150px;">
+						<col style="width:120px;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">극장</th>
+							<th scope="col">제목</th>
+							<th scope="col">지역</th>
+							<th scope="col">등록일</th>
+						</tr>
+					</thead>
+					<tbody>
 						
 							
+								
+									<tr>
+										<td>문경</td>
+										<th scope="row">
+											<a href="../support/notice/detail1ca4.html?artiNo=10117&amp;bbsNo=9" title="[문경] 7월휴관일 안내 상세보기">
+												[문경] 7월휴관일 안내
+											</a>
+										</th>
+										<td>부산/대구/경상</td>
+										<td>2020.07.06</td>
+									</tr>
+								
+									<tr>
+										<td>고양스타필드</td>
+										<th scope="row">
+											<a href="../support/notice/detailb926.html?artiNo=10116&amp;bbsNo=9" title="[고양스타필드지점] 7/7&#40;화&#41; 건물 내 법정 전기 안전검사 실시 안내 상세보기">
+												[고양스타필드지점] 7/7&#40;화&#41; 건물 내 법정 전기 안전검사 실시 안내
+											</a>
+										</th>
+										<td>경기</td>
+										<td>2020.07.06</td>
+									</tr>
+								
+									<tr>
+										<td>대전현대아울렛</td>
+										<th scope="row">
+											<a href="../support/notice/detail2a2e.html?artiNo=10115&amp;bbsNo=9" title="지점 임시 휴점 안내 상세보기">
+												지점 임시 휴점 안내
+											</a>
+										</th>
+										<td>대전/충청/세종</td>
+										<td>2020.07.03</td>
+									</tr>
+								
+									<tr>
+										<td>화곡</td>
+										<th scope="row">
+											<a href="../support/notice/detail492c.html?artiNo=10114&amp;bbsNo=9" title="[화곡지점] 매점 운영시간 조정 안내&#40;7/3~&#41; 상세보기">
+												[화곡지점] 매점 운영시간 조정 안내&#40;7/3~&#41;
+											</a>
+										</th>
+										<td>서울</td>
+										<td>2020.07.03</td>
+									</tr>
+								
+									<tr>
+										<td>대구신세계&#40;동대구&#41;</td>
+										<th scope="row">
+											<a href="../support/notice/detailb9fa.html?artiNo=10113&amp;bbsNo=9" title="지점 임시 휴점 안내 상세보기">
+												지점 임시 휴점 안내
+											</a>
+										</th>
+										<td>부산/대구/경상</td>
+										<td>2020.07.03</td>
+									</tr>
+								
 							
-								<button type="button" class="btn btn-like tooltip click">
-									<i class="iconset ico-like-line"></i>
-									<span>선호극장</span>
-
-									<span class="ir" data-width="235">
-										<span class="cont-area">
-											<span class="login-alert-tooltip">
-												로그인이 필요한 서비스 입니다.<br>
-												<a href="#" id="moveLogin" title="로그인하기">로그인하기 <i class="iconset ico-arr-right-green"></i></a>
-											</span>
-										</span>
-									</span>
-								</button>
 							
 						
-					</div>
-				</div>
-			</div>
-			<!--// theater-detail-cont -->
-		</div>
-		<!--// theater-detail-page -->
-
-		<div class="inner-wrap pt40">
-
-			<div class="tab-list fixed mb40 tab-layer">
-				<ul>
-					<li><a href="#tab01" title="극장정보 탭으로 이동">극장정보</a></li>
-					<li><a href="#tab02" title="상영시간표 탭으로 이동">상영시간표</a></li>
-					<li><a href="#tab03" title="관람료 탭으로 이동">관람료</a></li>
-				</ul>
+					</tbody>
+				</table>
 			</div>
 
-			<div class="tab-cont-wrap">
-				<div id="tab01" class="tab-cont">
-				</div>
-
-				<div id="tab02" class="tab-cont">
-					<h2 class="tit small" style="display: none;">무대인사</h2>
-					<div class="movie-greeting"></div>
-					<h2 class="tit small mt40">상영시간표</h2>
-				</div>
-				<div id="tab03" class="tab-cont">
-					<h2 class="tit small">영화관람료</h2>
-				</div>
-			</div>
 		</div>
 	</div>
-	<!--// contents -->
 </div>
-<!--// container -->
 
 <!-- 		</div> -->
         
@@ -3994,12 +3811,12 @@ function fn_bokdReload(page){
     <div class="footer-top">
         <div class="inner-wrap">
             <ul class="fnb">
-                <li><a href="megaboxinfo.html" title="회사소개 페이지로 이동">회사소개</a></li>
-                <li><a href="recruit.html" title="인재채용 페이지로 이동">인재채용</a></li>
-                <li><a href="socialcontribution.html" title="사회공헌 페이지로 이동">사회공헌</a></li>
-                <li><a href="partner.html" title="제휴/광고/부대사업문의 페이지로 이동">제휴/광고/부대사업문의</a></li>
-                <li><a href="support/terms.html" title="이용약관 페이지로 이동">이용약관</a></li>
-                <li class="privacy"><a href="support/privacy.html" title="개인정보처리방침 페이지로 이동">개인정보처리방침</a></li>
+                <li><a href="../megaboxinfo.html" title="회사소개 페이지로 이동">회사소개</a></li>
+                <li><a href="../recruit.html" title="인재채용 페이지로 이동">인재채용</a></li>
+                <li><a href="../socialcontribution.html" title="사회공헌 페이지로 이동">사회공헌</a></li>
+                <li><a href="../partner.html" title="제휴/광고/부대사업문의 페이지로 이동">제휴/광고/부대사업문의</a></li>
+                <li><a href="../support/terms.html" title="이용약관 페이지로 이동">이용약관</a></li>
+                <li class="privacy"><a href="../support/privacy.html" title="개인정보처리방침 페이지로 이동">개인정보처리방침</a></li>
                 <li><a href="https://jebo.joonganggroup.com/main.do" target="_blank" title="윤리경영 페이지로 이동">윤리경영</a></li>
             </ul>
 
@@ -4059,5 +3876,5 @@ function fn_bokdReload(page){
 	</script>
 </body>
 
-<!-- Mirrored from www.megabox.co.kr/theater?brchNo=1572 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jul 2020 06:35:59 GMT -->
+<!-- Mirrored from www.megabox.co.kr/theater/list by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jul 2020 06:35:02 GMT -->
 </html>
