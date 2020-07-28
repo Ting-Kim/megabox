@@ -1549,64 +1549,14 @@
 												html += "<tr>";
 												
 												for (var k = 0; k < data.screenTableList.length; k++) {
-													if (data.screenMovieList[i].seq_movie == data.screenTableList[k].seq_movie 
-															&& data.screenMovieList[i].seq_movie == data.screenTableList[k].seq_movie) {
-														html += '<td class="" brch-no="'+data.screenTableList[k].seq_branch+ '" play-schdl-no="2007231581003"';
-														html += ' rpst-movie-no="20021300" theab-no="01" play-de="'+data.screenTableList[k].screen_date.subString(0,4)+"'${fn:substring(data.screenTableList[k].screen_date, 0, 4)}${fn:substring(data.screenTableList[k].screen_date, 5, 7)}${fn:substring(data.screenTableList[k].screen_date, 8, 10)} play-seq="3">';	//	fn:substring은 여기서 어떻게?
-														html += '<div class="td-ab">';
-														html += '<div class="txt-center">';
-														html += '<a href="" title="영화예매하기">';
-														html += '<div class="ico-box">';
-														html += '<i class="iconset ico-off"></i>';
-														html += '</div>';
-														html += '<p class="time">'+data.screenTableList[k].screen_time+'</p>';
-														html += '<p class="chair">'+data.screenTableList[k].seat}석+'</p>';
-														html += '<div class="play-time">';
-														html += '<p>';
-																			/* 스크립틀릿은 어떻게?
-																			<c:set var="screen_time" value="${tableDTO.screen_time}"></c:set>
-																			<c:set var="run_time" value="${tableDTO.runTime}"></c:set>
-																			<%
-																				String screenTime = (String)pageContext.getAttribute("screen_time");
-																				int runTime = (int)pageContext.getAttribute("run_time")+10;	//	런타임 + 광고 10분
-																				Date day1 = null;
-																				day1 = format2.parse(screenTime);
-																				cal.setTime(day1);
-																				cal.add(Calendar.MINUTE, runTime);
-																				String endTime = format2.format(cal.getTime());
-																			%>
-																			${tableDTO.screen_time}~<%=endTime%>
-																			*/
-																			
-														html += '</p>';
-														html += '<p>3회차</p>';		
-														html += '</div>';
-														html += '</a>';
-														html += '</div>';
-														html += '</div>';
-														html += '</td>';
-													}	//	if - data.screenTableList
-												}	//	for - data.screenTableList
-																		
-												html += '</tr>';
-												html += '</tbody>';
-												html += '</table>';
-												html += '</div>';
-												html += '</div>';
-																								
-											}	// if - data.screenTheaterList
-										}	// for - data.screenTheaterList
-										
-										html += '</div>';
-										html += '</div>';
-									}// for - data.screenMovieList
+													
+												}
+												
+												
+											}
+										}
+									}
 									
-									html += '</div>';
-									html += '<div class="box-border v1 mt30">';
-									html += '<li>지연입장에 의한 관람불편을 최소화하고자 본 영화는 약 10분 후 시작됩니다.</li>';
-									html += '<li>쾌적한 관람 환경을 위해 상영시간 이전에 입장 부탁드립니다.</li>';
-									html += '</div>';
-									html += '</div>';
 									
 								
 									
@@ -1616,6 +1566,11 @@
 									
 									}	// function showTheaterTable(data)
 									
+									//$(function(){
+									//})
+									
+								
+								
 									
 								}	// function btn_onOff(obj)
 								
