@@ -27,8 +27,8 @@ public class test {
 		
 		System.out.println(today);
 		*/
-		int a = (Integer) null;
-		System.out.println(a);
+		Date sysdate = new Date();
+		System.out.println(sysdate);
 		
 	}
 	

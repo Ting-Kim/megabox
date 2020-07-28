@@ -689,7 +689,7 @@
 										<ul>
 											<c:forEach items="${ list }" var="dto">
 												<c:if test="${ dto.seq_loc eq 1 }">
-													<li><a href="<%=path %>/theaterInfo.do?branchSeq=${dto.seq_branch}&pageNum=1&calendarDate=<%=screenDay %>" title="">${dto.branch }</a></li>
+													<li><a href="<%=path %>/theaterInfo.do?branchSeq=${dto.seq_branch}&pageNum=1" title="">${dto.branch }</a></li>
 												</c:if>
 											</c:forEach>
 
@@ -706,7 +706,7 @@
 										
 											<c:forEach items="${ list }" var="dto">
 												<c:if test="${ dto.seq_loc eq 2 }">
-													<li><a href="<%=path %>/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1&calendarDate=<%=screenDay %>" title="">${dto.branch }</a></li>
+													<li><a href="<%=path %>/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1" title="">${dto.branch }</a></li>
 												</c:if>
 											</c:forEach>
 										</ul>
@@ -721,7 +721,7 @@
 	
 											<c:forEach items="${ list }" var="dto">
 												<c:if test="${ dto.seq_loc eq 3 }">
-													<li><a href="<%=path %>/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1&calendarDate=<%=screenDay %>" title="">${dto.branch }</a></li>
+													<li><a href="<%=path %>/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1" title="">${dto.branch }</a></li>
 												</c:if>
 											</c:forEach>
 
@@ -737,7 +737,7 @@
 											
 											<c:forEach items="${ list }" var="dto">
 												<c:if test="${ dto.seq_loc eq 4 }">
-													<li><a href="<%=path %>/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1&calendarDate=<%=screenDay %>" title="">${dto.branch }</a></li>
+													<li><a href="<%=path %>/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1" title="">${dto.branch }</a></li>
 												</c:if>
 											</c:forEach>
 
@@ -753,7 +753,7 @@
 
 											<c:forEach items="${ list }" var="dto">
 												<c:if test="${ dto.seq_loc eq 5 }">
-													<li><a href="<%=path %>/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1&calendarDate=<%=screenDay %>" title="">${dto.branch }</a></li>
+													<li><a href="<%=path %>/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1" title="">${dto.branch }</a></li>
 												</c:if>
 											</c:forEach>
  
@@ -769,7 +769,7 @@
 											
 											<c:forEach items="${ list }" var="dto">
 												<c:if test="${ dto.seq_loc eq 6 }">
-													<li><a href="<%=path %>/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1&calendarDate=<%=screenDay %>" title="">${dto.branch }</a></li>
+													<li><a href="<%=path %>/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1" title="">${dto.branch }</a></li>
 												</c:if>
 											</c:forEach>
 											
@@ -785,7 +785,7 @@
 											
 											<c:forEach items="${ list }" var="dto">
 												<c:if test="${ dto.seq_loc eq 7 }">
-													<li><a href="/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1&calendarDate=<%=screenDay %>" title="">${dto.branch }</a></li>
+													<li><a href="/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1" title="">${dto.branch }</a></li>
 												</c:if>
 											</c:forEach>
 										
@@ -801,7 +801,7 @@
 
 											<c:forEach items="${ list }" var="dto">
 												<c:if test="${ dto.seq_loc eq 8 }">
-													<li><a href="<%=path %>/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1&calendarDate=<%=screenDay %>" title="">${dto.branch }</a></li>
+													<li><a href="<%=path %>/theater/list.do?seq_branch=${dto.seq_branch}&pageNum=1" title="">${dto.branch }</a></li>
 												</c:if>
 											</c:forEach>
 										</ul>

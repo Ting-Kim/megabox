@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.util.ConnectionProvider;
@@ -15,18 +16,22 @@ import megabox.mvc.model.CalendarDTO;
 import megabox.mvc.model.ScreenMovieDTO;
 import megabox.mvc.model.ScreenTableDTO;
 
-public class ScreenTableDAO {
+public class ScreenFirstPageDAO {
 	// 싱글톤 방식
-	private static ScreenTableDAO dao = null;
-	private ScreenTableDAO() {}
-	public static ScreenTableDAO getInstance() {
+	private static ScreenFirstPageDAO dao = null;
+	private ScreenFirstPageDAO() {}
+	public static ScreenFirstPageDAO getInstance() {
 		if (dao == null) {
-			dao = new ScreenTableDAO();
+			dao = new ScreenFirstPageDAO();
 		}
 		return dao;
 	}
+	
+	Date today = new Date();
+	SimpleDateFormat dateFormat = new SimpleDateFormat("yyMMdd");
+	String sysDate = dateFormat.format(today);
 
-	public List<CalendarDTO> CalendarList(){
+	public List<CalendarDTO> calendarList(){
 
 		String sql = " select rownum, seq_calendar, calendar, to_char(calendar, 'dy') weekday from calendar"
 				+ " where  calendar >= sysdate-1 and rownum < 33";
@@ -63,15 +68,13 @@ public class ScreenTableDAO {
 		} 
 		return calendarList;
 	}
-
-	public List<ScreenTableDTO> ScreenTableList(int seqBranch, String calendarDate){
+	
+	public List<ScreenTableDTO> ScreenTableList(int seqBranch){
 
 		String sql = " select * "
 				+ " from screen_table "
 				+ " where seq_branch = ? and to_char(SCREEN_TIME, 'yyMMdd') = ? ";
-		
-		System.out.printf("\nScreenTableDAO의 ScreenTableList() 호출됨(Ajax) / branch:%d, calendar: %s\n", seqBranch,calendarDate);
-		
+
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ArrayList<ScreenTableDTO> tableList = new ArrayList<ScreenTableDTO>();
@@ -83,7 +86,7 @@ public class ScreenTableDAO {
 			conn = ConnectionProvider.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, seqBranch);
-			pstmt.setString(2, calendarDate);
+			pstmt.setString(2, sysDate);
 			rs = pstmt.executeQuery();
 			SimpleDateFormat sdfd = new SimpleDateFormat("yyyy.MM.dd");
 			SimpleDateFormat sdft = new SimpleDateFormat("HH:mm");
@@ -120,7 +123,7 @@ public class ScreenTableDAO {
 
 	}
 	
-	public List<ScreenMovieDTO> ScreenMovieList(int seqBranch, String calendarDate){
+	public List<ScreenMovieDTO> ScreenMovieList(int seqBranch){
 
 		String sql = " select distinct SEQ_BRANCH, BRANCH, SEQ_MOVIE " + 
 				"  , MOVIE_NAME, to_char(SCREEN_TIME, 'yy/MM/dd') screenday, runtime " + 
@@ -133,13 +136,12 @@ public class ScreenTableDAO {
 		ScreenMovieDTO dto = null;
 		ResultSet rs = null;
 
-		System.out.println("ScreenTableDAO의 ScreenMovieList 호출됨(Ajax)");
-		
+		System.out.println(sysDate);
 		try {
 			conn = ConnectionProvider.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, seqBranch);
-			pstmt.setString(2, calendarDate);
+			pstmt.setString(2, sysDate);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -169,7 +171,7 @@ public class ScreenTableDAO {
 	}
 	
 	// 영화는 jsp에서 c:if 로..
-	public List<ScreenMovieDTO> ScreenTheaterList(int seqBranch, String calendarDate){
+	public List<ScreenMovieDTO> ScreenTheaterList(int seqBranch){
 
 		String sql = " select distinct SEQ_BRANCH, BRANCH, SEQ_THEATER, THEATER, SEQ_MOVIE " + 
 				" , MOVIE_NAME, to_char(SCREEN_TIME, 'yy.MM.dd') screenday, SEAT, RUNTIME " + 
@@ -182,14 +184,12 @@ public class ScreenTableDAO {
 		ScreenMovieDTO dto = null;
 		ResultSet rs = null;
 
-		System.out.println("ScreenTableDAO의 ScreenTheaterList 호출됨(Ajax)");
-
 
 		try {
 			conn = ConnectionProvider.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, seqBranch);
-			pstmt.setString(2, calendarDate);
+			pstmt.setString(2, sysDate);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {

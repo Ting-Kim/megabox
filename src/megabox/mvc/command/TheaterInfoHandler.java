@@ -9,7 +9,7 @@ import megabox.mvc.model.CalendarDTO;
 import megabox.mvc.model.ScreenMovieDTO;
 import megabox.mvc.model.ScreenTableDTO;
 import megabox.mvc.model.TheaterInfoDTO;
-import megabox.mvc.service.ScreenTableService;
+import megabox.mvc.service.ScreenFirstPageService;
 import megabox.mvc.service.TheaterInfoService;
 
 public class TheaterInfoHandler implements CommandHandler{
@@ -20,10 +20,9 @@ public class TheaterInfoHandler implements CommandHandler{
 		
 		int seqBranch = Integer.parseInt(request.getParameter("branchSeq"));
 		int pageNum = Integer.parseInt(request.getParameter("pageNum"));
-		String calendarDate = request.getParameter("calendarDate");
 
 		TheaterInfoService infoService = new TheaterInfoService();
-		ScreenTableService screenTableService = new ScreenTableService();
+		ScreenFirstPageService screenTableService = new ScreenFirstPageService();
 
 		List<TheaterInfoDTO> titleList = infoService.infoSelect(seqBranch); 
 		List<TheaterInfoDTO> TheaterList = infoService.listSelect(); 
@@ -32,10 +31,10 @@ public class TheaterInfoHandler implements CommandHandler{
 		List<TheaterInfoDTO> parkList = infoService.parkSelect(seqBranch); 
 		List<TheaterInfoDTO> trafficSelect = infoService.trafficSelect(seqBranch); 
 		List<TheaterInfoDTO> theaterNoticeSelect = infoService.theaterNoticeSelect(seqBranch, pageNum);
-		List<ScreenTableDTO> screenTableList = screenTableService.screenTableSelect(seqBranch, calendarDate);
 		List<CalendarDTO> calendarList = screenTableService.calendarSelect();
-		List<ScreenMovieDTO> screenMovieList = screenTableService.screenMovieSelect(seqBranch, calendarDate);
-		List<ScreenMovieDTO> screenTheaterList = screenTableService.screenTheaterSelect(seqBranch, calendarDate);
+		List<ScreenTableDTO> screenTableList = screenTableService.screenTableSelect(seqBranch);
+		List<ScreenMovieDTO> screenMovieList = screenTableService.screenMovieSelect(seqBranch);
+		List<ScreenMovieDTO> screenTheaterList = screenTableService.screenTheaterSelect(seqBranch);
 
 		request.setAttribute("titleList", titleList);
 		request.setAttribute("TheaterList", TheaterList);

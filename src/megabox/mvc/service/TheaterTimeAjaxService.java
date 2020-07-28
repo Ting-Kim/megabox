@@ -1,8 +1,6 @@
 package megabox.mvc.service;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -10,19 +8,20 @@ import javax.naming.NamingException;
 
 import com.util.ConnectionProvider;
 
+import megabox.mvc.dao.ScreenFirstPageDAO;
 import megabox.mvc.dao.ScreenTableDAO;
+import megabox.mvc.model.CalendarDTO;
 import megabox.mvc.model.ScreenMovieDTO;
 import megabox.mvc.model.ScreenTableDTO;
 
-public class TheaterTimeTableService {
-	private static TheaterTimeTableService instance = new TheaterTimeTableService();
+public class TheaterTimeAjaxService {
+	private static TheaterTimeAjaxService instance = new TheaterTimeAjaxService();
 	
-	public static TheaterTimeTableService getInstance() {
+	public static TheaterTimeAjaxService getInstance() {
 		return instance;
 	}
 	
-	private TheaterTimeTableService() {}
-	
+	private TheaterTimeAjaxService() {}
 	
 	public List<ScreenMovieDTO> movieTimeTable(int seqBranch, String calendarDate) throws NamingException, SQLException {
 		Connection conn = ConnectionProvider.getConnection();

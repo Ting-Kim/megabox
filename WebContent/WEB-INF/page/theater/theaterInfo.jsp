@@ -1478,6 +1478,7 @@
 							
 							<!-- by태호, 상영시간표에서 날짜 선택할 때 Class에 on, 토, 일 입력    2020.07.26-->				
 							<c:set value="${dto.calendar}" var="calendarDate"/>
+							
 							<%
 								String calendarString = (String)pageContext.getAttribute("calendarDate");
 								Date calendarDateParse = format1.parse(calendarString);
@@ -1488,16 +1489,90 @@
 								String tomarrow = format1.format(tomarrowParse);
 								String timeTableCalendarDate = format3.format(calendarDateParse);
 							%>
-							<script>
+							
+							<script type="text/javascript">
 								function btn_onOff(obj){
 									$('.wrap').children('.on').removeClass('on');
 									$(obj).addClass('on');
 									
 									var calendarSplit = $(obj).attr('date-data').split('.');		//	2020.07.27
-									var calendar = calendarSplit[0]+calendarSplit[1]+calendarSplit[2];
+									var calendar = calendarSplit[0].substring(2,4)+calendarSplit[1]+calendarSplit[2];
+									var branchSeq = <%=branchSeq%>;
+										$.ajax({
+											type:"GET",
+											url:"<%=path%>/theater/theaterTimeTable.ajax",
+											dataType: 'json',
+											data:{"calendar":calendar,
+													"branchSeq":branchSeq}, 	//	파라미터
+											success: function(data){
+												console.log("success");
+												console.log(data);
+												showTheaterTable(data);
+												
+											},
+											error: function(e){
+												console.log(e);
+											}
+										})	
+										
+								function showTheaterTable(data){
+									let html = "";
+									for (var i = 0; i < data.screenMovieList.length; i++) {
+										html += "<div class='tab-block tab-layer mb30' style='display: none;'><ul></ul></div>";
+										html += "<div class='theater-list' value='1'>"; 
+										html += "<div class='theater-tit'>";
+										html += "<p class='movie-grade age-15'></p>";
+										html += "<p>"+data.screenMovieList[i].movie_name+"</p>";
+										html += "<p class='infomation'><span>상영중</span>/상영시간 "+data.screenMovieList[i].runTime+"분</p></div>";
+										for (var j = 0; j < data.screenTheaterList.length; j++) {
+											if (data.screenTheaterList[j].seq_movie == data.screenMovieList[i].seq_movie) {
+												html += "<div class='theater-type-box'>";
+												html += "<div class='theater-type'>";
+												html += "<p class='theater-name'>"+data.screenTheaterList[j].theater+"</p>";
+												html += "<p class='chair'>총 "+data.screenTheaterList[j].seats+ "석</p></div>";
+												html += "<div class='theater-time'>";
+												html += "<div class='theater-type-area'>2D</div>";
+												html += "<div class='theater-time-box'>";
+												html += "<table class='time-list-table'>";
+												html += "<caption>상영시간을 보여주는 표 입니다.</caption>";
+												html += "<colgroup>";
+												html += "<col style='width: 99px;'>";
+												html += "<col style='width: 99px;'>";
+												html += "<col style='width: 99px;'>";
+												html += "<col style='width: 99px;'>";
+												html += "<col style='width: 99px;'>";
+												html += "<col style='width: 99px;'>";
+												html += "<col style='width: 99px;'>";
+												html += "<col style='width: 99px;'>";
+												html += "</colgroup>";
+												html += "<tbody>";
+												html += "<tr>";
+												
+												for (var k = 0; k < data.screenTableList.length; k++) {
+													
+												}
+												
+												
+											}
+										}
+									}
 									
-									window.location.href='<%=path%>/theater/theaterTimeTable.ajax?calendarDate='+calendar;
-								}
+									
+								
+									
+									$(".reserve.theater-list-box").empty();
+									$(".reserve.theater-list-box").html(html);
+									
+									
+									}	// function showTheaterTable(data)
+									
+									//$(function(){
+									//})
+									
+								
+								
+									
+								}	// function btn_onOff(obj)
 								
 								
 								//$(function(){
@@ -1682,19 +1757,7 @@
 			</c:forEach>
 			<!-- c:forEach screenMovieList -->
 			
-		<script type="text/javascript">
-			$(function(){
-				var ajax = $.ajax({
-					type:"GET",
-			//		url:"", 	필요? 버튼 onclick에 준 window.location.href('')랑 무슨차이?
-					dataType: 'json',
-					async: true,
-					data:{"calendar":"test"}	//	파라미터
-				})	
-			})
-			
 		
-		</script>
 			
 			
 		</div>

@@ -35,7 +35,7 @@ public class AjaxController extends HttpServlet{
 		while(ir.hasNext()) {
 			String url = (String) ir.next(); 
 			String handlerClassName = prop.getProperty(url);  
-
+			System.out.println(handlerClassName);
 			Class<?> handlerClass;
 			try {
 				handlerClass = Class.forName(handlerClassName);
@@ -62,7 +62,7 @@ public class AjaxController extends HttpServlet{
 		private void process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		 
 			String requestURI =  request.getRequestURI();
 
-			System.out.println("> 요청 URI : " + requestURI );
+			System.out.println("> Ajax URI : " + requestURI );
 			if(  requestURI.indexOf( request.getContextPath() ) == 0) {
 				requestURI = requestURI.substring(request.getContextPath().length());
 			}
