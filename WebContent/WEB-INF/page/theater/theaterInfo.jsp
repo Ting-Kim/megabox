@@ -38,514 +38,29 @@
 	ArrayList<TheaterInfoDTO> theaterNoticeList = (ArrayList)TheaterInfoDAO.getInstance().TheaterNoticeList(branchSeq, Integer.parseInt(pageNum));
 %>
 <!doctype html>
-<!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
-<!--[if gt IE 9]><!-->
 <html lang="ko">
-<!--<![endif]-->
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-<link rel="shortcut icon" href="/static/pc/images/favicon.ico" />
-
-
-
-
-
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="shortcut icon" href="https://www.megabox.co.kr/static/pc/images/favicon.ico" />
 
 <title>(<c:forEach items="${titleList}" var="titleDTO">${titleDTO.branch}</c:forEach>)
 	극장정보 | 라이프씨어터, 메가박스
 </title>
-<meta property="name" id="metaTagTitle" content="극장정보 &lt; 극장" />
-<meta property="description" id="metaTagDtls"
-	content="반갑습니다. 메가박스 (강남)점 입니다." />
-<meta property="keywords" id="metaTagKeyword"
-	content="메가박스,megabox,영화,영화관,극장,티켓,박스오피스,상영예정작,예매,오페라,싱어롱,큐레이션,필름소사이어티,클래식소사이어티,이벤트,Movie,theater,Cinema,film,Megabox" />
 
-<meta property="fb:app_id" id="fbAppId" content="546913502790694" />
-
-
-<meta property="og:site_name" id="fbSiteName" content="메가박스" />
-<meta property="og:type" id="fbType" content="movie" />
-<meta property="og:url" id="fbUrl"
-	content="https://www.megabox.co.kr/theater?brchNo=1372" />
-<meta property="og:title" id="fbTitle" content="극장정보 &lt; 극장" />
-<meta property="og:description" id="fbDtls"
-	content="반갑습니다. 메가박스 (강남)점 입니다." />
-<meta property="og:image" id="fbImg"
-	content="https://img.megabox.co.kr/SharedImg/metaTag/2020/02/04/gFfTzMwwiCxhBwcUV5TRGMFX9Cmoj64W.jpg" />
-
-
-
-
-
-
-<link rel="stylesheet" href="<%=path%>/static/pc/dist/megabox.min.css"
-	media="all" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async
-	src="https://www.googletagmanager.com/gtag/js?id=UA-30006739-3"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- 
-<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(argumen\ts);} gtag('js', new Date()); gtag('config', 'UA-30006739-3');</script>
-<script src="<%=path%>/static/pc/dist/megabox.api.min.js"></script>
-<script src="<%=path%>/static/mb/js/lozad.min.js"></script>
-<script src="<%=path%>/js/common/dist/megabox.common.min.js"></script>
-<script src="<%=path%>/js/netfunnel/dist/megabox.netfunnel.min.js"></script>
-<script src="//cast.imp.joins.com/persona.js" async></script>
- -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-30006739-3"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<%-- <link rel="stylesheet" href="<%=path%>/static/pc/dist/megabox.min.css" media="all" /> --%>
+<link rel="stylesheet" href="<%=path%>/css/megabox.min.css" media="all" />
+<script src="<%=path%>/static/pc/js/moment.js"></script>
 </head>
-
 <body>
-
-
-
-	<div class="skip" title="스킵 네비게이션">
-		<a href="#contents" title="본문 바로가기">본문 바로가기</a> <a href="#footer"
-			title="푸터 바로가기">푸터 바로가기</a>
-	</div>
-
 	<div class="body-wrap">
-
-
-
-
-
-
-
-
-
-
-		<!-- <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
-<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script> -->
-		<%-- 		<script src="<%=path%>/static/mb/js/hmac-sha256.js"></script>
-		<script src="<%=path%>/static/mb/js/enc-base64-min.js"></script> --%>
-
-
-		<form id="loginForm">
-			<input type='hidden' name='redisKey' value='' /> <input
-				type='hidden' name='menuId' value='' /> <input type='hidden'
-				name='mappingId' value='' /> <input type='hidden' name='rtnParam'
-				value='' /> <input type='hidden' name='certType' value='' /> <input
-				type='hidden' name='preUrl' value='' />
-
-			<!-- 좌석도 로그인 프로세스 여부PARAM-->
-			<input type='hidden' name='bokdLoginAt' value='' /> <input
-				type='hidden' name='bokdLoginParam' value='' /> <input
-				type='hidden' name='nonMbCertRedisKey' value='' /> <input
-				type='hidden' name='nonMbCertedMblpNo' value='' /> <input
-				type='hidden' name='reloadYn' value='' /> <input type='hidden'
-				name='validDataRevisnYn' value='N' />
-
-		</form>
-
-
-		<!-- 로그인 레이어팝업 시작 -->
-		<!-- 화면ID  M-ME-LO-01 -->
-		<!-- 화면ID  M-ME-CC-01 -->
-		<div style="display: none;">
-			<a id="loginPupupATag" href="#layer_login_select"
-				class="button active btn-modal-open" w-data="850" h-data="484"></a>
-		</div>
-
-		<section id="layer_login_select" class="modal-layer"
-			style="z-index: 501;">
-			<a href="#" class="focus" title="레이어로 포커스 이동 됨">레이어로 포커스 이동 됨<!--레이어로 포커스 이동 됨--></a>
-			<div class="wrap"
-				style="width: 850px; height: 556px; margin-left: -425px; margin-top: -278px;">
-				<header class="layer-header">
-					<h3 class="tit">로그인</h3>
-				</header>
-
-				<div class="layer-con" style="height: 511px;">
-
-					<div class="tab-list tab-layer">
-						<ul>
-							<li class="on"><a href="#login_tab_01" title="회원 로그인 선택">회원
-									로그인<!--회원 로그인-->
-							</a></li>
-							<li><a href="#login_tab_02" title="비회원 로그인 선택">비회원 로그인<!--비회원 로그인--></a></li>
-						</ul>
-					</div>
-
-					<!-- tab-cont-wrap -->
-					<div class="tab-cont-wrap">
-						<!-- tab 회원 로그인 -->
-						<div id="login_tab_01" class="tab-cont on">
-							<a href="" class="ir" title="로그인"></a>
-
-							<div class="login-member col-2">
-								<!-- col-wrap -->
-								<div class="col-wrap">
-									<div class="col left">
-										<div class="login-input-area">
-											<input autocomplete="off" id="ibxLoginId" maxlength="20"
-												type="text" placeholder="아이디" title="아이디를 입력하세요"
-												class="input-text strTrim">
-											<!--아이디-->
-											<!--아이디를 입력하세요-->
-											<input autocomplete="off" id="ibxLoginPwd" maxlength="20"
-												type="password" placeholder="비밀번호" title="비밀번호를 입력하세요"
-												class="input-text mt15">
-											<!--비밀번호-->
-											<!--비밀번호를 입력하세요-->
-											<div class="alert"></div>
-
-											<!-- chk-util -->
-											<div class="chk-util">
-												<div class="left">
-													<input id="chkIdSave" type="checkbox"> <label
-														for="chkIdSave">아이디 저장<!--아이디 저장--></label>
-												</div>
-
-												<div class="right">
-													<div class="hp-ad">
-														<a
-															href="https://www.sepay.org/spm/join?regSiteCode=XF&ctgCode=1&subCode=1"
-															title="휴대폰 간편 로그인 선택" target="_blank" title="새창 열림"><span>휴대폰
-																간편로그인<!--휴대폰 간편로그인-->
-														</span> <em>광고<!--광고--></em></a>
-													</div>
-												</div>
-											</div>
-											<!--// chk-util -->
-
-											<button id="btnLogin" type="button"
-												class="button purple large btn-login">
-												로그인
-												<!--로그인-->
-											</button>
-
-											<div class="link">
-												<a href="/user-find" title="ID/PW 찾기 선택">ID/PW 찾기<!--ID/PW 찾기--></a>
-												<a href="/join" title="회원가입 선택">회원가입<!--회원가입--></a> <a
-													href="/on/oh/ohg/MbLogin/viewNonMbLogin.rest"
-													title="비회원 예매확인 선택">비회원 예매확인<!--비회원 예매확인--></a>
-											</div>
-
-											<div class="sns-login">
-												<a href="javaScript:void(0)" lnkgTy="FACEBOOK"
-													title="페이스북으로 로그인 선택"><img
-													src="<%=path%>/static/pc/images/member/ico-facebook.png"
-													alt="페이스북"> <!--페이스북--> 페이스북으로 로그인<!--페이스북으로 로그인--></a> <a
-													href="javaScript:void(0)" lnkgTy="NAVER"
-													title="네이버로 로그인 선택"><img
-													src="<%=path%>/static/pc/images/member/ico-naver.png"
-													alt="네이버"> <!--네이버--> 네이버로 로그인<!--네이버로 로그인--></a> <a
-													href="javaScript:void(0)" lnkgTy="KAKAO"
-													title="카카오톡으로 로그인 선택"><img
-													src="<%=path%>/static/pc/images/member/ico-kakao.png"
-													alt="카카오톡"> <!--카카오톡--> 카카오톡으로 로그인<!--카카오톡으로 로그인--></a> <a
-													href="javaScript:void(0)" lnkgTy="PAYCO"
-													title="페이코로 로그인 선택"><img
-													src="<%=path%>/static/pc/images/member/ico-payco.png"
-													alt="페이코"> <!--페이코--> 페이코로 로그인<!--페이코로 로그인--></a>
-											</div>
-										</div>
-									</div>
-
-									<div class="col right">
-										<div class="login-ad" id="Rw6jtk0hQTuOBSzFbvGGlw"></div>
-									</div>
-								</div>
-								<!--// col-wrap -->
-							</div>
-						</div>
-						<!--// tab 회원 로그인 -->
-
-						<!-- tab 비회원 로그인 -->
-						<div id="login_tab_02" class="tab-cont">
-							<a href="" class="ir" title="비회원 로그인"></a>
-
-							<div class="login-member col-2">
-								<!-- col-wrap -->
-								<div class="col-wrap">
-									<div class="col left">
-
-										<div class="no-member-login-table">
-											<table
-												summary="이름, 생년월일, 휴대폰번호, 인증번호, 비밀번호, 비밀번호 확인 항목을 가진 비회원 로그인 입력 표">
-												<caption>
-													이름, 생년월일, 휴대폰번호, 인증번호, 비밀번호, 비밀번호 확인 항목을 가진 비회원 로그인 입력 표
-													<!--이름, 생년월일, 휴대폰번호, 인증번호, 비밀번호, 비밀번호 확인 항목을 가진 비회원 로그인 입력 표-->
-												</caption>
-												<colgroup>
-													<col style="width: 110px;">
-													<col>
-												</colgroup>
-												<tbody>
-													<tr>
-														<th scope="row"><label for="ibxNonMbNm">이름<!--이름--></label>
-														</th>
-														<td><input maxlength="20" id="ibxNonMbNm" type="text"
-															placeholder="이름" class="input-text"> <!--이름--></td>
-													</tr>
-													<tr>
-														<th scope="row"><label for="ibxNonMbByymmdd">생년월일<!--생년월일--></label>
-														</th>
-														<td><input maxlength="6" id="ibxNonMbByymmdd"
-															type="text" placeholder="생년월일 앞6자리" class="input-text">
-															<!--주민번호 앞 6자리--></td>
-													</tr>
-													<tr>
-														<th scope="row"><label for="ibxNonMbTelno">휴대폰번호<!--휴대폰번호--></label>
-														</th>
-														<td>
-															<div class="hp-input">
-																<input maxlength="11" id="ibxNonMbTelno" type="text"
-																	placeholder="- 없이 입력" class="input-text">
-																<!--- 없이 입력-->
-																<button id="nonMbCertNoSend" type="button"
-																	class="button gray" disabled="disabled">
-																	인증요청
-																	<!--인증요청-->
-																</button>
-															</div>
-															<div id="mblpInput-error-text" class="alert"></div>
-														</td>
-													</tr>
-													<tr id="nonMbCertRow">
-														<th scope="row"><label for="mblpCharCertNo">인증번호<!--인증번호--></label>
-														</th>
-														<td>
-															<div class="chk-num">
-																<div class="line">
-																	<input maxlength="4" id="mblpCharCertNo" type="text"
-																		class="input-text">
-
-																	<div class="time-limit" id="timer">3:00</div>
-																</div>
-
-																<button id="btnMblpCharCert" type="button"
-																	class="button purple" disabled="disabled">
-																	확인
-																	<!--확인-->
-																</button>
-															</div>
-															<div id="nonMbCert-error-text" class="alert"></div>
-														</td>
-													</tr>
-													<tr>
-														<th scope="row"><label for="ibxNonMbPwd">비밀번호</label>
-															<!--비밀번호--></th>
-														<td><input maxlength="4" id="ibxNonMbPwd"
-															type="password" placeholder="비밀번호(숫자 4자리)"
-															class="input-text"> <!--비밀번호(숫자 4자리)--></td>
-													</tr>
-													<tr>
-														<th scope="row"><label for="ibxNonMbPwdConfirm">비밀번호<!--비밀번호-->확인<!--확인--></label>
-														</th>
-														<td><input maxlength="4" id="ibxNonMbPwdConfirm"
-															type="password" placeholder="비밀번호(숫자 4자리) 확인"
-															class="input-text"> <!--비밀번호(숫자 4자리) 확인-->
-															<div id="nonMbPwdErrText" class="alert"></div></td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-
-									<div class="col right">
-
-										<div class="no-member-privacy-rule">
-											<p class="tit">
-												비회원예매 개인정보 처리방침
-												<!--비회원예매 개인정보 처리방침-->
-											</p>
-
-											<div class="cont">
-												<dl>
-													<dt>수집목적</dt>
-													<dd>비회원예매 서비스 제공 / 이용자식별 / 구매 및 결제</dd>
-													<dt>수집항목</dt>
-													<dd>이름, 생년월일, 휴대폰번호, 비밀번호</dd>
-													<dt>보유기간</dt>
-													<dd>관람 또는 취소 후 7일 이내</dd>
-													<!--<dt>수집목적</dt><dd>비회원예매 서비스 제공 / 이용자식별 / 구매 및  결제</dd><dt>수집항목</dt><dd>이름, 생년월일, 휴대폰번호, 비밀번호</dd><dt>보유기간</dt><dd>관람 또는 취소 후 7일 이내</dd>-->
-												</dl>
-
-												<div class="btn-agree">
-													<input type="radio" id="chkNonMbBokdPersonInfoProcTrue"
-														name="chkNonMbBokdPersonInfoProc"> <label
-														for="chkNonMbBokdPersonInfoProcTrue">동의<!--동의--></label> <input
-														type="radio" id="chkNonMbBokdPersonInfoProcFalse"
-														name="chkNonMbBokdPersonInfoProc" class="ml20"> <label
-														for="chkNonMbBokdPersonInfoProcFalse">미동의<!--미동의--></label>
-												</div>
-
-												<ul class="dot-list gblue mt20">
-													<li class="font-gblue">정보수집에 동의를 거부할 수 있으며, 동의하지 않을 경우
-														비회원 예매서비스를 이용하실 수 없습니다.<!--정보수집에 동의를 거부할 수 있으며, 동의하지 않을 경우 비회원 예매서비스를 이용하실 수 없습니다.-->
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!--// col-wrap -->
-
-								<div class="btn-group">
-									<button id="btnChkNonMbLogin" type="button"
-										class="button purple">확인</button>
-									<a id="aNonMbLogin" href="#layer_no_member_chk"
-										class="button purple btn-modal-open" w-data='600' h-data='320'
-										style="display: none;"></a>
-								</div>
-							</div>
-						</div>
-						<!--// tab 비회원 로그인 -->
-					</div>
-					<!--// tab-cont-wrap -->
-				</div>
-
-				<button type="button" class="btn-modal-close">
-					레이어 닫기
-					<!--레이어 닫기-->
-				</button>
-			</div>
-		</section>
-
-		<section id="layer_no_member_chk" class="modal-layer">
-			<div class="wrap">
-				<header class="layer-header">
-					<h3 class="tit">알림</h3>
-				</header>
-
-				<div class="layer-con">
-					<p>티켓 발권을 위한 입력정보를 확인해 주세요.</p>
-
-					<div class="table-wrap v1">
-						<table class="data-table"
-							summary="이름, 생년월일, 휴대폰번호 항목을 가진 비회원 티켓 발권을 위한 입력정보 표">
-							<caption>이름, 생년월일, 휴대폰번호 항목을 가진 비회원 티켓 발권을 위한 입력정보 표</caption>
-							<colgroup>
-								<col style="width: 80px;" />
-								<col />
-							</colgroup>
-							<tbody>
-								<tr>
-									<th scope="row" class="a-l">이름</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th scope="row" class="a-l">생년월일</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th scope="row" class="a-l">휴대폰번호</th>
-									<td></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-
-				<div class="btn-group-fixed">
-					<button type="button" class="button close-layer small">취소</button>
-					<button id="btnNonMbLogin" type="button"
-						class="button purple small">확인</button>
-				</div>
-
-				<button id="btnNonMbModalClose" type="button"
-					class="btn-modal-close">레이어 닫기</button>
-			</div>
-		</section>
-
-
-
-
-		<!-- 메인에만 광고영역 노출 -->
-
-		<!-- 메인 영화에만 광고영역 노출 -->
-
-
 		<!-- header -->
 		<header id="header">
 			<h1 class="ci">
 				<a href="/" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a>
 			</h1>
-
-			<!-- 브라우저 다운로드 -->
-
-
-
-			<!-- ie-update : ie 9 이하 일때만 출력 -->
-			<div class="ie-update">
-				<div class="dimd"></div>
-				<div class="wrap">
-					<p class="tit">
-						<img src="<%=path%>/static/pc/images/ie/txt-update.png"
-							alt="megabox 홈페이지는 internet explrer10이상에서 최적화된 서비스 이용이 가능합니다. ie9 이하에서는 예매가 정상적으로 진행되지 않을 수 있으니, 브라우저를 업그레이드하시거나 다른 예매수단을 이용해 주세요!" />
-					</p>
-
-					<div class="box">
-						<div class="col">
-							<p class="txt">
-								브라우저를 최신 버전으로<br>업그레이드 해보세요!
-							</p>
-
-							<div class="link">
-								<a
-									href="https://www.microsoft.com/ko-kr/download/internet-explorer.aspx"
-									title="internet explorer 새 버전 다운로드" target="_blank"> <img
-									src="<%=path%>/static/pc/images/ie/btn-ie.png"
-									alt="internet explorer 새 버전 다운로드" />
-								</a>
-							</div>
-
-							<div class="link">
-								<a href="http://www.google.com/chrome?hl=ko" title="chrome 다운로드"
-									target="_blank"> <img
-									src="<%=path%>/static/pc/images/ie/btn-chrome.png"
-									alt="chrome 다운로드">
-								</a>
-							</div>
-						</div>
-
-						<div class="col">
-							<p class="txt">
-								megabox 모바일 app을<br>이용해 보세요!
-							</p>
-
-							<div class="link">
-								<a
-									href="https://itunes.apple.com/us/app/megabox/id894443858?l=ko&amp;ls=1&amp;mt=8"
-									title="available on the app store" target="_blank"> <img
-									src="../../../static/pc/images/ie/btn-appstore.png"
-									alt="available on the app store">
-								</a>
-							</div>
-
-							<div class="link">
-								<a
-									href="https://play.google.com/store/apps/details?id=com.megabox.mop&amp;hl=ko"
-									title="available on the google play" target="_blank"> <img
-									src="<%=path%>/static/pc/images/ie/btn-google.png"
-									alt="available on the google play">
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="close-chk">
-						<input type="checkbox" id="one_month_no_update" /> <label
-							for="one_month_no_update" class="ml05">한 달 동안 이 창을 열지 않음</label>
-
-						<button type="button" class="closeDl button purple x-small ml20">닫기</button>
-					</div>
-				</div>
-			</div>
-			<!--// ie-update : ie 9 이하 일때만 출력 -->
-			<!--// 브라우저 다운로드 -->
-
-			<!-- topGnb -->
-
-
-
 
 			<!-- 2019-04-15 마크업 수정 : 고객요청  -->
 			<div class="util-area">
@@ -684,7 +199,7 @@
 						</div></li>
 				</ul>
 			</nav>
-
+</header>
 			<!-- by 태호, <nav> 태그 마우스 포인터에 따라 자식 <li> 태그  on/off 기능 (2020.07.12)-->
 			<script>
 				$('#gnb ul li').children('a').mouseover(function() {
@@ -707,45 +222,6 @@
 					}
 				});
 			</script>
-
-			<!--// gnb -->
-
-			<form id="bokdMForm">
-				<input type="hidden" name="returnURL" value="info" />
-			</form>
-			<!-- container -->
-			<div id="bokdContainer" class="container"
-				style="padding-bottom: 200px; display: none">
-				<input type="hidden" id="playDe" name="playDe" value="" />
-				<div class="page-util">
-					<div class="inner-wrap">
-						<div class="location"></div>
-
-					</div>
-				</div>
-
-				<div id="bokdMSeat"
-					style="overflow: hidden; display: none; height: 736px;">
-					<%-- <iframe id="frameBokdMSeat"
-						src="<%=path%>/on/oh/ohz/PcntSeatChoi/selectPcntSeatChoi.do?megaboxLanguage=kr"
-						title="관람인원선택 프레임" scrolling="no" frameborder="0"
-						class="reserve-iframe" style="width: 100%; height: 736px;"></iframe> --%>
-				</div>
-
-				<div id="bokdMPayBooking"
-					style="overflow: hidden; display: none; height: 736px;">
-					<%-- <iframe id="framePayBooking"
-						src="<%=path%>/on/oh/ohz/PayBooking/completeSeat.do?megaboxLanguage=kr"
-						title="예매 결제" scrolling="no" frameborder="0"
-						class="reserve-iframe" style="width: 100%; height: 736px;"></iframe> --%>
-				</div>
-
-			</div>
-			<!--// container -->
-			<%-- 		<script src="<%=path%>/js/megabox-brch.js"></script>
-			<script src="<%=path%>/js/megabox-simpleBokd.js"></script> --%>
-
-
 
 			<div id="schdlContainer" class="container">
 				<div class="page-util">
@@ -784,7 +260,7 @@
 													<c:if test="${dto.seq_loc eq 1 }">
 														<li><a
 															href="<%=path %>/theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=1"
-															title="${dto.branch} 상세보기">${dteneno.branch }</a></li>
+															title="${dto.branch} 상세보기">${dto.branch }</a></li>
 													</c:if>
 												</c:forEach>
 
@@ -922,8 +398,7 @@
 								$('.theater-area-list ul li').mouseover(
 										function() {
 
-											$('.theater-area-list ul li')
-													.removeClass();
+											$('.theater-area-list ul li').removeClass();
 											/* 	if ($(this).children('div').attr('class') != 'area-depth2') {
 												} */
 											$(this).addClass('on');
@@ -932,11 +407,8 @@
 								$('.theater-area-list')
 										.mouseleave(
 												function() {
-													if ($('.area-depth1')
-															.mouseleave()) {
-														$(
-																'.theater-area-list ul li')
-																.removeClass();
+													if ($('.area-depth2').mouseleave()) {
+														$('.theater-area-list ul li')	.removeClass();
 													}
 												});
 							</script>
@@ -1140,7 +612,9 @@
 					<!-- .info -->
 				</div>
 				<!-- .parking-section -->
+				
 			</div>
+	<!--  -->
 	</div>
 
 
@@ -1393,8 +867,7 @@
 
 		</ul>
 	</div>
-	</div>
-	
+	</div>	
 	<!---------------------------------------tab02 -------------------------------------------->
 	<% 
 		Date todayParse = new Date();
@@ -1464,9 +937,7 @@
 							
 							<!-- button class, tabindex 수정 필요..... -->
 							<c:forEach items="${calendarList}" var="dto" varStatus="status">
-								<button class='<c:if test="${dto.weekday eq '토'}">sat</c:if>
-													<c:if test="${dto.weekday eq '일'}">holi</c:if>
-													<c:if test="${status.index eq 1}">  on</c:if>' 
+								<button class='<c:if test="${dto.weekday eq '토'}">sat</c:if><c:if test="${dto.weekday eq '일'}">holi</c:if><c:if test="${status.index eq 1}">  on</c:if>' 
 								 type="button" date-data="${dto.calendar}"
 								month="${fn:substring(dto.calendar, 6, 7)-1}" 
 								tabindex="<c:if test='${status.first || status.end}'>-1</c:if>" 
@@ -1552,7 +1023,7 @@
 													if (data.screenMovieList[i].seq_movie == data.screenTableList[k].seq_movie 
 															&& data.screenMovieList[i].seq_movie == data.screenTableList[k].seq_movie) {
 														html += '<td class="" brch-no="'+data.screenTableList[k].seq_branch+ '" play-schdl-no="2007231581003"';
-														html += ' rpst-movie-no="20021300" theab-no="01" play-de="'+data.screenTableList[k].screen_date.subString(0,4)+"'${fn:substring(data.screenTableList[k].screen_date, 0, 4)}${fn:substring(data.screenTableList[k].screen_date, 5, 7)}${fn:substring(data.screenTableList[k].screen_date, 8, 10)} play-seq="3">';	//	fn:substring은 여기서 어떻게?
+														html += ' rpst-movie-no="20021300" theab-no="01" play-de="'+data.screenTableList[k].screen_date.substring(0,4)+data.screenTableList[k].screen_date.substring(0, 4)+data.screenTableList[k].screen_date.substring(5, 7)+data.screenTableList[k].screen_date.substring(8, 10)+' play-seq="3">';
 														html += '<div class="td-ab">';
 														html += '<div class="txt-center">';
 														html += '<a href="" title="영화예매하기">';
@@ -1560,24 +1031,18 @@
 														html += '<i class="iconset ico-off"></i>';
 														html += '</div>';
 														html += '<p class="time">'+data.screenTableList[k].screen_time+'</p>';
-														html += '<p class="chair">'+data.screenTableList[k].seat}석+'</p>';
+														html += '<p class="chair">'+data.screenTableList[k].seat+' 석</p>';
 														html += '<div class="play-time">';
 														html += '<p>';
-																			/* 스크립틀릿은 어떻게?
-																			<c:set var="screen_time" value="${tableDTO.screen_time}"></c:set>
-																			<c:set var="run_time" value="${tableDTO.runTime}"></c:set>
-																			<%
-																				String screenTime = (String)pageContext.getAttribute("screen_time");
-																				int runTime = (int)pageContext.getAttribute("run_time")+10;	//	런타임 + 광고 10분
-																				Date day1 = null;
-																				day1 = format2.parse(screenTime);
-																				cal.setTime(day1);
-																				cal.add(Calendar.MINUTE, runTime);
-																				String endTime = format2.format(cal.getTime());
-																			%>
-																			${tableDTO.screen_time}~<%=endTime%>
-																			*/
-																			
+															var screen_date_y = data.screenTableList[k].screen_date.substring(0,4);
+															var screen_date_m = data.screenTableList[k].screen_date.substring(5, 7);
+															var screen_date_d = data.screenTableList[k].screen_date.substring(8,10);
+															var screen_time_h = data.screenTableList[k].screen_time.substring(0,2);
+															var screen_time_m = data.screenTableList[k].screen_time.substring(3,5);
+															var date = new Date(screen_date_y, screen_date_m-1, screen_date_d, screen_time_h, screen_time_m);
+															date.setMinutes(date.getMinutes()+ data.screenTableList[k].runTime);
+															var endTime = moment(date).format("HH:mm");
+														html += data.screenTableList[k].screen_time+"~"+endTime;
 														html += '</p>';
 														html += '<p>3회차</p>';		
 														html += '</div>';
@@ -1602,10 +1067,10 @@
 									}// for - data.screenMovieList
 									
 									html += '</div>';
-									html += '<div class="box-border v1 mt30">';
-									html += '<li>지연입장에 의한 관람불편을 최소화하고자 본 영화는 약 10분 후 시작됩니다.</li>';
-									html += '<li>쾌적한 관람 환경을 위해 상영시간 이전에 입장 부탁드립니다.</li>';
-									html += '</div>';
+									//html += '<div class="box-border v1 mt30">';
+									//html += '<li>지연입장에 의한 관람불편을 최소화하고자 본 영화는 약 10분 후 시작됩니다.</li>';
+									//html += '<li>쾌적한 관람 환경을 위해 상영시간 이전에 입장 부탁드립니다.</li>';
+									//html += '</div>';
 									html += '</div>';
 									
 								
@@ -1631,7 +1096,6 @@
 							</script>
 											
 											
-
 											<% if(calendarDate.equals(today)){
 											%>
 												오늘
@@ -1802,9 +1266,6 @@
 			</c:forEach>
 			<!-- c:forEach screenMovieList -->
 			
-		
-			
-			
 		</div>
 		<div class="box-border v1 mt30">
 			<li>지연입장에 의한 관람불편을 최소화하고자 본 영화는 약 10분 후 시작됩니다.</li>
@@ -1815,13 +1276,15 @@
 
 
 	<!---------------------------------------tab03 -------------------------------------------->
-
+	<!-- by 태호, 아직 미완성.. -->
 	<div id="tab03" class="tab-cont">
 		<a href="" class="ir">관람료 탭 화면 입니다.</a>
 		<h2 class="tit small">영화관람료</h2>
 		<div class="fee-table-box">
-			<div class="fee-table">
-				<p class="fee-table-tit">2D</p>
+		
+			<c:forEach items="${theaterGradeList}" var="TheaterGradeDTO">
+				<div class="fee-table">
+				<p class="fee-table-tit">${TheaterGradeDTO.theater_grade}</p>
 				<div class="table-wrap">
 					<table class="data-table a-c"
 						summary="가격표를 요일, 상영시간, 일반, 청소년 순서로 보여줍니다.">
@@ -1838,10 +1301,43 @@
 								<th scope="col">상영시간</th>
 								<th scope="col">일반</th>
 								<th scope="col">청소년</th>
+								<th scope="col">우대</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							<c:forEach items="${partTimeList}" var="PartTimeDTO" varStatus="status">
+								<tr>
+								<c:if test="${status.first}">
+									<th scope="rowgroup" rowspan="4">월~목</th>
+								</c:if>
+												<td>${PartTimeDTO.part_time}<c:if test="${PartTimeDTO.seq_part_time eq 1}">(06:00~)</c:if><c:if test="${PartTimeDTO.seq_part_time eq 2}">(11:00~)</c:if><c:if test="${PartTimeDTO.seq_part_time eq 3}">(13:00~)</c:if><c:if test="${PartTimeDTO.seq_part_time eq 4}">(22:00~)</c:if></td>
+											<c:forEach items="${screenChargeList}" var="ScreenChargeDTO">
+												<c:if test="${ScreenChargeDTO.seq_grade eq TheaterGradeDTO.seq_grade 
+																	&& ScreenChargeDTO.seq_week eq 1 
+																	&& ScreenChargeDTO.seq_part_time eq PartTimeDTO.seq_part_time}">
+														<td>${ScreenChargeDTO.movie_charge}</td>
+												</c:if>
+											</c:forEach>
+								</c:forEach>
+								</tr>						
+									
+								<c:forEach items="${partTimeList}" var="PartTimeDTO" varStatus="status">
+								<tr>
+								<c:if test="${status.first}">
+									<th scope="rowgroup" rowspan="4">금~일<br>
+									공휴일</th>
+								</c:if>
+												<td>${PartTimeDTO.part_time}<c:if test="${PartTimeDTO.seq_part_time eq 1}">(06:00~)</c:if><c:if test="${PartTimeDTO.seq_part_time eq 2}">(11:00~)</c:if><c:if test="${PartTimeDTO.seq_part_time eq 3}">(13:00~)</c:if><c:if test="${PartTimeDTO.seq_part_time eq 4}">(22:00~)</c:if></td>
+											<c:forEach items="${screenChargeList}" var="ScreenChargeDTO">
+												<c:if test="${ScreenChargeDTO.seq_grade eq TheaterGradeDTO.seq_grade && ScreenChargeDTO.seq_week eq 2 && ScreenChargeDTO.seq_part_time eq PartTimeDTO.seq_part_time}">
+														<td>${ScreenChargeDTO.movie_charge}</td>
+												</c:if>
+											</c:forEach>
+										</c:forEach>
+								</tr>							
+						
+						
+							<!-- <tr>
 								<th scope="rowgroup" rowspan="3">월~목</th>
 								<td>조조 (06:00~)</td>
 								<td>7,000</td>
@@ -1857,6 +1353,9 @@
 								<td>9,000</td>
 								<td>7,000</td>
 							</tr>
+							
+							
+							
 							<tr>
 								<th scope="rowgroup" rowspan="3">금~일<br>공휴일
 								</th>
@@ -1873,69 +1372,18 @@
 								<td>심야 (24:00~)</td>
 								<td>10,000</td>
 								<td>8,000</td>
-							</tr>
+							</tr> -->
+							
+							
 						</tbody>
 					</table>
 				</div>
 			</div>
-			<div class="fee-table">
-				<p class="fee-table-tit">3D</p>
-				<div class="table-wrap">
-					<table class="data-table a-c"
-						summary="가격표를 요일, 상영시간, 일반, 청소년 순서로 보여줍니다.">
-						<caption>가격표를 요일, 상영시간, 일반, 청소년 순서로 보여줍니다.</caption>
-						<colgroup>
-							<col>
-							<col style="width: 25%;">
-							<col style="width: 25%;">
-							<col style="width: 25%;">
-						</colgroup>
-						<thead>
-							<tr>
-								<th scope="col">요일</th>
-								<th scope="col">상영시간</th>
-								<th scope="col">일반</th>
-								<th scope="col">청소년</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="rowgroup" rowspan="3">월~목</th>
-								<td>조조 (06:00~)</td>
-								<td>9,000</td>
-								<td>8,000</td>
-							</tr>
-							<tr>
-								<td>일반 (10:00~)</td>
-								<td>13,000</td>
-								<td>11,000</td>
-							</tr>
-							<tr>
-								<td>심야 (24:00~)</td>
-								<td>11,000</td>
-								<td>9,000</td>
-							</tr>
-							<tr>
-								<th scope="rowgroup" rowspan="3">금~일<br>공휴일
-								</th>
-								<td>조조 (06:00~)</td>
-								<td>10,000</td>
-								<td>9,000</td>
-							</tr>
-							<tr>
-								<td>일반 (10:00~)</td>
-								<td>14,000</td>
-								<td>12,000</td>
-							</tr>
-							<tr>
-								<td>심야 (24:00~)</td>
-								<td>12,000</td>
-								<td>10,000</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+			
+			
+			</c:forEach>		
+		
+	
 		</div>
 		<span style="color: #503396"><span style="font-size: 22px">요금제</span></span><br>
 		<br> • <font color="#01738b">청소년 요금</font>&nbsp; 만7세~ 만18세 :
@@ -1956,8 +1404,12 @@
 	<!--// contents -->
 	<!--// container -->
 
+				</div>
+	
+			</div>
+		</div>
 	</div>
-
+	
 	<!-- by 태호, 극장정보, 상영시간표, 관람료 탭 선택시 해당 <div> class On 효과    2020.07.21
 		   by 태호, 극장정보, 상영시간표, 관람료 탭 선택시 해당 <li> 태그 class On 효과	   2020.07.26 -->
 	<script type="text/javascript">
@@ -1981,113 +1433,56 @@
 			document.querySelector("#tab" + tab).classList.add('on');
 		}
 	</script>
-
-
-	<section id="saw_movie_regi" class="modal-layer">
-		<input type="hidden" id="isLogin" />
-		<div class="wrap">
-			<header class="layer-header">
-				<h3 class="tit">본 영화 등록</h3>
-			</header>
-
-			<div class="layer-con">
-				<p class="reset">발권하신 티켓 하단의 거래번호 또는 예매번호를 입력해주세요.</p>
-
-				<div class="pop-gray mt10 mb30">
-					<label for="movie_regi" class="mr10">거래번호 또는 예매번호</label> <input
-						type="text" id="movie_regi" class="input-text w280px numType"
-						maxlength="20" placeholder="숫자만 입력해 주세요" title="티켓 거래번호 입력" />
-					<button class="button gray ml05" id="regBtn">등록</button>
-				</div>
-
-				<div class="box-border v1 mt30">
-					<p class="tit-box">이용안내</p>
-
-					<ul class="dot-list">
-						<li>극장에서 예매하신 내역을 본 영화(관람이력)로 등록하실 수 있습니다.</li>
-						<li>예매처를 통해 예매하신 고객님은 극장에서 발권하신 티켓 하단의 온라인 예매번호 <BR>12자리를
-							입력해주세요.(Yes24, 네이버, 맥스무비, 인터파크, SKT, KT, 다음)
-						</li>
-						<li>본 영화 등록은 관람인원수 만큼 등록가능하며, 동일 계정에 중복등록은 불가합니다.</li>
-						<li>상영시간 종료 이후 등록 가능합니다.</li>
-						<li>본 영화로 수동 등록한 내역은 이벤트 참여 및 포인트 추후 적립이 불가합니다.</li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="btn-group-fixed">
-				<button type="button" class="button purple close-layer">닫기</button>
-			</div>
-
-			<button type="button" class="btn-modal-close">레이어 닫기</button>
-		</div>
-	</section>
-
-	<div class="quick-area">
-		<a href="" class="btn-go-top" title="top">top</a>
-	</div>
-
-	<!-- footer -->
+	
 	<footer id="footer">
-		<!-- footer-top -->
-		<div class="footer-top">
-			<div class="inner-wrap">
-				<ul class="fnb">
-					<li><a href="/megaboxinfo" title="회사소개 페이지로 이동">회사소개</a></li>
-					<li><a href="/recruit" title="인재채용 페이지로 이동">인재채용</a></li>
-					<li><a href="/socialcontribution" title="사회공헌 페이지로 이동">사회공헌</a></li>
-					<li><a href="/partner" title="제휴/광고/부대사업문의 페이지로 이동">제휴/광고/부대사업문의</a></li>
-					<li><a href="/support/terms" title="이용약관 페이지로 이동">이용약관</a></li>
-					<li class="privacy"><a href="/support/privacy"
-						title="개인정보처리방침 페이지로 이동">개인정보처리방침</a></li>
-					<li><a href="https://jebo.joonganggroup.com/main.do"
-						target="_blank" title="윤리경영 페이지로 이동">윤리경영</a></li>
-				</ul>
+			<div class="footer-top">
+				<div class="inner-wrap">
+					<ul class="fnb">
+						<li><a href="#" title="회사소개 페이지로 이동">회사소개</a></li>
+						<li><a href="#" title="인재채용 페이지로 이동">인재채용</a></li>
+						<li><a href="#" title="사회공헌 페이지로 이동">사회공헌</a></li>
+						<li><a href="#" title="제휴/광고/부대사업문의 페이지로 이동">제휴/광고/부대사업문의</a></li>
+						<li><a href="#" title="이용약관 페이지로 이동">이용약관</a></li>
+						<li class="privacy"><a href="#" title="개인정보처리방침 페이지로 이동">개인정보처리방침</a></li>
+						<li><a href="#" target="_blank" title="윤리경영 페이지로 이동">윤리경영</a></li>
+					</ul>
 
-				<a href="#layer_looking_theater" class="btn-looking-theater"
-					title="극장찾기"><i class="iconset ico-footer-search"></i> 극장찾기</a>
+					<a href="#" class="btn-looking-theater" title="극장찾기"><i
+						class="iconset ico-footer-search"></i> 극장찾기</a>
+				</div>
 			</div>
-		</div>
-		<!--// footer-top -->
+			<div class="footer-bottom">
+				<div class="inner-wrap">
+					<div class="ci">MEGABOX : Life Theater</div>
 
-		<!-- footer-bottom -->
-		<div class="footer-bottom">
-			<div class="inner-wrap">
-				<div class="ci">MEGABOX : Life Theater</div>
-
-				<div class="footer-info">
-					<div>
-						<address>서울특별시 성동구 왕십리로 50, 6층(성수동 1가, 메가박스스퀘어)</address>
-						<p>ARS 1544-0070</p>
+					<div class="footer-info">
+						<div>
+							<address>서울특별시 성동구 왕십리로 50, 6층(성수동 1가, 메가박스스퀘어)</address>
+							<p>ARS 1544-0070</p>
+						</div>
+						<p>대표자명 김진선</p>
+						<p>&middot; 개인정보보호책임자 조상연</p>
+						<p>&middot; 사업자등록번호 211-86-59478</p>
+						<p>&middot; 통신판매업신고번호 제 833호</p>
+						<p class="copy">COPYRIGHT &copy; MegaboxJoongAng, Inc. All
+							rights reserved</p>
 					</div>
-					<p>대표자명 김진선</p>
-					<p>&middot; 개인정보보호책임자 조상연</p>
-					<p>&middot; 사업자등록번호 211-86-59478</p>
-					<p>&middot; 통신판매업신고번호 제 833호</p>
-					<p class="copy">COPYRIGHT &copy; MegaboxJoongAng, Inc. All
-						rights reserved</p>
-				</div>
 
-				<div class="footer-sns">
-					<a href="https://twitter.com/megaboxon" target="_blank"
-						title="MEGABOX 트위터 페이지로 이동"><i class="iconset ico-twitter">트위터</i></a>
-					<a href="https://www.facebook.com/megaboxon" target="_blank"
-						title="MEGABOX 페이스북 페이지로 이동"><i class="iconset ico-facebook">페이스북</i></a>
-					<a href="http://instagram.com/megaboxon" target="_blank"
-						title="MEGABOX 인스타그램 페이지로 이동"><i class="iconset ico-instagram">인스타그램</i></a>
-					<a
-						href="https://play.google.com/store/apps/details?id=com.megabox.mop"
-						target="_blank" title="MEGABOX 구글플레이 페이지로 이동"><i
-						class="iconset ico-googleplay">구글플레이</i></a> <a
-						href="https://itunes.apple.com/kr/app/megabox/id894443858?l=ko&ls=1&mt=8"
-						target="_blank" title="MEGABOX 앱스토어 페이지로 이동"><i
-						class="iconset ico-appstore">앱스토어</i></a>
+					<div class="footer-sns">
+						<a href="#" target="_blank" title="MEGABOX 트위터 페이지로 이동"><i
+							class="iconset ico-twitter">트위터</i></a> <a href="#" target="_blank"
+							title="MEGABOX 페이스북 페이지로 이동"><i class="iconset ico-facebook">페이스북</i></a>
+						<a href="#" target="_blank" title="MEGABOX 인스타그램 페이지로 이동"><i
+							class="iconset ico-instagram">인스타그램</i></a> <a href="#"
+							target="_blank" title="MEGABOX 구글플레이 페이지로 이동"><i
+							class="iconset ico-googleplay">구글플레이</i></a> <a href="#"
+							target="_blank" title="MEGABOX 앱스토어 페이지로 이동"><i
+							class="iconset ico-appstore">앱스토어</i></a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<!--// footer-bottom -->
-		<div id="layer_looking_theater" class="layer-looking-theater"></div>
-	</footer>
-	<!--// footer -->
+			<div id="layer_looking_theater" class="layer-looking-theater"></div>
+		</footer>
+	</div>
 </body>
 </html>

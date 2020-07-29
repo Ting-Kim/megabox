@@ -10,7 +10,7 @@ public class PaginationDTO {
 
       private int startPage;
       private int endPage;
-      private booleand prev, next;
+      private boolean prev, next;
       
       private int total;
  

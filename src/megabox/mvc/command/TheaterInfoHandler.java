@@ -6,8 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import megabox.mvc.model.CalendarDTO;
+import megabox.mvc.model.PartTimeDTO;
+import megabox.mvc.model.ScreenChargeDTO;
 import megabox.mvc.model.ScreenMovieDTO;
 import megabox.mvc.model.ScreenTableDTO;
+import megabox.mvc.model.TheaterGradeDTO;
 import megabox.mvc.model.TheaterInfoDTO;
 import megabox.mvc.service.ScreenFirstPageService;
 import megabox.mvc.service.TheaterInfoService;
@@ -35,6 +38,10 @@ public class TheaterInfoHandler implements CommandHandler{
 		List<ScreenTableDTO> screenTableList = screenTableService.screenTableSelect(seqBranch);
 		List<ScreenMovieDTO> screenMovieList = screenTableService.screenMovieSelect(seqBranch);
 		List<ScreenMovieDTO> screenTheaterList = screenTableService.screenTheaterSelect(seqBranch);
+		List<ScreenChargeDTO> screenChargeList = screenTableService.screenChargeSelect(seqBranch);
+		List<TheaterGradeDTO> theaterGradeList = screenTableService.theaterGradeSelect(seqBranch);
+		List<PartTimeDTO> partTimeList = screenTableService.partTimeSelect(seqBranch);
+		
 
 		request.setAttribute("titleList", titleList);
 		request.setAttribute("TheaterList", TheaterList);
@@ -47,6 +54,9 @@ public class TheaterInfoHandler implements CommandHandler{
 		request.setAttribute("screenTableList", screenTableList);
 		request.setAttribute("screenMovieList", screenMovieList);
 		request.setAttribute("screenTheaterList", screenTheaterList);
+		request.setAttribute("screenChargeList", screenChargeList);
+		request.setAttribute("theaterGradeList", theaterGradeList);
+		request.setAttribute("partTimeList", partTimeList);
 		
 		return "/theater/theaterInfo";
 		

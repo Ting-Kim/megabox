@@ -222,5 +222,7 @@ public class ScreenFirstPageDAO {
 	}
 	
 	
+	// CHARGE_MOVIE, AGE, WEEK_SORT, PART_TIME,  THEATER_GRADE, THEATER(JOIN)
+	
 	
 }
