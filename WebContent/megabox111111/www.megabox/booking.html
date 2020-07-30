@@ -1,14 +1,19 @@
+<%@ page contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
-
-
-
-
-
-
-
-
-
-
+<% 
+	SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy.MM.dd");
+	SimpleDateFormat format2 = new SimpleDateFormat ( "HH:mm");
+	SimpleDateFormat format3 = new SimpleDateFormat ( "yyMMdd");
+	Calendar cal = Calendar.getInstance();
+	
+	String nowTime = format1.format(cal.getTime());
+	String screenDay = format3.format(cal.getTime());
+	
+	String path = request.getContextPath();
+%>
 <!doctype html>
 <!--[if lt IE 10]><html class="lt-ie9" lang="ko"><![endif]-->
 <!--[if gt IE 9]><!--><html lang="ko"><!--<![endif]-->
@@ -21,39 +26,10 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 	<link rel="shortcut icon" href="static/pc/images/favicon.ico" />
-
-    
-	
-
-
-
-
 		<title>빠른예매 < 예매 | 라이프씨어터, 메가박스</title>
-		<meta property="name"			id="metaTagTitle"	content="빠른예매 &lt; 예매"/>
-		<meta property="description"	id="metaTagDtls"	content="메가박스에서 영화를 간편하고 빠르게 예약해보세요.
-"/>
-		<meta property="keywords"		id="metaTagKeyword"	content="메가박스 빠른예매, 빠른예매, 예매"/>
-
-		<meta property="fb:app_id" 		id="fbAppId" 	content="546913502790694"/>
-		
-
-		<meta property="og:site_name" 	id="fbSiteName"	content="메가박스"/>
-		<meta property="og:type" 		id="fbType"		content="movie"/>
-		<meta property="og:url" 		id="fbUrl"		content="booking.html" />
-		<meta property="og:title" 		id="fbTitle"	content="빠른예매 &lt; 예매" />
-		<meta property="og:description"	id="fbDtls"		content="메가박스에서 영화를 간편하고 빠르게 예약해보세요.
-"/>
-		<meta property="og:image" 		id="fbImg"		content="../img.megabox.co.kr/SharedImg/metaTag/2020/02/04/gFfTzMwwiCxhBwcUV5TRGMFX9Cmoj64W.jpg" />
-		
-
-
-	
-	
-     	
      		<link rel="stylesheet" href="static/pc/dist/megabox.min.css" media="all" />
      		<!-- Global site tag (gtag.js) - Google Analytics -->
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-30006739-3"></script>
-			<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-30006739-3');</script>
 		    <script src="static/pc/dist/megabox.api.min.js"></script>
 			<script src="static/mb/js/lozad.min.js"></script>
 			<script src="js/common/dist/megabox.common.min.js"></script>

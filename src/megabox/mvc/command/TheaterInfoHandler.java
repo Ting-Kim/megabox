@@ -58,6 +58,11 @@ public class TheaterInfoHandler implements CommandHandler{
 		request.setAttribute("theaterGradeList", theaterGradeList);
 		request.setAttribute("partTimeList", partTimeList);
 		
+
+
+		
+		
+		
 		return "/theater/theaterInfo";
 		
 		

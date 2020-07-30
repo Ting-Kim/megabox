@@ -65,21 +65,21 @@
 			<!-- 2019-04-15 마크업 수정 : 고객요청  -->
 			<div class="util-area">
 				<div class="left-link">
-					<a href="<%=path%>/benefit/viplounge" title="VIP LOUNGE">VIP
-						LOUNGE</a> <a href="<%=path%>/benefit/membership" title="멤버십">멤버십</a>
-					<a href="/support" title="고객센터">고객센터</a>
+					<a href="<%=path%>/benefit/viplounge.do" title="VIP LOUNGE">VIP
+						LOUNGE</a> <a href="<%=path%>/benefit/membership.do" title="멤버십">멤버십</a>
+					<a href="<%=path%>/support.do" title="고객센터">고객센터</a>
 				</div>
 
 				<div class="right-link">
 					<!-- 로그인전 -->
 					<div class="before" style="display: none">
-						<a href="javaScript:fn_viewLoginPopup('default','pc')" title="로그인">로그인</a>
-						<a href="/join" title="회원가입">회원가입</a>
+						<a href="javaScript:fn_viewLoginPopup('default','pc')" title="로그인">로그인</a><!-- 미입력 -->
+						<a href="<%=path%>/join.do" title="회원가입">회원가입</a>
 					</div>
 
 					<!-- 로그인후 -->
 					<div class="after" style="display: none">
-						<a href="/on/oh/ohg/MbLogin/mbLogout.do" class="" title="로그아웃">로그아웃</a>
+						<a href="<%=path%>/logout.do" class="" title="로그아웃">로그아웃</a>
 						<a href="" class="notice" title="알림">알림</a>
 
 						<!-- layer-header-notice -->
@@ -116,16 +116,16 @@
 
 					</div>
 
-					<a href="/booking">빠른예매</a>
+					<a href="<%=path%>/booking.do">빠른예매</a>
 				</div>
 			</div>
 			<!--// 2019-04-15 마크업 수정 : 고객요청  -->
 
-			<div class="link-area">
+			<div class="link-area">		<!-- 미완성 -->	
 				<a href="#layer_sitemap" class="header-open-layer btn-layer-sitemap"
 					title="사이트맵">사이트맵</a> <a href="#layer_header_search"
 					class="header-open-layer btn-layer-search" title="검색">검색</a> <a
-					href="<%=path%>/booking/timetable" class="link-ticket"
+					href="<%=path%>/booking/timetable.do" class="link-ticket"
 					title="상영시간표">상영시간표</a> <a href="#layer_mymega"
 					class="header-open-layer btn-layer-mymega" title="나의 메가박스">나의
 					메가박스</a>
@@ -139,61 +139,61 @@
 
 			<nav id="gnb">
 				<ul class="gnb-depth1">
-					<li><a href="<%=path%>/movie" class="gnb-txt-movie" title="영화">영화</a>
+					<li><a href="<%=path%>/movie.do" class="gnb-txt-movie" title="영화">영화</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="<%=path%>/movie" title="전체영화">전체영화</a></li>
-								<li><a href="<%=path%>curation/specialcontent" title="큐레이션">큐레이션</a></li>
+								<li><a href="<%=path%>/movie.do" title="전체영화">전체영화</a></li>
+								<li><a href="<%=path%>/curation.do" title="큐레이션">큐레이션</a></li>
 
 								<li id="festivalArea" style="display: none;"><a
 									href="<%=path%>/festival" title="영화제">영화제</a></li>
-								<li><a href="<%=path%>/moviepost/all" title="무비포스트">무비포스트</a></li>
+								<li><a href="<%=path%>/moviepost.do" title="무비포스트">무비포스트</a></li>
 							</ul>
 						</div></li>
-					<li><a href="<%=path%>/booking" class="gnb-txt-reserve"
+					<li><a href="<%=path%>/booking.do" class="gnb-txt-reserve"
 						title="예매">예매</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="<%=path%>/booking" title="빠른예매">빠른예매</a></li>
-								<li><a href="<%=path%>/booking/timetable" title="상영시간표">상영시간표</a></li>
+								<li><a href="<%=path%>/booking.do" title="빠른예매">빠른예매</a></li>
+								<li><a href="<%=path%>/booking/timetable.do" title="상영시간표">상영시간표</a></li> <!-- 미완성 -->
 								<li><a href="<%=path%>/booking/privatebooking"
-									title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a></li>
+									title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a></li>		<!-- 미완성 -->
 							</ul>
 						</div></li>
-					<li><a href="<%=path%>/theater/list" class="gnb-txt-theater"
+					<li><a href="<%=path%>/theater/list.do=" class="gnb-txt-theater"
 						title="극장">극장</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="<%=path%>/theater/list" title="전체극장">전체극장</a></li>
-								<li><a href="<%=path%>/specialtheater/list" title="특별관">특별관</a></li>
+								<li><a href="<%=path%>/theater/list.do" title="전체극장">전체극장</a></li>
+								<li><a href="<%=path%>/specialtheater/list.do" title="특별관">특별관</a></li>
 							</ul>
 						</div></li>
-					<li><a href="javascript:void(0)"
+					<li><a href="<%=path%>/event.do"
 						onclick="NetfunnelChk.aTag('EVENT_LIST','/event');return false;"
 						class="gnb-txt-event" title="이벤트">이벤트</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="javascript:void(0)"
+								<li><a href="<%=path%>/event.do"
 									onclick="NetfunnelChk.aTag('EVENT_LIST','/event');return false;"
 									title="진행중 이벤트">진행중 이벤트</a></li>
-								<li><a href="javascript:void(0)"
+								<li><a href="<%=path%>/event/past.do"
 									onclick="NetfunnelChk.aTag('EVENT_LIST','/event/end');return false;"
 									title="지난 이벤트">지난 이벤트</a></li>
-								<li><a href="javascript:void(0)"
+								<li><a href="<%=path%>/event/board.do"
 									onclick="NetfunnelChk.aTag('EVENT_LIST','/event/winner/list');return false;"
 									title="당첨자발표">당첨자발표</a></li>
 							</ul>
 						</div></li>
-					<li><a href="javascript:void(0)"
+					<li><a href="<%=path%>/store.do"
 						onclick="NetfunnelChk.aTag('STORE_LIST','/store');return false;"
 						class="gnb-txt-store" title="스토어">스토어</a></li>
 					<li><a href="/benefit/membership" class="gnb-txt-benefit"
 						title="혜택">혜택</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="<%=path%>/benefit/membership" title="메가박스 멤버십">메가박스
+								<li><a href="<%=path%>/benefit/membership.do" title="메가박스 멤버십">메가박스
 										멤버십</a></li>
-								<li><a href="<%=path%>/benefit/discount/guide"
+								<li><a href="<%=path%>/benefit/discount.do"
 									title="제휴/할인">제휴/할인</a></li>
 							</ul>
 						</div></li>
@@ -259,7 +259,7 @@
 												<c:forEach items="${TheaterList}" var="dto">
 													<c:if test="${dto.seq_loc eq 1 }">
 														<li><a
-															href="<%=path %>/theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=1"
+															href="<%=path %>/theaterInfo.do?branchSeq=${dto.seq_branch}&pageNum=1"
 															title="${dto.branch} 상세보기">${dto.branch }</a></li>
 													</c:if>
 												</c:forEach>
@@ -275,7 +275,7 @@
 												<c:forEach items="${TheaterList}" var="dto">
 													<c:if test="${dto.seq_loc eq 2 }">
 														<li><a
-															href="<%=path %>/theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=1>"
+															href="<%=path %>/theaterInfo.do?branchSeq=${dto.seq_branch}&pageNum=1"
 															title="${dto.branch} 상세보기">${dto.branch }</a></li>
 													</c:if>
 												</c:forEach>
@@ -292,7 +292,7 @@
 												<c:forEach items="${TheaterList}" var="dto">
 													<c:if test="${dto.seq_loc eq 3 }">
 														<li><a
-															href="<%=path %>/theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=1>"
+															href="<%=path %>/theaterInfo.do?branchSeq=${dto.seq_branch}&pageNum=1"
 															title="${dto.branch} 상세보기">${dto.branch }</a></li>
 													</c:if>
 												</c:forEach>
@@ -308,7 +308,7 @@
 												<c:forEach items="${TheaterList}" var="dto">
 													<c:if test="${dto.seq_loc eq 4 }">
 														<li><a
-															href="<%=path %>/theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=1>"
+															href="<%=path %>/theaterInfo.do?branchSeq=${dto.seq_branch}&pageNum=1"
 															title="${dto.branch} 상세보기">${dto.branch }</a></li>
 														<c:if test="${seq_branch eq 54 or seq_branch eq 66}">
 															<i class="iconset ico-theater-new"></i>
@@ -328,7 +328,7 @@
 												<c:forEach items="${TheaterList}" var="dto">
 													<c:if test="${dto.seq_loc eq 5 }">
 														<li><a
-															href="<%=path %>/theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=1>"
+															href="<%=path %>/theaterInfo.do?branchSeq=${dto.seq_branch}&pageNum=1"
 															title="${dto.branch} 상세보기">${dto.branch } <c:if
 																	test="${dto.seq_branch eq 92}">
 																	<i class="iconset ico-theater-new"></i>
@@ -348,7 +348,7 @@
 												<c:forEach items="${TheaterList}" var="dto">
 													<c:if test="${dto.seq_loc eq '6' }">
 														<li><a
-															href="<%=path %>/theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=1>"
+															href="<%=path %>/theaterInfo.do?branchSeq=${dto.seq_branch}&pageNum=1"
 															title="${dto.branch} 상세보기">${dto.branch }</a></li>
 													</c:if>
 												</c:forEach>
@@ -364,7 +364,7 @@
 												<c:forEach items="${TheaterList}" var="dto">
 													<c:if test="${dto.seq_loc eq 7 }">
 														<li><a
-															href="<%=path %>/theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=1>"
+															href="<%=path %>/theaterInfo.do?branchSeq=${dto.seq_branch}&pageNum=1"
 															title="${dto.branch} 상세보기">${dto.branch }</a></li>
 
 													</c:if>
@@ -381,7 +381,7 @@
 												<c:forEach items="${TheaterList}" var="dto">
 													<c:if test="${dto.seq_loc eq 8 }">
 														<li><a
-															href="<%=path %>/theaterInfo.do?branchSeq=<%=branchSeq%>&pageNum=1>"
+															href="<%=path %>/theaterInfo.do?branchSeq=${dto.seq_branch}&pageNum=1"
 															title="${dto.branch} 상세보기">${dto.branch }</a></li>
 													</c:if>
 												</c:forEach>
@@ -395,51 +395,75 @@
 
 							<!-- by 태호, 지역별 지점 탭 on/off 기능     2020.07.21    (마우스 떼도 안 없어지는 점 수정해야함.)-->
 							<script>
-								$('.theater-area-list ul li').mouseover(
-										function() {
-
-											$('.theater-area-list ul li').removeClass();
-											/* 	if ($(this).children('div').attr('class') != 'area-depth2') {
-												} */
-											$(this).addClass('on');
-										});
-
-								$('.theater-area-list')
-										.mouseleave(
-												function() {
-													if ($('.area-depth2').mouseleave()) {
-														$('.theater-area-list ul li')	.removeClass();
-													}
-												});
-							</script>
+		                        $('.theater-area-list ul li').mouseover(
+		                            function() {
+		                        	$('.theater-area-list ul li').removeClass();
+		                        	$(this).addClass('on');
+		                        });
+		
+		                        $('.theater-area-list ul li').mouseleave(
+		                        	function() {
+		                        	$('.theater-area-list ul li')   .removeClass();
+		                        });
+                    		 </script>
 
 
 							<p class="name">
 								<c:forEach items="${titleList}" var="titleDTO">
-												${titleDTO.branch}</c:forEach>
+									${titleDTO.branch}
+								</c:forEach>
 							</p>
+							
+							
+						<div class="btn-util right">
 
-							<div class="btn-util right">
+                        <div class="block">
 
-								<div class="block">
+                           <button type="button" class="btn btn-like tooltip click" id="btn99">
+                              <i class="iconset ico-like-line"></i> <span>선호극장</span> 
+                              <span class="ir" data-width="235"> <span class="cont-area">
+                                    <span class="login-alert-tooltip"> 로그인이 필요한 서비스 입니다.<br>
+                                       <a href="" id="moveLogin" title="로그인하기">로그인하기 <i
+                                          class="iconset ico-arr-right-green"></i></a>
+                                 </span>
+                              </span>
+                              </span>
+                           </button>
+                           
+                     <div class="tooltip-layer" id="aaaaa" style="display: block; min-width: 200px; z-index: 501; 
+                     																opacity: 0; pointer-events: auto; width: 235px; 
+                     																top: 20px; left: 925px;">
+                     <div class="wrap" style="min-width: 200px; width: 235px;">
+                     <div class="tit-area" style="display: none;"></div>
+                     <div class="cont-area">
+                     <span class="login-alert-tooltip">
+                     로그인이 필요한 서비스 입니다.<br>
+                     <a href="" id="moveLogin" title="로그인하기">로그인하기 <i class="iconset ico-arr-right-green"></i></a>
+                     </span>
+                     </div>
+                     </div>
+                     <button class="btn-close-tooltip" style="display: block;" id="btn9">툴팁 닫기</button>
+                     </div>
 
+                        </div>
+                     </div>
+							
+					<script>
+	                     $(function() {
+	                        $('#btn99').on("click", function() {
+	                           $('#aaaaa').css({
+	                              'opacity': '1'        
+	                           });
+	                        })
+	                     });
+	                     
+	                     $(function() {
+	                        $('#btn9').on("click", function() {
+	                           $('#aaaaa').css('opacity', '0');
+	                        })
+	                     })
+                  	</script>
 
-
-
-									<button type="button" class="btn btn-like tooltip click">
-										<i class="iconset ico-like-line"></i> <span>선호극장</span> <span
-											class="ir" data-width="235"> <span class="cont-area">
-												<span class="login-alert-tooltip"> 로그인이 필요한 서비스 입니다.<br>
-													<a href="" id="moveLogin" title="로그인하기">로그인하기 <i
-														class="iconset ico-arr-right-green"></i></a>
-											</span>
-										</span>
-										</span>
-									</button>
-
-
-								</div>
-							</div>
 						</div>
 						<!--// theater-detail-cont -->
 					</div>
@@ -470,17 +494,10 @@
 										<br>
 										<p>${titleDTO.specific }</p>
 									</c:forEach>
-
 								</div>
 
-
-
 								<h2 class="tit small mt70">시설안내</h2>
-
-
-
 								<h3 class="tit small">보유시설</h3>
-
 								<div class="theater-facility">
 
 									<c:forEach items="${facilityList}" var="facilityDTO">
@@ -529,8 +546,6 @@
 
 								<div class="parking-info">
 
-
-
 									<c:set var="doneLoop" value="false" />
 									<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
 										<c:if test="${parkDTO.seq_pinfo eq 1 && not doneLoop }">
@@ -555,10 +570,7 @@
 								</div>
 								<!-- .info -->
 
-
-
 								<!-- .parking-section -->
-
 
 								<c:set var="doneLoop" value="false" />
 								<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
@@ -589,8 +601,6 @@
 						<c:set var="doneLoop" value="false" />
 						<c:forEach items="${parkList}" var="parkDTO" varStatus="status">
 							<c:if test="${parkDTO.seq_pinfo eq 3 && not doneLoop }">
-
-
 								<div class="parking-section">
 									<div class="icon-box">
 										<i class="${parkDTO.iconPark }" title="${parkDTO.pPart}">${parkDTO.pPart}</i>
@@ -598,7 +608,7 @@
 									<div class="info">
 										<p class="tit">${parkDTO.pPart}</p>
 										<ul class="dot-list">
-											<c:set var="doneLoop" value="true" />
+								<c:set var="doneLoop" value="true" />
 							</c:if>
 						</c:forEach>
 
@@ -940,7 +950,7 @@
 								<button class='<c:if test="${dto.weekday eq '토'}">sat</c:if><c:if test="${dto.weekday eq '일'}">holi</c:if><c:if test="${status.index eq 1}">  on</c:if>' 
 								 type="button" date-data="${dto.calendar}"
 								month="${fn:substring(dto.calendar, 6, 7)-1}" 
-								tabindex="<c:if test='${status.first || status.end}'>-1</c:if>" 
+								tabindex="<c:if test='${status.first || status.count == 15}'>-1</c:if>" 
 								onclick="btn_onOff(this)">
 									<span class="ir">${fn:substring(dto.calendar, 0, 4)}년 ${fn:substring(dto.calendar, 6, 7)}월</span>
 									<em	style="pointer-events: none;">${fn:substring(dto.calendar, 8,10)}<span
@@ -1067,10 +1077,6 @@
 									}// for - data.screenMovieList
 									
 									html += '</div>';
-									//html += '<div class="box-border v1 mt30">';
-									//html += '<li>지연입장에 의한 관람불편을 최소화하고자 본 영화는 약 10분 후 시작됩니다.</li>';
-									//html += '<li>쾌적한 관람 환경을 위해 상영시간 이전에 입장 부탁드립니다.</li>';
-									//html += '</div>';
 									html += '</div>';
 									
 								
@@ -1084,18 +1090,7 @@
 									
 								}	// function btn_onOff(obj)
 								
-								
-								//$(function(){
-								//	$('.wrap').children('.on').removeClass('on');
-								//	var children = $('.theater-list').val();
-								//	if (typeof children == "undefined") {
-								//		$(obj).addClass('disabled');
-								//	}
-								//})
-								
 							</script>
-											
-											
 											<% if(calendarDate.equals(today)){
 											%>
 												오늘
@@ -1161,7 +1156,7 @@
 				</ul>
 			</div>
 			<div class="rateing-lavel">
-				<a href="" class="" title="관람등급안내">관람등급안내</a>
+				<a href="javascript:void(0)" class="" title="관람등급안내" id="information-watch-grade">관람등급안내</a>
 			</div>
 		</div>
 		
@@ -1320,7 +1315,7 @@
 											</c:forEach>
 								</c:forEach>
 								</tr>						
-									
+									         
 								<c:forEach items="${partTimeList}" var="PartTimeDTO" varStatus="status">
 								<tr>
 								<c:if test="${status.first}">
@@ -1335,46 +1330,6 @@
 											</c:forEach>
 										</c:forEach>
 								</tr>							
-						
-						
-							<!-- <tr>
-								<th scope="rowgroup" rowspan="3">월~목</th>
-								<td>조조 (06:00~)</td>
-								<td>7,000</td>
-								<td>6,000</td>
-							</tr>
-							<tr>
-								<td>일반 (10:00~)</td>
-								<td>11,000</td>
-								<td>9,000</td>
-							</tr>
-							<tr>
-								<td>심야 (24:00~)</td>
-								<td>9,000</td>
-								<td>7,000</td>
-							</tr>
-							
-							
-							
-							<tr>
-								<th scope="rowgroup" rowspan="3">금~일<br>공휴일
-								</th>
-								<td>조조 (06:00~)</td>
-								<td>8,000</td>
-								<td>7,000</td>
-							</tr>
-							<tr>
-								<td>일반 (10:00~)</td>
-								<td>12,000</td>
-								<td>10,000</td>
-							</tr>
-							<tr>
-								<td>심야 (24:00~)</td>
-								<td>10,000</td>
-								<td>8,000</td>
-							</tr> -->
-							
-							
 						</tbody>
 					</table>
 				</div>
@@ -1484,5 +1439,102 @@
 			<div id="layer_looking_theater" class="layer-looking-theater"></div>
 		</footer>
 	</div>
+	
+	<section id="favor_theater_setting" class="modal-layer" style="z-index: 501;">
+<div class="wrap" style="width: 600px; height: 470px; margin-left: -300px; margin-top: -235px;">
+	<header class="layer-header">
+		<h3 class="tit">관람등급안내</h3>
+	</header>
+
+	<div class="layer-con" style="height: 425px;">
+		<div class="table-wrap">
+			<table class="data-table grade-table">
+				<caption>관람 등급을 등급명, 설명 순서로 보여줍니다.</caption>
+				<colgroup>
+					<col style="width:25%">
+					<col>
+				</colgroup>
+				<thead>
+					<tr>
+						<th>등급명</th>
+						<th>설명</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<p class="movie-grade age-all">전체 관람가</p>
+						</td>
+						<td>모든 연령의 고객이 관람 가능</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="movie-grade age-12">12세 이상 관람가</p>
+						</td>
+						<td>
+							만 12세 이상(주민등록상 생일기준) 관람 가능<br>
+							만 12세 미만 고객은 보호자(성인) 동반 시 관람 가능
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="movie-grade age-15">15세 이상 관람가</p>
+						</td>
+						<td>
+							만 15세 이상(주민등록상 생일기준) 관람 가능<br>
+							만 15세 미만 고객은 보호자(성인) 동반 시 관람 가능
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="movie-grade age-19">청소년 관람 불가</p>
+						</td>
+						<td>
+							만 18세 이상(주민등록상 생일기준) 관람 가능<br>
+							- 만 18세 이상이더라도 고등학교 재학중인 경우 관람 불가<br>
+							- 신분증을 지참 필수(구매, 입장 시 신분증 확인)<br>
+							만 18세 미만 고객은 보호자(성인) 동반 시에도 관람 불가
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p class="movie-grade age-no">미정</p>
+						</td>
+						<td>등급 미정 영화</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<button type="button" class="btn-modal-close">레이어 닫기</button>
+</div>
+</section>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+<div class="bg-modal" style="opacity: 0;"></div>
+
+<script type="text/javascript">
+	$('#information-watch-grade').on("click", function(){
+		$('.bg-modal').css({
+			'opacity':'1'
+		});
+		
+		if($('.modal-layer').hasClass('on')!==true){
+			$('.modal-layer').addClass(' on');
+		}
+	});
+
+	$('.btn-modal-close').on("click", function(){
+		if($('.modal-layer').hasClass('on')===true){
+			$('.modal-layer').removeClass(' on');
+		};	
+		
+		$('.bg-modal').css({
+			'opacity':'0'
+		});
+	});
+	
+</script>
+
 </body>
 </html>
