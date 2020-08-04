@@ -393,7 +393,27 @@
                      </div>
                   </div>
     
-    
+    <script type="text/javascript">
+	    function showTheaterTable(data){
+			for (var i = 0; i < data.screenMovieList.length; i++) {
+				
+				for (var j = 0; j < data.screenTheaterList.length; j++) {
+					if (data.screenTheaterList[j].seq_movie == data.screenMovieList[i].seq_movie) {
+						
+						for (var k = 0; k < data.screenTableList.length; k++) {
+							if (data.screenMovieList[i].seq_movie == data.screenTableList[k].seq_movie 
+									&& data.screenMovieList[i].seq_movie == data.screenTableList[k].seq_movie) {
+								
+							}	//	if - data.screenTableList
+						}	//	for - data.screenTableList
+																		
+					}	// if - data.screenTheaterList
+				}	// for - data.screenTheaterList
+				
+			}// for - data.screenMovieList
+			
+		}	// function showTheaterTable(data)
+    </script>
     
 </body>
 </html></html>

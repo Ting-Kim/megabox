@@ -40,11 +40,8 @@
 <link rel="stylesheet" href="<%=path%>/css/megabox.netfunnel.min.css" media="all" />
 </head>
 <body>
-	<div class="skip" title="스킵 네비게이션">
-		<a href="#" title="본문 바로가기">본문 바로가기</a> 
-		<a href="#"	title="푸터 바로가기">푸터 바로가기</a>
-	</div>
 	<div class="body-wrap">
+		<!-- header -->
 		<header id="header">
 			<h1 class="ci">
 				<a href="<%=path%>/main.do" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a>
@@ -53,21 +50,24 @@
 			<!-- 2019-04-15 마크업 수정 : 고객요청  -->
 			<div class="util-area">
 				<div class="left-link">
-					<a href="#" title="VIP LOUNGE">VIP LOUNGE</a> <a
-						href="#" title="멤버십">멤버십</a> <a href="/support"
-						title="고객센터">고객센터</a>
+					<a href="<%=path%>/benefit/viplounge.do" title="VIP LOUNGE">VIP
+						LOUNGE</a> <a href="<%=path%>/benefit/membership.do" title="멤버십">멤버십</a>
+					<a href="<%=path%>/support.do" title="고객센터">고객센터</a>
 				</div>
 
 				<div class="right-link">
+					<!-- 로그인전 -->
 					<div class="before" style="display: none">
-						<a href="#" title="로그인">로그인</a>
-						<a href="#" title="회원가입">회원가입</a>
+						<a href="javaScript:fn_viewLoginPopup('default','pc')" title="로그인">로그인</a><!-- 미입력 -->
+						<a href="<%=path%>/join.do" title="회원가입">회원가입</a>
 					</div>
 
+					<!-- 로그인후 -->
 					<div class="after" style="display: none">
-						<a href="#" class="" title="로그아웃">로그아웃</a>
-						<a href="#" class="notice" title="알림">알림</a>
+						<a href="<%=path%>/logout.do" class="" title="로그아웃">로그아웃</a>
+						<a href="" class="notice" title="알림">알림</a>
 
+						<!-- layer-header-notice -->
 						<div class="layer-header-notice">
 							<div class="notice-wrap">
 								<p class="tit-notice">알림함</p>
@@ -95,66 +95,91 @@
 								<button type="button" class="btn-close-header-notice">알림
 									닫기</button>
 							</div>
+							<!--// notice-wrap -->
+							<!--// layer-header-notice -->
 						</div>
 
 					</div>
 
-					<a href="#">빠른예매</a>
+					<a href="<%=path%>/booking.do">빠른예매</a>
 				</div>
 			</div>
+			<!--// 2019-04-15 마크업 수정 : 고객요청  -->
 
-			<div class="link-area">
-				<a href="#" class="header-open-layer btn-layer-sitemap"	title="사이트맵">사이트맵</a> <a href="#layer_header_search" class="header-open-layer btn-layer-search" title="검색">검색</a> <a
-					href="#" class="link-ticket" title="상영시간표">상영시간표</a>
-				<a href="#" class="header-open-layer btn-layer-mymega" title="나의 메가박스">나의 메가박스</a>
+			<div class="link-area">		<!-- 미완성 -->	
+				<a href="#layer_sitemap" class="header-open-layer btn-layer-sitemap"
+					title="사이트맵">사이트맵</a> <a href="#layer_header_search"
+					class="header-open-layer btn-layer-search" title="검색">검색</a> <a
+					href="<%=path%>/booking/timetable.do" class="link-ticket"
+					title="상영시간표">상영시간표</a> <a href="#layer_mymega"
+					class="header-open-layer btn-layer-mymega" title="나의 메가박스">나의
+					메가박스</a>
 			</div>
 
 			<!-- gnb -->
-			
+			<!--
+        2019-04-15 마크업 수정 : 고객요청
+        1뎁스 a 태그에 각각 다른 class 추가
+    -->
+
 			<nav id="gnb">
 				<ul class="gnb-depth1">
 					<li><a href="<%=path%>/movie.do" class="gnb-txt-movie" title="영화">영화</a>
 						<div class="gnb-depth2">
 							<ul>
 								<li><a href="<%=path%>/movie.do" title="전체영화">전체영화</a></li>
-								<li><a href="#" title="큐레이션">큐레이션</a></li>
+								<li><a href="<%=path%>/curation.do" title="큐레이션">큐레이션</a></li>
 
 								<li id="festivalArea" style="display: none;"><a
-									href="#" title="영화제">영화제</a></li>
-								<li><a href="#" title="무비포스트">무비포스트</a></li>
+									href="<%=path%>/festival" title="영화제">영화제</a></li>
+								<li><a href="<%=path%>/moviepost.do" title="무비포스트">무비포스트</a></li>
 							</ul>
 						</div></li>
-					<li><a href="#" class="gnb-txt-reserve" title="예매">예매</a>
+					<li><a href="<%=path%>/booking.do" class="gnb-txt-reserve"
+						title="예매">예매</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="#" title="빠른예매">빠른예매</a></li>
-								<li><a href="#" title="상영시간표">상영시간표</a></li>
-								<li><a href="#" title="더 부티크 프라이빗 예매">더
-										부티크 프라이빗 예매</a></li>
+								<li><a href="<%=path%>/booking.do" title="빠른예매">빠른예매</a></li>
+								<li><a href="<%=path%>/booking/timetable.do" title="상영시간표">상영시간표</a></li> <!-- 미완성 -->
+								<li><a href="<%=path%>/booking/privatebooking.do"
+									title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a></li>		<!-- 미완성 -->
 							</ul>
 						</div></li>
-					<li><a href="<%=path%>/theater/list.do" class="gnb-txt-theater" title="극장">극장</a>
+					<li><a href="<%=path%>/theater/list.do=" class="gnb-txt-theater"
+						title="극장">극장</a>
 						<div class="gnb-depth2">
 							<ul>
 								<li><a href="<%=path%>/theater/list.do" title="전체극장">전체극장</a></li>
 								<li><a href="<%=path%>/specialtheater/list.do" title="특별관">특별관</a></li>
 							</ul>
 						</div></li>
-					<li><a href="<%=path%>/event.do"	class="gnb-txt-event" title="이벤트">이벤트</a>
+					<li><a href="<%=path%>/event.do"
+						onclick="NetfunnelChk.aTag('EVENT_LIST','/event');return false;"
+						class="gnb-txt-event" title="이벤트">이벤트</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="<%=path%>/event.do"	title="진행중 이벤트">진행중 이벤트</a></li>
-								<li><a href="#"	title="지난 이벤트">지난 이벤트</a></li>
-								<li><a href="#" title="당첨자발표">당첨자발표</a></li>
+								<li><a href="<%=path%>/event.do"
+									onclick="NetfunnelChk.aTag('EVENT_LIST','/event');return false;"
+									title="진행중 이벤트">진행중 이벤트</a></li>
+								<li><a href="<%=path%>/event/past.do"
+									onclick="NetfunnelChk.aTag('EVENT_LIST','/event/end');return false;"
+									title="지난 이벤트">지난 이벤트</a></li>
+								<li><a href="<%=path%>/event/board.do"
+									onclick="NetfunnelChk.aTag('EVENT_LIST','/event/winner/list');return false;"
+									title="당첨자발표">당첨자발표</a></li>
 							</ul>
 						</div></li>
-					<li><a href="<%=path%>/store.do" class="gnb-txt-store" title="스토어">스토어</a></li>
-					<li><a href="#" class="gnb-txt-benefit"	title="혜택">혜택</a>
+					<li><a href="<%=path%>/store.do"
+						onclick="NetfunnelChk.aTag('STORE_LIST','/store');return false;"
+						class="gnb-txt-store" title="스토어">스토어</a></li>
+					<li><a href="/benefit/membership" class="gnb-txt-benefit"
+						title="혜택">혜택</a>
 						<div class="gnb-depth2">
 							<ul>
-								<li><a href="#" title="메가박스 멤버십">메가박스
+								<li><a href="<%=path%>/benefit/membership.do" title="메가박스 멤버십">메가박스
 										멤버십</a></li>
-								<li><a href="#" title="제휴/할인">제휴/할인</a></li>
+								<li><a href="<%=path%>/benefit/discount.do"
+									title="제휴/할인">제휴/할인</a></li>
 							</ul>
 						</div></li>
 				</ul>
@@ -219,7 +244,7 @@
 
 						<ul class="list-depth">
 							<li><a href="theaterList.do" title="전체극장">전체극장</a></li>
-							<li><a href="<%=path%>/specialtheaterList.do" title="특별관">특별관</a></li>
+							<li><a href="<%=path%>/theater/list.do" title="특별관">특별관</a></li>
 						</ul>
 					</div>
 
@@ -523,71 +548,6 @@
 		}
 	});
 	
-/* 
-	$(function() {
-
-		// 이벤트 버블현상 공통 제거
-		$('#contents').on('click', 'a', function(e) {
-
-			if (($(this).attr('href') || '').indexOf('/') == -1) {
-				e.preventDefault();
-			}
-		});
-
-		// 전체극장 > 지역 선택
-		$('.sel-city').on('click', function() {
-
-			$("div.theater-place li.on").removeClass('on');
-			$(this).parent().addClass('on');
-
-			var _h1 = $('.user-theater').outerHeight();
-			var _h2 = $('.theater-place').outerHeight();
-			var _h0 = $("div.theater-place li.on .theater-list").outerHeight();
-			var _hAll = _h0 + _h1 + _h2;
-
-			$('.theater-box').outerHeight(_hAll);
-		});
-
-		// 로그인 버튼
-		$('#moveLogin').click(function() {
-
-			fn_viewLoginPopup('default','pc');
-		});
-
-		// 전체극장 > 선호영화관 관리
-		$('.user-theater a.float-r').click(function() {
-
-			// 선호극장 호출 및 콜백
-			gfn_favorBrchReg(function(param){
-
-				var $li;
-
-				// 선호극장 목록 삭제
-				$('.theater-circle li').remove();
-
-				// 선호극장 class 전체 삭제
-				$('.theater-list span.favorit-theater').remove();
-
-				// 선호극장 처리
-				$.each(param, function(i, data){
-
-					// 전체극장에서 관련 극장 찾기
-					$li = $('.theater-list li[data-brch-no="'+ data.favorCdVal +'"]');
-
-					if ($li.length != 0) {
-
-						// 선호극장 class 추가
-						$li.prepend('<span class="favorit-theater"><i class="iconset ico-favo-theater"></i></span>');
-
-						// 선호영화관 추가
-						$('ul.theater-circle').append(' '); //기존 줄바꿈이 스페이스 영역이라 추가
-						$('ul.theater-circle').append($('<li>').html($li.find('a, input').clone()));
-					}
-				})
-			});
-		});
-	});
-  */
 </script>
  
  
@@ -630,7 +590,7 @@
 							<div class="swiper-wrapper">
 
 								<div class="cell swiper-slide" tabindex="0">
-									<a href="#" class="eventBtn" data-no="8448" data-netfunnel=""
+									<a href="<%=path%>/event/info.do?num=42" class="eventBtn" data-no="8448" data-netfunnel=""
 										title="힐링 프리미엄 극장, 창원내서 6월 24일&#40;수&#41; OPEN! 상세보기">
 										<div class="img new"></div>
 										<div class="cont new">
@@ -642,7 +602,7 @@
 									</a>
 								</div>
 								<div class="cell swiper-slide" tabindex="0">
-									<a href="#" class="eventBtn" data-no="8447" data-netfunnel=""
+									<a href="<%=path%>/event/info.do?num=43" class="eventBtn" data-no="8447" data-netfunnel=""
 										title="세종에서 제일 편안한 극장, 세종청사 6월 24일&#40;수&#41; OPEN! 상세보기">
 										<div class="img new"></div>
 										<div class="cont new">
@@ -655,7 +615,7 @@
 								</div>
 
 								<div class="cell swiper-slide" tabindex="0">
-									<a href="#" class="eventBtn" data-no="8446" data-netfunnel=""
+									<a href="<%=path%>/event/info.do?num=44" class="eventBtn" data-no="8446" data-netfunnel=""
 										title="품격있는 당신을 위한 명품극장, 대전현대아울렛 6월 24일&#40;수&#41; OPEN! 상세보기">
 										<div class="img new"></div>
 										<div class="cont new">
@@ -854,17 +814,23 @@
 
 					<div class="tit-util mt70 mb15">
 						<h3 class="tit">극장 이벤트</h3>
-						<a href="" class="more" title="극장 이벤트 더보기">더보기 <i
+						<a href="<%=path %>/event/tab.do?type=3" class="more" title="극장 이벤트 더보기">더보기 <i
 							class="iconset ico-arr-right-gray"></i></a>
 					</div>
 
 					<div class="event-box">
 						<ul>
-							<c:forEach items="${ elist }" var="edto">
-								<li><a href="#" class="eventBtn" title="${edto.title} 상세보기">
-									<img src="https://img.megabox.co.kr/SharedImg/event/2020/03/17/x23DPxjY0lBYKEGgOv0au8URBgUTbDPb.jpg"
-									alt="${edto.title}" onerror="noImg(this)" />
+							<c:forEach items="${ elist }" var="edto" varStatus="status">
+								<c:if test="${status.first}">
+								<li><a href="<%=path%>/event/info.do?num=4" class="eventBtn" title="${edto.title} 상세보기">
+									<img src="<%=path%>/img/event/theaterEvent1.jpg" alt="${edto.title}" onerror="noImg(this)" />
 								</a></li>
+								</c:if>
+								<c:if test="${status.last}">
+								<li><a href="<%=path%>/event/info.do?num=47" class="eventBtn" title="${edto.title} 상세보기">
+									<img src="<%=path%>/img/event/theaterEvent2.jpg" alt="${edto.title}" onerror="noImg(this)" />
+								</a></li>
+								</c:if>
 							</c:forEach>
 							
 						
@@ -886,7 +852,7 @@
 					
 					<div class="tit-util mt70 mb15">
 						<h3 class="tit">극장 공지사항</h3>
-						<a href="#" class="more" title="극장 공지사항 더보기">더보기
+						<a href="<%=path%>/support/noticePage.do" class="more" title="극장 공지사항 더보기">더보기
 							<i class="iconset ico-arr-right-gray"></i>
 						</a>
 					</div>

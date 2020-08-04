@@ -59,7 +59,7 @@
 		<!-- header -->
 		<header id="header">
 			<h1 class="ci">
-				<a href="/" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a>
+				<a href="<%=path%>/main.do" title="MEGABOX 메인으로 가기">MEGABOX : Life Theater</a>
 			</h1>
 
 			<!-- 2019-04-15 마크업 수정 : 고객요청  -->
@@ -160,7 +160,7 @@
 									title="더 부티크 프라이빗 예매">더 부티크 프라이빗 예매</a></li>		<!-- 미완성 -->
 							</ul>
 						</div></li>
-					<li><a href="<%=path%>/theater/list.do=" class="gnb-txt-theater"
+					<li><a href="<%=path%>/theater/list.do" class="gnb-txt-theater"
 						title="극장">극장</a>
 						<div class="gnb-depth2">
 							<ul>
@@ -995,7 +995,8 @@
 												console.log(e);
 											}
 										})	
-										
+								
+								//	hashTable 이용해서 JSON 객체로 변환해서 사용해보기..
 								function showTheaterTable(data){
 									let html = "";
 									for (var i = 0; i < data.screenMovieList.length; i++) {
