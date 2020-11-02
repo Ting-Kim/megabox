@@ -1,9 +1,0 @@
-# HTTrack Website Copier Cookie File
-# This file format is compatible with Netscape cookies
-www.megabox.co.kr	TRUE	/	FALSE	1999999999	WMONID	ZmbAgWWnAyy
-www.megabox.co.kr	TRUE	/	FALSE	1999999999	JSESSIONID	3ugukRlzmu8Z6qDMQte43gm0Lv2iEeOHi7f6hos0vv2WKWPSV6hK47CsShyv1k6f.b25fbWVnYWJveF9kb21haW4vbWVnYS1vbi1zZXJ2ZXI2
-cast.imp.joins.com	TRUE	/	FALSE	1999999999	ne	.^khIk>/*:t0)[Ne4U4&TupS0Ej=n?60)phlEbe@GAfpEtqc]}WSBx2CXHeCxh-kuz!AJhxhZ/Xo>(@}+r::@1>6w:9rTFJ/tdTsSC9v"
-www.megabox.co.kr	TRUE	/	FALSE	1999999999	SESSION	MTUwYjE4MmYtMDE5MC00ZDdhLWIzMTUtNTJhMmMyZDUwZGM1
-www.megabox.co.kr	TRUE	/	FALSE	1999999999	org.springframework.web.servlet.i18n.CookieLocaleResolver.LOCALE	kr
-www.megabox.co.kr	TRUE	/	FALSE	1999999999	SameSite	None
-
